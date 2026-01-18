@@ -1,0 +1,11 @@
+sentence-transformers
+scikit-learn
+textstat
+numpy
+trafilaturcle
+google-api-python-client
+pyvis 
+networkx
+steamlit
+pdfplumber
+flask

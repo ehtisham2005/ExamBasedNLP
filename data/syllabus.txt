@@ -1,0 +1,48 @@
+Module 1: Overview of Software Engineering
+Nature of Software, Software Process, Project, Product
+Process Models: Classical Evolutionary models
+Agile Process: Extreme Programming (XP), Agile Principles
+Overview of System Engineering
+
+Module 2: Software Project Management
+Project Planning, Scope, Work Break-down Structure (WBS)
+Milestones, Deliverables, Cost and Estimates (Human Resources, Time-scale)
+Risk Management, RMMM Plan
+CASE Tools, Agile Project Management
+Managing team dynamics and communication
+Metrics and Measurement
+
+Module 3: Modelling Requirements
+Software Requirements and types
+Requirements Engineering process: Elicitation, Analysis, Validation
+System Modeling, Requirements Specification
+Requirements Elicitation techniques
+Requirements management in Agile
+
+Module 4: Software Design
+Design concepts: Abstraction, Refinement, Modularity
+Cohesion and Coupling
+Architectural Design, Detailed Design
+Transaction Transformation, Refactoring
+Object Oriented Design, User-Interface Design
+
+Module 5: Validation And Verification
+Strategic Approach to Software Testing
+Test Plan, Test Design, Test Execution
+Reviews, Inspection, Auditing
+Regression Testing, Mutation Testing
+Object Oriented Testing, Web Based System Testing
+Mobile App Testing and Automation
+DevOps Testing, Cloud and Big Data Testing
+
+Module 6: Software Evolution
+Software Maintenance, Types of Maintenance
+Software Configuration Management (SCM) and Tools
+Re-Engineering, Reverse Engineering, Software Reuse
+
+Module 7: Quality Assurance
+Product and Process Metrics
+Quality Standards: ISO, TQM, Six-Sigma
+Process Improvement Models: CMM & CMMI
+Quality Control vs Quality Assurance
+Quality Factors and Methods of Quality Management

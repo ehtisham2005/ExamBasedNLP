@@ -1,0 +1,83 @@
+1. You are interacting with the MIS department of a very large oil company with multiple departments. They have a complex legacy system, and migrating data will take considerable time. The company is very particular about processes, acceptance criteria, and legal contracts.  
+   a. Which software process model is best suited? Justify your answer.  
+   b. Briefly explain the selected model.
+
+2. Why is each practice in Extreme Programming simple and self-complete? How do combinations of practices make XP’s behavior more emergent?
+
+3. Adobe is developing a competing product for Microsoft Word with a strict 10-month deadline. Compare how this project would be executed using the Spiral model and the Agile SCRUM model. Which methodology is more efficient? Justify your answer.
+
+4. A healthcare company wants to launch a telemedicine application for online appointments, video consultations, health monitoring, and prescriptions.  
+   a. Create a phase-based Work Breakdown Structure (WBS).  
+   b. Create a deliverable-based WBS.  
+   c. Identify dependencies and prepare a suitable activity network.
+
+5. A standalone software utility is to be developed in Python by a team of four members. The estimated size is 20,000 lines of code. Using the Organic COCOMO model, calculate the effort, development time, productivity, and average staff size.
+
+6. A grocery delivery mobile application project is in Sprint 3 when a critical bug affecting user registration is discovered. Fixing it may delay the release.  
+   a. As the Scrum Master, how would you handle this situation while balancing quality and deadlines?  
+   b. How can Scrum principles such as transparency and collaboration help resolve this issue?
+
+7. You are responsible for eliciting requirements from a customer who is too busy to meet. Identify and justify any two suitable requirement elicitation techniques.
+
+8. A multinational company is developing project management software for distributed teams across different time zones. Identify:  
+   a. Any three functional requirements  
+   b. Any two non-functional requirements
+
+9. A technology company plans to develop a highly customizable ERP system for small enterprises with clearly defined requirements and a short development timeline. Identify the appropriate software process model and explain the process in detail.
+
+10. Compare the failure curves of hardware, civil, electrical, and software projects. Highlight their characteristics, failure patterns, and mitigation strategies.
+
+11. You are part of a team developing a complex e-commerce platform where requirements are unclear and expected to change frequently, and the client wants a working model from the beginning. Which software process model is most suitable? Explain with respect to the scenario.
+
+12. Explain the umbrella activities carried out during the development of a software project.
+
+13. Given a project with activities having optimistic, most likely, and pessimistic time estimates:  
+    a. Calculate the expected time for each activity using PERT.  
+    b. Draw the network diagram and determine the total project duration.
+
+14. Draw a process-based Work Breakdown Structure with three levels for an online food delivery application.
+
+15. A software project is estimated to have 150,000 delivered source instructions and is categorized as an embedded project. Using the Basic COCOMO model, estimate the effort and development time.
+
+16. Compare organic, semi-detached, and embedded projects. Discuss their characteristics, differences, and provide example scenarios.
+
+17. A university plans to develop an ERP system to streamline operations. Identify and explain:  
+    a. User requirements  
+    b. System requirements  
+    c. Direct and indirect stakeholders  
+    d. Two functional requirements  
+    e. Two non-functional requirements
+
+18. Suggest the most appropriate generic software process model for the following systems and justify your answers:  
+    a. A system to control antilock braking in a car  
+    b. A virtual reality system to support software maintenance  
+    c. A university accounting system replacing an existing system  
+    d. An interactive travel planning system with minimal environmental impact
+
+19. A large-scale e-commerce application faces frequent requirement changes and failures under the Waterfall model. Critically analyze how adopting Agile methodology would help. Discuss principles, practices, roles, ceremonies, artifacts, and challenges during the transition.
+
+20. A university has contracted you to develop an online course registration system.  
+    a. Define parallel work activities  
+    b. Establish milestones  
+    c. Represent tasks, durations, and dependencies  
+    d. Develop a timeline chart
+
+21. Explain how you would identify and differentiate between functional and non-functional requirements during early stages of developing an online food delivery application. Provide at least five examples of each.
+
+22. Compare layered architecture and client-server architecture. Discuss suitable system types, trade-offs, and real-world examples.
+
+23. A startup is developing software for an autonomous drone navigation system with real-time constraints and high reliability. Using the Embedded mode, estimate the Effort Adjustment Factor, effort, schedule, and required personnel.
+
+24. In a multi-developer project facing frequent requirement changes and version conflicts, explain how Software Configuration Management practices can address these issues. Propose strategies to maintain consistency.
+
+25. A startup planning to bid for large government contracts lacks formal development processes. The client mandates process maturity at CMMI Level 3. As a project manager, how would you guide the team to adopt suitable process improvements? Explain the impact on delivery, performance, and client confidence.
+
+26. Prepare a control flow graph to determine cyclomatic complexity for a given code snippet and design a test suite to cover all logical decisions.
+
+27. During a software audit, undocumented test results and informal review notes are discovered. Evaluate how formal inspection and auditing practices improve test reliability and accountability, and discuss long-term impacts on software quality.
+
+28. After releasing a new feature, unrelated modules start behaving inconsistently. As a test lead, how would you ensure recent changes did not introduce side effects? Explain regression testing strategies and the role of automation.
+
+29. Design an object-oriented solution for a ride-sharing application. Identify key classes, responsibilities, relationships, and explain how inheritance, encapsulation, and polymorphism are applied.
+
+30. Create a context model for an online food delivery system. Propose a Level 0 and detailed Level 1 Data Flow Diagram, justify process decomposition, and explain how external entities and data stores are handled.

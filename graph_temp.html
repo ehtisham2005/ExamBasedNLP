@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 500px;
+                 background-color: #1e1e1e;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#ff5733", "font": {"color": "white"}, "id": "Nature of Software, Software Process, Project, Product", "label": "Nature of Software, Software Process, Project, Product", "shape": "dot", "size": 33, "title": "Nature of Software, Software Process, Project, Product\nPriority: \ud83d\udd25\ud83d\udd25\ud83d\udd25 High\nDifficulty: Hard\nTime: 5m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Product and Process Metrics", "label": "Product and Process Metrics", "shape": "dot", "size": 15, "title": "Product and Process Metrics\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 10m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "CASE Tools, Agile Project Management", "label": "CASE Tools, Agile Project Management", "shape": "dot", "size": 27, "title": "CASE Tools, Agile Project Management\nPriority: \ud83d\udd25\ud83d\udd25 Med\nDifficulty: Hard\nTime: 10m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Strategic Approach to Software Testing", "label": "Strategic Approach to Software Testing", "shape": "dot", "size": 17, "title": "Strategic Approach to Software Testing\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 10m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Cohesion and Coupling", "label": "Cohesion and Coupling", "shape": "dot", "size": 15, "title": "Cohesion and Coupling\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 20m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Quality Factors and Methods of Quality Management", "label": "Quality Factors and Methods of Quality Management", "shape": "dot", "size": 15, "title": "Quality Factors and Methods of Quality Management\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 10m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Process Improvement Models: CMM \u0026 CMMI", "label": "Process Improvement Models: CMM \u0026 CMMI", "shape": "dot", "size": 22, "title": "Process Improvement Models: CMM \u0026 CMMI\nPriority: \ud83d\udd25\ud83d\udd25 Med\nDifficulty: Hard\nTime: 30m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Process Models: Classical Evolutionary models", "label": "Process Models: Classical Evolutionary models", "shape": "dot", "size": 20, "title": "Process Models: Classical Evolutionary models\nPriority: \ud83d\udd25\ud83d\udd25 Med\nDifficulty: Hard\nTime: 15m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Software Configuration Management (SCM) and Tools", "label": "Software Configuration Management (SCM) and Tools", "shape": "dot", "size": 18, "title": "Software Configuration Management (SCM) and Tools\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 20m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Module 6: Software Evolution", "label": "Module 6: Software Evolution", "shape": "dot", "size": 17, "title": "Module 6: Software Evolution\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 5m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Software Maintenance, Types of Maintenance", "label": "Software Maintenance, Types of Maintenance", "shape": "dot", "size": 20, "title": "Software Maintenance, Types of Maintenance\nPriority: \ud83d\udd25\ud83d\udd25 Med\nDifficulty: Hard\nTime: 40m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Quality Control vs Quality Assurance", "label": "Quality Control vs Quality Assurance", "shape": "dot", "size": 15, "title": "Quality Control vs Quality Assurance\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 10m"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Object Oriented Design, User-Interface Design", "label": "Object Oriented Design, User-Interface Design", "shape": "dot", "size": 17, "title": "Object Oriented Design, User-Interface Design\nPriority: \ud83d\udd39 Low\nDifficulty: Moderate\nTime: 45m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Overview of System Engineering", "label": "Overview of System Engineering", "shape": "dot", "size": 19, "title": "Overview of System Engineering\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 20m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Module 7: Quality Assurance", "label": "Module 7: Quality Assurance", "shape": "dot", "size": 15, "title": "Module 7: Quality Assurance\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 10m"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Test Plan, Test Design, Test Execution", "label": "Test Plan, Test Design, Test Execution", "shape": "dot", "size": 15, "title": "Test Plan, Test Design, Test Execution\nPriority: \ud83d\udd39 Low\nDifficulty: Moderate\nTime: 35m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Module 5: Validation And Verification", "label": "Module 5: Validation And Verification", "shape": "dot", "size": 15, "title": "Module 5: Validation And Verification\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 15m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Milestones, Deliverables, Cost and Estimates (Human Resources, Time-scale)", "label": "Milestones, Deliverables, Cost and Estimates (Human Resources, Time-scale)", "shape": "dot", "size": 22, "title": "Milestones, Deliverables, Cost and Estimates (Human Resources, Time-scale)\nPriority: \ud83d\udd25\ud83d\udd25 Med\nDifficulty: Hard\nTime: 5m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Module 4: Software Design", "label": "Module 4: Software Design", "shape": "dot", "size": 15, "title": "Module 4: Software Design\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 5m"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Risk Management, RMMM Plan", "label": "Risk Management, RMMM Plan", "shape": "dot", "size": 15, "title": "Risk Management, RMMM Plan\nPriority: \ud83d\udd39 Low\nDifficulty: Moderate\nTime: 5m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Reviews, Inspection, Auditing", "label": "Reviews, Inspection, Auditing", "shape": "dot", "size": 17, "title": "Reviews, Inspection, Auditing\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 5m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Object Oriented Testing, Web Based System Testing", "label": "Object Oriented Testing, Web Based System Testing", "shape": "dot", "size": 15, "title": "Object Oriented Testing, Web Based System Testing\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 80m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Requirements Elicitation techniques", "label": "Requirements Elicitation techniques", "shape": "dot", "size": 36, "title": "Requirements Elicitation techniques\nPriority: \ud83d\udd25\ud83d\udd25\ud83d\udd25 High\nDifficulty: Hard\nTime: 5m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Mobile App Testing and Automation", "label": "Mobile App Testing and Automation", "shape": "dot", "size": 15, "title": "Mobile App Testing and Automation\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 80m"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Module 1: Overview of Software Engineering", "label": "Module 1: Overview of Software Engineering", "shape": "dot", "size": 19.6, "title": "Module 1: Overview of Software Engineering\nPriority: \ud83d\udd39 Low\nDifficulty: Moderate\nTime: 5m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Agile Process: Extreme Programming (XP), Agile Principles", "label": "Agile Process: Extreme Programming (XP), Agile Principles", "shape": "dot", "size": 20.55, "title": "Agile Process: Extreme Programming (XP), Agile Principles\nPriority: \ud83d\udd25\ud83d\udd25 Med\nDifficulty: Hard\nTime: 5m"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Module 2: Software Project Management", "label": "Module 2: Software Project Management", "shape": "dot", "size": 20.2, "title": "Module 2: Software Project Management\nPriority: \ud83d\udd25\ud83d\udd25 Med\nDifficulty: Unknown\nTime: 5m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Project Planning, Scope, Work Break-down Structure (WBS)", "label": "Project Planning, Scope, Work Break-down Structure (WBS)", "shape": "dot", "size": 26.1, "title": "Project Planning, Scope, Work Break-down Structure (WBS)\nPriority: \ud83d\udd25\ud83d\udd25 Med\nDifficulty: Hard\nTime: 5m"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Managing team dynamics and communication", "label": "Managing team dynamics and communication", "shape": "dot", "size": 15.0, "title": "Managing team dynamics and communication\nPriority: \ud83d\udd39 Low\nDifficulty: Unknown\nTime: 5m"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Metrics and Measurement", "label": "Metrics and Measurement", "shape": "dot", "size": 15.0, "title": "Metrics and Measurement\nPriority: \ud83d\udd39 Low\nDifficulty: Moderate\nTime: 20m"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Module 3: Modelling Requirements", "label": "Module 3: Modelling Requirements", "shape": "dot", "size": 32.55, "title": "Module 3: Modelling Requirements\nPriority: \ud83d\udd25\ud83d\udd25\ud83d\udd25 High\nDifficulty: Unknown\nTime: 5m"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Software Requirements and types", "label": "Software Requirements and types", "shape": "dot", "size": 45.45, "title": "Software Requirements and types\nPriority: \ud83d\udd25\ud83d\udd25\ud83d\udd25 High\nDifficulty: Unknown\nTime: 5m"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Requirements Engineering process: Elicitation, Analysis, Validation", "label": "Requirements Engineering process: Elicitation, Analysis, Validation", "shape": "dot", "size": 32.65, "title": "Requirements Engineering process: Elicitation, Analysis, Validation\nPriority: \ud83d\udd25\ud83d\udd25\ud83d\udd25 High\nDifficulty: Unknown\nTime: 5m"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "System Modeling, Requirements Specification", "label": "System Modeling, Requirements Specification", "shape": "dot", "size": 33.25, "title": "System Modeling, Requirements Specification\nPriority: \ud83d\udd25\ud83d\udd25\ud83d\udd25 High\nDifficulty: Moderate\nTime: 5m"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Requirements management in Agile", "label": "Requirements management in Agile", "shape": "dot", "size": 22.3, "title": "Requirements management in Agile\nPriority: \ud83d\udd25\ud83d\udd25 Med\nDifficulty: Unknown\nTime: 5m"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Design concepts: Abstraction, Refinement, Modularity", "label": "Design concepts: Abstraction, Refinement, Modularity", "shape": "dot", "size": 15.0, "title": "Design concepts: Abstraction, Refinement, Modularity\nPriority: \ud83d\udd39 Low\nDifficulty: Moderate\nTime: 50m"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Architectural Design, Detailed Design", "label": "Architectural Design, Detailed Design", "shape": "dot", "size": 15.0, "title": "Architectural Design, Detailed Design\nPriority: \ud83d\udd39 Low\nDifficulty: Unknown\nTime: 5m"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Transaction Transformation, Refactoring", "label": "Transaction Transformation, Refactoring", "shape": "dot", "size": 15.0, "title": "Transaction Transformation, Refactoring\nPriority: \ud83d\udd39 Low\nDifficulty: Unknown\nTime: 5m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Regression Testing, Mutation Testing", "label": "Regression Testing, Mutation Testing", "shape": "dot", "size": 17.25, "title": "Regression Testing, Mutation Testing\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 5m"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "DevOps Testing, Cloud and Big Data Testing", "label": "DevOps Testing, Cloud and Big Data Testing", "shape": "dot", "size": 15.0, "title": "DevOps Testing, Cloud and Big Data Testing\nPriority: \ud83d\udd39 Low\nDifficulty: Unknown\nTime: 5m"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Re-Engineering, Reverse Engineering, Software Reuse", "label": "Re-Engineering, Reverse Engineering, Software Reuse", "shape": "dot", "size": 15.0, "title": "Re-Engineering, Reverse Engineering, Software Reuse\nPriority: \ud83d\udd39 Low\nDifficulty: Unknown\nTime: 5m"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Quality Standards: ISO, TQM, Six-Sigma", "label": "Quality Standards: ISO, TQM, Six-Sigma", "shape": "dot", "size": 15.0, "title": "Quality Standards: ISO, TQM, Six-Sigma\nPriority: \ud83d\udd39 Low\nDifficulty: Hard\nTime: 5m"}]);
+                  edges = new vis.DataSet([{"from": "Nature of Software, Software Process, Project, Product", "to": "Product and Process Metrics", "value": 0.6426093578338623, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "CASE Tools, Agile Project Management", "value": 0.5978618860244751, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Strategic Approach to Software Testing", "value": 0.5785024166107178, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Cohesion and Coupling", "value": 0.489429771900177, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Quality Factors and Methods of Quality Management", "value": 0.47614264488220215, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Process Improvement Models: CMM \u0026 CMMI", "value": 0.45395082235336304, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Process Models: Classical Evolutionary models", "value": 0.43882161378860474, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Software Configuration Management (SCM) and Tools", "value": 0.42009878158569336, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Module 6: Software Evolution", "value": 0.417304128408432, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Software Maintenance, Types of Maintenance", "value": 0.4172292947769165, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Quality Control vs Quality Assurance", "value": 0.4136112928390503, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Object Oriented Design, User-Interface Design", "value": 0.3600987195968628, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Overview of System Engineering", "value": 0.35917413234710693, "width": 1}, {"from": "Nature of Software, Software Process, Project, Product", "to": "Module 7: Quality Assurance", "value": 0.3548034429550171, "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "CASE Tools, Agile Project Management", "value": 0.5413938760757446, "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "Product and Process Metrics", "value": 0.5391478538513184, "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "Process Improvement Models: CMM \u0026 CMMI", "value": 0.523004412651062, "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "Strategic Approach to Software Testing", "value": 0.4702988862991333, "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "Cohesion and Coupling", "value": 0.4572886824607849, "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "Quality Control vs Quality Assurance", "value": 0.4426472783088684, "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "Software Maintenance, Types of Maintenance", "value": 0.44027256965637207, "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "Test Plan, Test Design, Test Execution", "value": 0.4370460510253906, "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "Module 5: Validation And Verification", "value": 0.35775431990623474, "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "Software Configuration Management (SCM) and Tools", "value": 0.35269370675086975, "width": 1}, {"from": "Overview of System Engineering", "to": "Module 7: Quality Assurance", "value": 0.3895041346549988, "width": 1}, {"from": "Overview of System Engineering", "to": "Software Configuration Management (SCM) and Tools", "value": 0.36812570691108704, "width": 1}, {"from": "Overview of System Engineering", "to": "CASE Tools, Agile Project Management", "value": 0.36071401834487915, "width": 1}, {"from": "Overview of System Engineering", "to": "Software Maintenance, Types of Maintenance", "value": 0.3518637716770172, "width": 1}, {"from": "Milestones, Deliverables, Cost and Estimates (Human Resources, Time-scale)", "to": "Module 4: Software Design", "value": 0.4449489116668701, "width": 1}, {"from": "Milestones, Deliverables, Cost and Estimates (Human Resources, Time-scale)", "to": "Risk Management, RMMM Plan", "value": 0.40490180253982544, "width": 1}, {"from": "Milestones, Deliverables, Cost and Estimates (Human Resources, Time-scale)", "to": "Reviews, Inspection, Auditing", "value": 0.38536393642425537, "width": 1}, {"from": "Risk Management, RMMM Plan", "to": "Module 4: Software Design", "value": 0.5238407850265503, "width": 1}, {"from": "Risk Management, RMMM Plan", "to": "Object Oriented Testing, Web Based System Testing", "value": 0.5001168251037598, "width": 1}, {"from": "Risk Management, RMMM Plan", "to": "Requirements Elicitation techniques", "value": 0.47502416372299194, "width": 1}, {"from": "CASE Tools, Agile Project Management", "to": "Product and Process Metrics", "value": 0.6205230951309204, "width": 1}, {"from": "CASE Tools, Agile Project Management", "to": "Strategic Approach to Software Testing", "value": 0.550248384475708, "width": 1}, {"from": "CASE Tools, Agile Project Management", "to": "Cohesion and Coupling", "value": 0.531839907169342, "width": 1}, {"from": "CASE Tools, Agile Project Management", "to": "Process Improvement Models: CMM \u0026 CMMI", "value": 0.49346640706062317, "width": 1}, {"from": "CASE Tools, Agile Project Management", "to": "Module 6: Software Evolution", "value": 0.472564697265625, "width": 1}, {"from": "CASE Tools, Agile Project Management", "to": "Software Maintenance, Types of Maintenance", "value": 0.4678746461868286, "width": 1}, {"from": "CASE Tools, Agile Project Management", "to": "Module 7: Quality Assurance", "value": 0.45089128613471985, "width": 1}, {"from": "CASE Tools, Agile Project Management", "to": "Quality Control vs Quality Assurance", "value": 0.4171743094921112, "width": 1}, {"from": "CASE Tools, Agile Project Management", "to": "Quality Factors and Methods of Quality Management", "value": 0.41332390904426575, "width": 1}, {"from": "CASE Tools, Agile Project Management", "to": "Software Configuration Management (SCM) and Tools", "value": 0.41174817085266113, "width": 1}, {"from": "Requirements Elicitation techniques", "to": "Module 4: Software Design", "value": 0.542631208896637, "width": 1}, {"from": "Requirements Elicitation techniques", "to": "Object Oriented Testing, Web Based System Testing", "value": 0.513385534286499, "width": 1}, {"from": "Requirements Elicitation techniques", "to": "Reviews, Inspection, Auditing", "value": 0.44504299759864807, "width": 1}, {"from": "Module 4: Software Design", "to": "Object Oriented Testing, Web Based System Testing", "value": 0.5223995447158813, "width": 1}, {"from": "Module 4: Software Design", "to": "Reviews, Inspection, Auditing", "value": 0.36604684591293335, "width": 1}, {"from": "Cohesion and Coupling", "to": "Product and Process Metrics", "value": 0.4669801592826843, "width": 1}, {"from": "Cohesion and Coupling", "to": "Quality Factors and Methods of Quality Management", "value": 0.43723124265670776, "width": 1}, {"from": "Cohesion and Coupling", "to": "Process Improvement Models: CMM \u0026 CMMI", "value": 0.42155906558036804, "width": 1}, {"from": "Cohesion and Coupling", "to": "Software Maintenance, Types of Maintenance", "value": 0.41526418924331665, "width": 1}, {"from": "Cohesion and Coupling", "to": "Strategic Approach to Software Testing", "value": 0.3981173634529114, "width": 1}, {"from": "Cohesion and Coupling", "to": "Software Configuration Management (SCM) and Tools", "value": 0.39178556203842163, "width": 1}, {"from": "Cohesion and Coupling", "to": "Quality Control vs Quality Assurance", "value": 0.36377251148223877, "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Product and Process Metrics", "value": 0.5426546335220337, "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Mobile App Testing and Automation", "value": 0.5111868977546692, "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Test Plan, Test Design, Test Execution", "value": 0.4855862259864807, "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Quality Factors and Methods of Quality Management", "value": 0.4732688367366791, "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Quality Control vs Quality Assurance", "value": 0.4610595703125, "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Module 7: Quality Assurance", "value": 0.3918740749359131, "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Module 6: Software Evolution", "value": 0.3856181502342224, "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Software Maintenance, Types of Maintenance", "value": 0.37493640184402466, "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Process Improvement Models: CMM \u0026 CMMI", "value": 0.353999525308609, "width": 1}, {"from": "Test Plan, Test Design, Test Execution", "to": "Process Improvement Models: CMM \u0026 CMMI", "value": 0.380210280418396, "width": 1}, {"from": "Reviews, Inspection, Auditing", "to": "Software Maintenance, Types of Maintenance", "value": 0.35210973024368286, "width": 1}, {"from": "Module 6: Software Evolution", "to": "Product and Process Metrics", "value": 0.49493324756622314, "width": 1}, {"from": "Module 6: Software Evolution", "to": "Quality Factors and Methods of Quality Management", "value": 0.3915213346481323, "width": 1}, {"from": "Module 6: Software Evolution", "to": "Software Maintenance, Types of Maintenance", "value": 0.3536253273487091, "width": 1}, {"from": "Software Maintenance, Types of Maintenance", "to": "Process Improvement Models: CMM \u0026 CMMI", "value": 0.43698593974113464, "width": 1}, {"from": "Software Maintenance, Types of Maintenance", "to": "Product and Process Metrics", "value": 0.43227100372314453, "width": 1}, {"from": "Software Maintenance, Types of Maintenance", "to": "Quality Factors and Methods of Quality Management", "value": 0.36835548281669617, "width": 1}, {"from": "Software Maintenance, Types of Maintenance", "to": "Module 7: Quality Assurance", "value": 0.3501957058906555, "width": 1}, {"from": "Software Configuration Management (SCM) and Tools", "to": "Product and Process Metrics", "value": 0.4376751184463501, "width": 1}, {"from": "Software Configuration Management (SCM) and Tools", "to": "Process Improvement Models: CMM \u0026 CMMI", "value": 0.4373929500579834, "width": 1}, {"from": "Software Configuration Management (SCM) and Tools", "to": "Quality Control vs Quality Assurance", "value": 0.3597162961959839, "width": 1}, {"from": "Module 7: Quality Assurance", "to": "Quality Control vs Quality Assurance", "value": 0.652857780456543, "width": 1}, {"from": "Module 7: Quality Assurance", "to": "Quality Factors and Methods of Quality Management", "value": 0.47847461700439453, "width": 1}, {"from": "Module 7: Quality Assurance", "to": "Product and Process Metrics", "value": 0.42479148507118225, "width": 1}, {"from": "Module 7: Quality Assurance", "to": "Process Improvement Models: CMM \u0026 CMMI", "value": 0.3549646735191345, "width": 1}, {"from": "Product and Process Metrics", "to": "Quality Control vs Quality Assurance", "value": 0.5360146760940552, "width": 1}, {"from": "Product and Process Metrics", "to": "Process Improvement Models: CMM \u0026 CMMI", "value": 0.5250407457351685, "width": 1}, {"from": "Product and Process Metrics", "to": "Quality Factors and Methods of Quality Management", "value": 0.5008824467658997, "width": 1}, {"from": "Process Improvement Models: CMM \u0026 CMMI", "to": "Quality Control vs Quality Assurance", "value": 0.4199378490447998, "width": 1}, {"from": "Process Improvement Models: CMM \u0026 CMMI", "to": "Quality Factors and Methods of Quality Management", "value": 0.3954174816608429, "width": 1}, {"from": "Quality Control vs Quality Assurance", "to": "Quality Factors and Methods of Quality Management", "value": 0.47013407945632935, "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "forceAtlas2Based": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.01,
+            "damping": 0.4,
+            "gravitationalConstant": -100,
+            "springConstant": 0.08,
+            "springLength": 200
+        },
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
