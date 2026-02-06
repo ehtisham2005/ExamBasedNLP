@@ -17,29 +17,42 @@ st.set_page_config(page_title="Exam Guide AI", layout="wide")
 
 # --- HELPER: Fix the Icons ---
 def get_clean_priority_label(score):
-    """
-    Uses Symbols instead of Colors to prevent UI confusion.
-    """
-    if score > 2.5: return "🔥🔥🔥 High"  # Fire = Importance
+    if score > 2.5: return "🔥🔥🔥 High"
     if score > 1.0: return "🔥🔥 Med"
     return "🔹 Low"
 
 # --- CACHED FUNCTIONS ---
 @st.cache_data
 def load_data():
+    """Loads BOTH Syllabus and PYQs"""
+    topics = None
+    pyqs_content = ""
+    
+    # 1. Load Syllabus
     if os.path.exists("data/syllabus.txt"):
-        return load_text_file("data/syllabus.txt", "Syllabus")
-    return None
+        topics = load_text_file("data/syllabus.txt", "Syllabus")
+    
+    # 2. Load PYQs
+    if os.path.exists("data/pyqs.txt"):
+        with open("data/pyqs.txt", "r", encoding="utf-8") as f:
+            pyqs_content = f.read()
+
+    return topics, pyqs_content
 
 @st.cache_data
-def get_analysis(topics):
-    """Runs ALL AI tasks: Relations, Importance, and Time Estimation"""
+def get_analysis(topics, pyqs_content):
+    """Runs ALL AI tasks."""
+    
+    # 1. Relationships (Syllabus only)
     relations = analyze_deep_relations(topics)
-    importance = calculate_importance(topics)
+    
+    # 2. Importance (Syllabus + PYQs)
+    importance = calculate_importance(topics, pyqs_content)
     
     node_metrics = {}
     total_time = 0
     
+    # 3. Time & Difficulty
     for topic in topics:
         content = get_cached_content(topic)
         mins, diff, is_math = estimate_effort(content)
@@ -56,66 +69,82 @@ def get_analysis(topics):
 # --- MAIN UI ---
 st.title("🧠 AI Exam Guiding System")
 
-topics = load_data()
+topics, pyqs_content = load_data()
+
 if not topics:
-    st.error("❌ Data not found. Please ensure 'data/syllabus.txt' exists.")
+    st.error("❌ Syllabus data not found. Please ensure 'data/syllabus.txt' exists.")
     st.stop()
 
-relations, importance_scores, node_metrics, total_time = get_analysis(topics)
+if not pyqs_content:
+    st.warning("⚠️ 'data/pyqs.txt' not found or empty. Importance scores may be inaccurate.")
+
+relations, importance_scores, node_metrics, total_time = get_analysis(topics, pyqs_content)
 
 # --- SIDEBAR ---
 st.sidebar.header("🎛️ Controls")
-min_strength = st.sidebar.slider("Graph Complexity", 0.1, 1.0, 0.40, 0.05)
+# Defaulted slider to 0.15 so edges show up immediately
+min_strength = st.sidebar.slider("Graph Complexity", 0.1, 1.0, 0.15, 0.05)
 focus_topic = st.sidebar.selectbox("🔍 Focus Topic", ["None"] + topics)
 
 # --- GRAPH GENERATION ---
 G = nx.Graph()
 
 for topic in topics:
-    score = importance_scores.get(topic, 0)
+    # --- SAFE DATA EXTRACTION (Prevents Crash) ---
+    raw_data = importance_scores.get(topic, {"score": 0, "matches": []})
+    
+    # Handle old cache vs new data structure
+    if isinstance(raw_data, (int, float)):
+        score = raw_data
+        data = {"score": raw_data, "matches": []}
+    else:
+        data = raw_data
+        score = data.get("score", 0)
+
     meta = node_metrics.get(topic, {})
     
-    # Use the NEW icon system
+    # Priority Label
     priority_label = get_clean_priority_label(score)
     is_math = meta.get("is_math", False)
     
-    # Visual Logic:
+    # Visual Logic
     size = 15 + (score * 5)
     
-    # Color = Difficulty (Strictly Red/Yellow/Green)
+    # Color Logic
     diff = meta.get("difficulty", "Unknown")
-    color = "#00ff41" # Green (Easy)
+    color = "#00ff41" # Green
     if diff == "Moderate": color = "#ffff00" # Yellow
     if diff == "Hard": color = "#ff5733" # Red
     
-    # Tooltip
     math_icon = "🧮 " if is_math else ""
     tooltip = f"{math_icon}{topic}\nPriority: {priority_label}\nDifficulty: {diff}\nTime: {meta['time']}m"
     
     G.add_node(topic, title=tooltip, label=topic, color=color, size=size)
 
+# --- DRAW EDGES (This was missing!) ---
 for link in relations:
     if link['score'] >= min_strength:
         G.add_edge(link['topic_a'], link['topic_b'], value=link['score'])
 
+# Filter by Focus Topic
 if focus_topic != "None" and focus_topic in G.nodes():
     neighbors = list(G.neighbors(focus_topic))
     G = G.subgraph(neighbors + [focus_topic])
 
+# --- RENDER NETWORK ---
 net = Network(height="500px", width="100%", bgcolor="#1e1e1e", font_color="white")
 net.from_nx(G)
 net.force_atlas_2based(gravity=-100, spring_length=200)
 html_file = "graph_temp.html"
 net.save_graph(html_file)
 
-# --- LAYOUT ---
+# --- DISPLAY OUTPUT ---
 col1, col2 = st.columns([2, 1])
 
 with col1:
     st.subheader("Interactive Knowledge Graph")
     with open(html_file, 'r', encoding='utf-8') as f:
         components.html(f.read(), height=520)
-    # Clear Legend
     st.caption("🟢 Easy  🟡 Moderate  🔴 Hard | 🔵 Bigger Bubble = 🔥 Higher Priority")
 
 with col2:
@@ -127,13 +156,16 @@ with col2:
     
     table_data = []
     for topic in topics:
-        score = importance_scores.get(topic, 0)
+        # Safe extraction for table
+        raw_data = importance_scores.get(topic, {"score": 0})
+        score = raw_data if isinstance(raw_data, (int, float)) else raw_data.get("score", 0)
+        
         meta = node_metrics.get(topic, {})
         type_icon = "🧮 Math" if meta.get("is_math") else "📖 Theory"
         
         table_data.append({
             "Topic": topic,
-            "Priority": get_clean_priority_label(score), # New Icons
+            "Priority": get_clean_priority_label(score),
             "Type": type_icon,
             "Difficulty": meta.get("difficulty", "-"),
             "Time": meta.get("time", 0),
@@ -149,10 +181,27 @@ with col2:
         st.dataframe(
             display_df, 
             hide_index=True, 
-            # REMOVED: use_container_width=True (Fixes your error)
             column_config={
                 "Priority": st.column_config.TextColumn("Priority"),
                 "Time": st.column_config.NumberColumn("Mins", format="%d m"),
                 "Type": st.column_config.TextColumn("Type", width="small")
             }
         )
+
+# --- SIDEBAR DETAILS ---
+if focus_topic != "None":
+    st.sidebar.markdown("---")
+    st.sidebar.subheader(f"📜 PYQs for: {focus_topic}")
+    
+    # Safe extraction for sidebar
+    raw_data = importance_scores.get(focus_topic, {})
+    # If old cache (float), we have no questions. If new dict, we do.
+    questions = []
+    if isinstance(raw_data, dict):
+        questions = raw_data.get("matches", [])
+    
+    if questions:
+        for q in questions:
+            st.sidebar.info(f"❓ {q}")
+    else:
+        st.sidebar.caption("No direct matches found in PYQs.")

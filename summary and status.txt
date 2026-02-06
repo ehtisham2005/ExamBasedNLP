@@ -114,8 +114,8 @@ SEARCH_ENGINE_ID=your_cx_id_here
 This is the main demo script currently.
 
 ```bash
-python src/visualizer.py
-
+.venv/Scripts/activate
+streamlit run src/app.py
 ```
 
 * *First Run:* Takes ~2 mins (downloads data via API).

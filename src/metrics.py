@@ -1,55 +1,40 @@
-import textstat
 import re
 
-def estimate_effort(text):
+def estimate_effort(content):
     """
-    Calculates study time based on length, complexity, AND math density.
-    Returns: (minutes, difficulty_label, is_math_heavy)
+    Estimates study time, difficulty, and math intensity based on the content text.
+    
+    Returns:
+        mins (int): Estimated minutes to study.
+        difficulty (str): "Easy", "Moderate", or "Hard".
+        is_math (bool): True if the topic involves calculations/formulas.
     """
-    if not text or len(text) < 100:
-        return 5, "Unknown", False  # Minimum 5 mins for any topic
+    if not content:
+        return 15, "Moderate", False  # Default values if no content
 
-    # 1. Math Detection 🧮
-    # We look for words that signal "Slow Down & Think"
-    math_signals = [
-        'formula', 'equation', 'calculate', 'theorem', 'proof', 'algorithm', 
-        'sigma', 'integral', 'derivative', 'matrix', 'logarithm', 
-        'step 1', 'step 2', 'complexity', 'O(', '∑'
+    # 1. Estimate Time (Roughly 150 words per minute reading/study speed)
+    word_count = len(content.split())
+    # Base time is 10 mins, plus 1 min for every 100 words
+    mins = 10 + (word_count // 100)
+
+    # 2. Check for Math/Formulas
+    # Keywords that suggest mathematical or derivation-heavy content
+    math_keywords = [
+        "equation", "formula", "calculate", "derive", "theorem", 
+        "integral", "matrix", "probability", "compute", "solve"
     ]
-    
-    math_hits = 0
-    lower_text = text.lower()
-    for signal in math_signals:
-        math_hits += lower_text.count(signal)
-    
-    # Heuristic: If we find >3 math signals per 1000 chars, it's a technical topic
-    is_math_heavy = math_hits > (len(text) / 1000 * 3)
+    math_score = sum(1 for word in math_keywords if word in content.lower())
+    is_math = math_score > 2  # If more than 2 math words appear, it's math-heavy
 
-    # 2. Base Reading Speed (WPM)
-    # Average student reading speed is ~200 wpm for fiction, but ~100 for textbooks.
-    wpm = 130 
-    
-    # Adjust for Reading Ease (Flesch-Kincaid)
-    complexity = textstat.flesch_reading_ease(text)
-    if complexity < 50: wpm = 100   # Dense Academic Text
-    if complexity < 30: wpm = 70    # Very Hard / Legalistic
+    # 3. Estimate Difficulty
+    # Longer content + Math usually equals harder
+    if is_math and mins > 30:
+        difficulty = "Hard"
+    elif mins > 20:
+        difficulty = "Moderate"
+    elif is_math:
+        difficulty = "Moderate" # Short but mathy
+    else:
+        difficulty = "Easy"
 
-    # 3. Calculate Time
-    word_count = textstat.lexicon_count(text, removepunct=True)
-    minutes = word_count / wpm
-    
-    # 4. Apply The "Math Penalty"
-    # Math takes time to derive/practice, not just read.
-    if is_math_heavy:
-        minutes = minutes * 1.6  # +60% more time
-    
-    # Round to nearest 5 mins (cleaner UI)
-    minutes = int(5 * round(minutes / 5))
-    if minutes < 5: minutes = 5
-
-    # 5. Determine Label
-    label = "Easy"
-    if complexity < 60: label = "Moderate"
-    if complexity < 40 or is_math_heavy: label = "Hard"
-
-    return minutes, label, is_math_heavy
+    return mins, difficulty, is_math
