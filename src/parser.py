@@ -49,30 +49,32 @@ class ExamParser:
 
     def parse_pyqs(self) -> List[str]:
         """
-        Parses the PYQ file into a list of distinct questions.
-        Handles multi-line questions and sub-parts (a, b, c).
+        Extracts individual questions from the PYQs file. 
+        Uses regex to identify question starts and handles multi-line questions.
         """
-        try:
-            with open(self.pyqs_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-        except FileNotFoundError:
-            logger.error(f"PYQ file not found: {self.pyqs_path}")
-            return []
-        except Exception as e:
-            logger.error(f"Unexpected error reading PYQs: {e}")
+        raw_lines = load_text_file(self.pyqs_path, "PYQs")
+        if not raw_lines:
+            logger.warning(f"PYQs file at {self.pyqs_path} is empty or missing.")
             return []
 
-        raw_questions = self.question_start_pattern.split(content)
+        questions: List[str] = []
+        current_question = ""
         
-        final_questions = []
-        for q in raw_questions:
-            clean_q = q.strip()
-            if clean_q:
-                normalized_q = " ".join(clean_q.split())
-                final_questions.append(normalized_q)
+        for line in raw_lines:
+            if self.question_start_pattern.match(line):
+                if current_question:
+                    questions.append(current_question.strip())
+                current_question = line.strip()
+            else:
+                current_question += " " + line.strip()
+        
+        if current_question:
+            questions.append(current_question.strip())
+        
+        logger.info(f"Successfully parsed {len(questions)} questions from PYQs.")
+        return questions
 
-        logger.info(f"Successfully parsed {len(final_questions)} individual questions.")
-        return final_questions
+ 
 
 if __name__ == "__main__":
     parser = ExamParser()

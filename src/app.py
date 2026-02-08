@@ -25,30 +25,23 @@ def get_clean_priority_label(score):
 # --- CACHED FUNCTIONS ---
 @st.cache_data
 def load_data():
-    """Loads BOTH Syllabus and PYQs using the structured ExamParser"""
-    # Initialize the parser with the correct paths
     parser = ExamParser(syllabus_path="data/syllabus.txt", pyqs_path="data/pyqs.txt")
-    
-    # 1. Load Syllabus: This cleans headers and splits multi-topic lines
     topics = parser.parse_syllabus()
-    
-    # 2. Load PYQs: This returns a list of individual questions
-    pyqs_list = parser.parse_pyqs()
-    
-    # Join the questions back with newlines if analyzer.py still expects a single string
-    pyqs_content = "\n".join(pyqs_list) if pyqs_list else ""
-
-    return topics, pyqs_content
+    # Return the LIST of questions, not a joined string
+    pyqs_list = parser.parse_pyqs() 
+    return topics, pyqs_list
 
 @st.cache_data
-def get_analysis(topics, pyqs_content):
+def get_analysis(topics, pyqs_list):
     """Runs ALL AI tasks."""
     
     # 1. Relationships (Syllabus only)
+    # 1. Relationships
     relations = analyze_deep_relations(topics)
     
-    # 2. Importance (Syllabus + PYQs)
-    importance = calculate_importance(topics, pyqs_content)
+    # 2. Importance: Pass the LIST of questions here
+    # This allows the model to find specific matches for each question.
+    importance = calculate_importance(topics, pyqs_list)
     
     node_metrics = {}
     total_time = 0
