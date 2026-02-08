@@ -2,8 +2,10 @@ sentence-transformers
 scikit-learn
 textstat
 numpy
-trafilaturcle
-google-api-python-client
-pyvis 
+trafilatura
 networkx
-steamlit
+pyvis
+python-dotenv
+streamlit
+pandas
+google-api-python-client

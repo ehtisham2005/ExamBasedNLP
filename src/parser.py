@@ -82,5 +82,7 @@ if __name__ == "__main__":
     print(f"\n--- PARSER TEST ---")
     print(f"Total Topics Found: {len(topics)}")
     print(f"Total Questions Found: {len(questions)}")
-    if topics: print(f"Sample Topic: {topics[10] }")
+    if topics: print(f"Sample Topic: {topics[15] }")
+    for i in range(50):
+        print(f"Topic {i+1}: {topics[i]}")
     if questions: print(f"Sample Question: {questions[0][:75]}...")

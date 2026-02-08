@@ -3,10 +3,11 @@ from pyvis.network import Network
 from deep_relations import analyze_deep_relations
 from loader import load_text_file
 import random
+from parser import ExamParser
 
 def create_knowledge_graph():
-    syllabus_path = "data/syllabus.txt"
-    topics = load_text_file(syllabus_path, "Syllabus")
+    parser = ExamParser(syllabus_path="data/syllabus.txt")
+    topics = parser.parse_syllabus() # This provides the cleaned list
     if not topics: return
 
     # 1. Get Relations
