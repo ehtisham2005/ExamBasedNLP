@@ -12,8 +12,8 @@ def analyze_deep_relations(topics):
     print("🕸️  Mapping Semantic Relationships...")
     
     # Use the standard efficient Transformer model
-    model = SentenceTransformer('all-MiniLM-L6-v2')
-    #model = SentenceTransformer('all-mpnet-base-v2')
+    #model = SentenceTransformer('all-MiniLM-L6-v2')
+    model = SentenceTransformer('all-mpnet-base-v2')
     
     # Encode all topics into the semantic vector space
     embeddings = model.encode(topics, convert_to_tensor=True)

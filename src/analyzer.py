@@ -10,8 +10,8 @@ def calculate_importance(topics, pyqs=None):
         return {t: {"score": 0, "matches": []} for t in topics}
 
     print("⚖️  Calculating Topic Importance vs PYQs...")
-    model = SentenceTransformer('all-MiniLM-L6-v2')
-    #model = SentenceTransformer('all-mpnet-base-v2')
+    #model = SentenceTransformer('all-MiniLM-L6-v2')
+    model = SentenceTransformer('all-mpnet-base-v2')
     
     topic_embeddings = model.encode(topics, convert_to_tensor=True)
     pyq_embeddings = model.encode(pyqs, convert_to_tensor=True)
