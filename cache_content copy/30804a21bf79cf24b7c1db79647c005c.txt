@@ -1,7 +1,0 @@
-Agile management is the application of the principles of Agile software development and Lean Management to various team and project management processes, particularly product development. Following the appearance of The Manifesto for Agile Software Development in 2001, organizations discovered the need for agile technique to spread into other areas of activity, including team and project management. This gave way to the creation of practices that built upon the core principles of Agile software development while engaging with more of the organizational structure, such as the Scaled agile framework (SAFe). 
-The term Agile originates from Agile manufacturing - which in the early 1990s had developed from flexible manufacturing systems and lean manufacturing/production.
-In 2004, one of the authors of the original manifesto, Jim Highsmith, published Agile Project Management: Creating Innovative Products. 
-The term "Agile Project Management" has not been picked up by any of the international organizations developing Project Management Standards and as such, Agile management has become common parlance to engage organizations without the formal recognition or institutions to back.
-
-The ISO Standard ISO 21502:2020 refers to the term "agile" as a delivery approach of products (project scope).
-The PMBoK Standard published by the Project Management Institute refers to an "adaptive" type of development lifecycle also called "agile" or "change-driven" about the product development lifecycle of a project (an element of the project lifecycle).
