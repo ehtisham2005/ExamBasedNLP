@@ -1,0 +1,48 @@
+People Metrics and Process Metrics, both play important roles in software development. People Metrics helps in quantifying the useful attributes whereas Process Metrics creates the body of the software. People metrics focus on how well team members work together and their overall satisfaction, while process metrics measure how smoothly tasks are completed. By paying attention to these metrics, teams can improve collaboration, efficiency, and the quality of their work, leading to successful project outcomes.
+People Metrics
+People metrics play an important role in software project management. These are also called personnel metrics. Some authors view resource metrics to include personnel metrics, software metrics, and hardware metrics but most of the authors mainly view resource metrics as consisting of personnel metrics only. In the present context, we also assume resource metrics to include mainly personnel metrics. People metrics quantify useful attributes of those generating the products using the available processes, methods, and tools. These metrics tell you about the attributes like turnover rates, productivity, and absenteeism.
+Why should you track people metrics?
+Tracking people metrics is important because it helps ensure that everyone working on a software project is happy, motivated, and performing at their best. By keeping an eye on metrics like productivity, teamwork experience, and communication skills, you can make sure that teams are working well together and that everyone has what they need to succeed. This can lead to better outcomes for the project, as well as a more positive and supportive work environment. Plus, tracking these metrics allows you to identify any issues early on and address them before they become bigger problems.
+Top 7 People Matrices to Track
+Following are the People Metrices:
+- Productivity: Productivity metrics are simple ways to measure how much work is done in a certain period. They help see how efficient and effective someone or something is at completing tasks.
+- Employee Net Promoter Score (eNPS) : Employee Net Promoter Score measures how likely employees are to recommend their workplace to others. It should be track because eNPS evaluate overall employee satisfaction and suggest areas for improvement. It can be calculated by conducting regular surveys asking employees how likely they are to recommend the company to friends or family.
+- Team Collaboration: Team Collaboration measures how well team members work together and communicate. It's essential to track because effective teamwork streamlines workflows and enhances project outcomes. To track, monitor communication frequency, participation in team activities, and gather feedback from team members regularly.
+- Attrition: Attrition tracks the rate at which employees leave the organization. It's important to track because it helps identify trends and reasons for turnover, allowing proactive measures to retain talent. To track, calculate the percentage of employees leaving within a given period and analyze reasons through exit interviews or surveys.
+- Absenteeism: Absenteeism measures the frequency at which employees are absent from work. It's crucial to track because it highlights patterns of absence, enabling the identification and resolution of underlying issues. To track, maintain records of employee attendance, including reasons for absence, and analyze trends over time to minimize disruptions to productivity.
+- Total cost of workforce: The Total Cost of Workforce calculates all expenses associated with employing staff. It's important to track because it helps manage budget allocation and optimize resource utilization. To track, compile data on salaries, benefits, training costs, and other expenses related to workforce management to understand the total cost of employing staff.
+- Quality of Work: Quality of Work evaluates the standard and effectiveness of tasks completed by employees. It's vital to track because it ensures deliverables meet quality standards, satisfy customer requirements, and uphold organizational reputation. To track, employ quality assurance processes, gather feedback from stakeholders, and conduct performance evaluations to measure and improve work quality.
+For more, refer to Most Important People Metrics.
+Process Metrics
+- Process Metrics are the measures of the development process that create a body of software. A common example of a process metric is the length of time that the process of software creation tasks.
+- Based on the assumption that the quality of the product is a direct function of the process, process metrics can be used to estimate, monitor, and improve the reliability and quality of software. ISO- 9000 certification, or "Quality Management Standards", is the generic reference for a family of standards developed by the International Standard Organization (ISO).
+- Often, Process Metrics are tools of management in their attempt to gain insight into the creation of a product that is intangible. Since the software is abstract, there is no visible, traceable artifact from software projects. Objectively tracking progress becomes extremely difficult. Management is interested in measuring progress and productivity and being able to make predictions concerning both.
+- Process metrics are often collected as part of a model of software development. Models such as Boehm's COCOMO (Constructive Cost Model) make cost estimations for software projects. The boat's COPMO makes predictions about the need for additional effort on large projects.
+- Although valuable management tools, process metrics are not directly relevant to program understanding. They are more useful in measuring and predicting such things as resource usage and schedule.
+Types of Process Metrics
+- Static Process Metrics: Static Process Metrics are directly related to the defined process. For example, the number of types of roles, types of artifacts, etc.
+- Dynamic Process Metrics: Dynamic Process Metrics are simply related to the properties of process performance. For example, how many activities are performed, how many artifacts are created, etc.)
+- Process Evolution Metrics: Process Evolution Metrics are related to the process of making changes over a period of time. For example, how many iterations are there within the process)
+Top 7 Process Metrices
+- Lead Time: Lead Time measures the time taken from initiating a process (such as starting work on a task) to its completion (finishing the task). It indicates how quickly work moves through the development process.
+- Cycle Time: Cycle Time tracks the duration it takes to complete one full cycle of a process, from beginning to end. It provides insights into the efficiency and effectiveness of the development workflow.
+- Throughput: Throughput basically Quantifies the rate at which tasks or features are completed within a given timeframe. It reflects the productivity and capacity of the development team.
+- Work in Progress (WIP): Work in Progress (WIP) indicates the number of tasks or features currently being worked on but not yet completed. It helps in identifying bottlenecks and managing workflow to ensure tasks are completed efficiently.
+- Defect Density: Defect Density measures the number of defects or bugs found per unit of work or code. It helps in assessing the quality and reliability of the software being developed.
+- Process Efficiency: Process Efficiency evaluates the ratio of value-added work (tasks that directly contribute to delivering value to the customer) to non-value-added work (tasks that do not directly contribute to value delivery). It identifies opportunities for streamlining processes and reducing waste.
+- Process Compliance: Process Compliance assesses the extent to which development processes adhere to defined standards, guidelines, or regulations. It ensures consistency and quality in the software development process.
+Questions for Practice
+1. Size and Complexity are a part of [UGC-NET 2022]
+(A) People Metrics
+(B) Project Metrics
+(C) Process Metrics
+(D) Product Metrics
+Solution: Correct Answer is (D).
+2. Which one of the following sets of attributes should not be encompassed by effective software metrics? [UGC-NET 2014]
+(A) Simple and computable
+(B) Consistent and objective
+(C) Consistent in the use of units and dimensions
+(D) Programming language dependent
+Solution: Correct Answer is (D).
+Conclusion
+In software engineering, tracking both people and process metrics is crucial for ensuring successful project outcomes. People metrics, such as employee satisfaction and teamwork effectiveness, help in maintaining a motivated and productive workforce. Process metrics, like lead time and defect density, allow teams to monitor and improve the efficiency and quality of their development processes. By focusing on both aspects, teams can better manage resources, identify areas for improvement, and ultimately deliver high-quality software products on time and within budget.

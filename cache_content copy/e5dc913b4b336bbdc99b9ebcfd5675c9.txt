@@ -1,0 +1,194 @@
+Test Execution is the process of executing the tests written by the tester to verify that the developed code, functions, or modules provide the expected result as per the client's or business's requirements. Test Execution comes under one of the phases of the Software Testing Life Cycle (STLC).
+Objectives:
+- Test execution ensures that the project runs smoothly and efficiently.
+- It also helps to ensure the application's competency in the global market.
+- Test executions make sure that the requirements are collected correctly and incorporated correctly in design and architecture.
+- It also checks whether the software application meets the requirements or not.
+Process of Test Execution
+The test Execution technique consists of three different phases, which will be carried out to process the test result and ensure the correctness of the required results. In each phase, various activities or work will be carried out by various team members. The three main phases of test execution are the creation of test cases, test case execution, and validation of test results. Let us discuss each phase.
+1. Creation of Test Cases
+The first phase is to create suitable test cases for each module or function. Here, the tester with good domain knowledge must be required to create suitable test cases. It is always preferable to create simple test cases and the creation of test cases should not be delayed else it will cause excess time to release the product. The created test cases should not be repeated again. It should cover all the possible scenarios raised in the application.
+2. Test Cases Execution
+After test cases have been created, execution of test cases will take place. Here, the Quality Analyst team will either do automated or manual testing depending upon the test case scenario. It is always preferable to do both automated as well as manual testing to have 100% assurance of correctness. The selection of testing tools is also important to execute the test cases.
+3. Validating Test Results
+After executing the test cases, note down the results of each test case in a separate file or report. Check whether the executed test cases achieved the expected result and record the time required to complete each test case i.e., measure the performance of each test case. If any of the test cases is failed or not satisfied the condition then report it to the development team for validating the code.
+Example of Test Execution Process on E-Commerce Website
+Test Cases specially design for the Login Functionality of an e-commerce website:
+Test Case 1: Successful Login with Valid Credentials
+| Test Case ID | TC_LOGIN_01 |
+|---|---|
+| Test Case Name | Successful Login with Valid Credentials |
+| Module | Login |
+| Test Priority | High |
+| Test Type | Functional |
+| Preconditions | User has a valid account, login page is accessible |
+| Test Data | Username: valid_user Password: valid_password |
+| Test Steps | 1. Open the login page. 2. Enter valid username and password. 3. Click the "Login" button. |
+| Expected Result | User is successfully logged in and redirected to the home page. |
+| Actual Result | User is successfully logged in and redirected to the home page. |
+| Status | Pass |
+| Remarks | No issues found. |
+Test Case 2: Unsuccessful Login with Invalid Credentials
+| Test Case ID | TC_LOGIN_02 |
+|---|---|
+| Test Case Name | Unsuccessful Login with Invalid Credentials |
+| Module | Login |
+| Test Priority | High |
+| Test Type | Functional |
+| Preconditions | User has an invalid account, login page is accessible |
+| Test Data | Username: invalid_user Password: invalid_password |
+| Test Steps | 1. Open the login page. 2. Enter invalid username and password. 3. Click the "Login" button. |
+| Expected Result | User should receive an error message indicating invalid credentials. |
+| Actual Result | Error message displayed: "Invalid username or password." |
+| Status | Pass |
+| Remarks | No issues found. |
+Here we are utilizing Selenium WebDriver and TestNG within a Java project for executing the testcase practically:
+BaseTestMain.java (Base class for WebDriver setup and teardown)
+package AutomatedFunctional;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+public class BaseTestMain {
+protected WebDriver driver;
+protected String Url = "https://ecommerce.artoftesting.com/";
+// Set up the ChromeDriver
+@BeforeMethod
+public void setup() {
+// Set the path to your chromedriver executable (update path accordingly)
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\path of the chromedriver\\drivers\\chromedriver.exe");
+// Initialize the ChromeDriver
+driver = new ChromeDriver();
+}
+// Close the browser after each test
+@AfterMethod
+public void teardown() {
+if (driver != null) {
+driver.quit(); // Close the browser after each test
+}
+}
+}
+LoginTest.java (Test Cases Execution)
+package AutomatedFunctional;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+public class LoginTest extends BaseTestMain {
+@Test
+public void testLogin_ValidCredentials() {
+// Step 1: Navigate to the login page
+driver.get(Url);
+// Step 2: Create a new LoginPage object
+LoginPage loginPage = new LoginPage(driver);
+// Step 3: Enter valid username and password
+loginPage.enterUsername("valid_user");
+loginPage.enterPassword("valid_password");
+// Step 4: Click the login button
+loginPage.clickLogin();
+// Step 5: Verify that the login was successful
+Assert.assertTrue(loginPage.isLoginSuccessful(), "Login was not successful with valid credentials.");
+}
+@Test
+public void testLogin_InvalidCredentials() {
+// Step 1: Navigate to the login page
+driver.get(Url);
+// Step 2: Create a new LoginPage object
+LoginPage loginPage = new LoginPage(driver);
+// Step 3: Enter invalid username and password
+loginPage.enterUsername("invalid_user");
+loginPage.enterPassword("wrong_password");
+// Step 4: Click the login button
+loginPage.clickLogin();
+// Step 5: Verify that login failed (you can verify with a specific message or URL)
+Assert.assertTrue(driver.getCurrentUrl().equals("https://ecommerce.artoftesting.com/"), "Login failed, but we were redirected to the wrong URL.");
+}
+}
+Test Execution Summary:
+- Test Case 1 (Valid Login): Passed successfully, and user is redirected to the homepage.
+- Test Case 2 (Invalid Credentials): Passed successfully, and error message is displayed.
+Output:
+The test execution was completed successfully, verifying that the login functionality works as expected. All test cases passed without issues, confirming that the system behaves correctly in both valid and invalid login scenarios. Any discrepancies between expected and actual results were noted for further review.
+Activities Under Test Execution
+With the process of test execution following are the 5 main internal activities that should be carried out.
+1. Defect Finding and Reporting
+Defect finding is the process of identifying the bugs or errors raised while executing the test cases on the developed code or modules. If any error appears or any of the test cases failed then it will be recorded and the same will be reported to the respective development team. Sometimes, during the user acceptance testing also end users may find the error and report it to the team. All the recorded details will be reported to the respective team and they will work on the recorded errors or bugs.
+2. Defect Mapping
+After the error has been detected and reported to the development team, the development team will work on those errors and fix them as per the requirement. Once the development team has done its job, the tester team will again map the test cases or test scripts to that developed module or code to run the entire tests to ensure the correct output.
+3. Re-Testing
+From the name itself, we can easily understand that Re-Testing is the process of testing the modules or entire product again to ensure the smooth release of the module or product. In some cases, the new module or functionality will be developed after the product release. In this case, all the modules will be re-tested for a smooth release. So that it cannot cause any other defects after the release of the product or application.
+4. Regression Testing
+Regression Testing is software testing that ensures that the newly made changes to the code or newly developed modules or functions should not affect the normal processing of the application or product.
+5. System Integration Testing
+System Integration Testing is a type of testing technique that will be used to check the entire component or modules of the system in a single run. It ensures that the whole system will be checked in a single test environment instead of checking each module or function separately.
+Ways to Perform Test Execution
+Testers can choose from the below list of preferred methods to carry out test execution:
+- Run test cases: It is a simple and easiest approach to run test cases on the local machine and it can be coupled with other artifacts like test plans, test suites, test environments, etc.
+- Run test suites: A test suite is a collection of manual and automated test cases and the test cases can be executed sequentially or in parallel. Sequential execution is useful in cases where the result of the last test case depends on the success of the current test case.
+- Run test case execution and test suite execution records: Recording test case execution and test suite execution is a key activity in the test process and helps to reduce errors, making the testing process more efficient.
+- Generate test results without execution: Generating test results from non-executed test cases can be helpful in achieving comprehensive test coverage.
+- Modify execution variables: Execution variables can be modified in the test scripts for particular test runs.
+- Run automated and manual tests: Test execution can be done manually or can be automated.
+- Schedule test artifacts: Test artifacts include video, screenshots, data reports, etc. These are very helpful as they document the results of the past test execution and provide information about what needs to be done in future test execution.
+- Defect tracking: Without defect tracking test execution is not possible, as during testing one should be able to track the defects and identify what when wrong and where.
+After understanding different ways to perform test execution, it's worth considering how cloud-based testing platforms like LambdaTest can seamlessly integrate into your test execution workflow, providing much-needed scalability and reliability. LambdaTest is an AI-powered test orchestration and execution platform that offers both manual and automated testing at scale. It enhances efficiency and effectiveness in executing test cases and suites, offering a seamless and more productive experience.
+Test Execution Priorities
+Test Execution Priorities are nothing but prioritizing the test cases depending upon several factors. It means that it executes the test cases with high efficient first than the other test cases. It depends upon various factors. Let us discuss some of the factors to be considered while prioritizing the test cases.
+- Complexity: The complexity of the test cases can be determined by including several factors such as boundary values of test cases, features or components of test cases, data entry of test cases, and how much the test cases cover the given business problem.
+- Risk Covered: How much risk that a certain test case may undergo to achieve the result. Risk in the form of time required to complete the test case process, space complexity whether it is executed in the given memory space, etc.,
+- Platforms Covered: It simply tells that in which platform or operating system the test cases have been executed i.e., test cases executed in the Windows OS, Mac OS, Mobile OS, etc.,
+- Depth: It covers how depth the given test cases cover each functionality or module in the application i.e., how much a given test procedure covers all the possible conditions in a single functionality or module.
+- Breadth: It covers how the breadth of the given test cases covers the entire functionality or modules in the application i.e., how much a given test procedure covers all the possible conditions in the entire functionality or modules in the product or application.
+Test Execution States
+The tester or the Quality Analyst team reports or notices the result of each test case and records it in their documentation or file. There are various results raised when executing the test cases. They are
+- Pass: It tells that the test cases executed for the module or function are successful.
+- Fail: It tells that the test cases executed for the module or function are not successful and resulted in different outputs.
+- Not Run: It tells that the test cases are yet to be executed.
+- Partially Executed: It tells that only a certain number of test cases are passed and others aren't met the given requirement.
+- Inconclusive: It tells that the test cases are executed but it requires further analysis before the final submission.
+- In Progress: It tells that the test cases are currently executed.
+- Unexpected Result: It tells that all the test cases are executed successfully but provide different unexpected results.
+Test Execution Cycle
+A test execution cycle is an iterative approach that will be helpful in detecting errors. The test execution cycle includes various processes. These are:
+- Requirement Analysis: In which, the QA team will gather all the necessary requirements needed for test execution. For example, how many testers are needed, what automation test tools are needed, what testing covers under the given budget, etc., the QA team will also plan depending upon the client or business requirement.
+- Test Planning: In this phase, the QA team will plan when to start and complete the testing. Choosing of correct automation test tool, and testers needed for executing the test plan. They further plan who should develop the test cases for which module/function, who should execute the test cases, how many test cases needed to be executed, etc.,
+- Test Cases Development: This is the phase in which the QA team assigned a group of testers to write or generate the test cases for each module. A tester with good domain knowledge will easily write the best test cases or test scripts. Prioritizing the developed test cases is also the main factor.
+- Test Environment Setup: Test Environment Setup usually differs from project to project. In some cases, it is created by the team itself and it is also created by clients or customers. Test Environment Setup is nothing but testing the entire developed product with suitable software or hardware components or with both by executing all the tests on it. It is essential and it is sometimes carried out along with the test case development process.
+- Test Execution: This stage involves test execution by the team and all the detected bugs are recorded and reported for remediation and rectification.
+- Test Closure: This is the final stage and here it records the entire details of the test execution process. It also contains the end-users testing details. It again modifies the testing process if any defects are found during the testing. Hence, it is a repetitive process.
+Test Execution Report
+The Test Execution Report is nothing but a document that contains all the information about the test execution process. It is documentation that will be recorded and updated by the QA team. In that, they just record all the processes happening in the day-to-day test execution activities. The test execution activities are nothing but executing the task related to testing. The documentation or the report contains various information. They are:
+- Who all are going to execute the test cases?
+- Who is doing the unit testing, integration testing, system testing, etc.,
+- Who is going to write test cases?
+- The number of test cases executed successfully.
+- The number of test cases failed during the testing.
+- The number of test cases executed today.
+- The number of test cases yet to be executed.
+- What are the automation test tools used for today's test execution?
+- What are the modules/functions testing today?
+- Recording the issues while executing the test cases.
+- What is today's testing plan?
+- What is tomorrow's testing plan?
+- Recording the pending plans.
+- Overall success rate.
+- Overall failure rate.
+| Test Execution Report |
+|---|
+| Test Summary Report Identifier |
+| Summary |
+| Variances |
+| Comprehensive Assessment |
+| Summary of Results |
+| Evaluation |
+| Summary of Activities |
+| Approval |
+Guidelines for Test Execution
+- Write the suitable test cases for each module of the function.
+- Assign suitable test cases to respective modules or functions.
+- Execute both manual testing as well as automated testing for successful results.
+- Choose a suitable automated tool for testing the application.
+- Choose the correct test environment setup.
+- Note down the execution status of each test case and note down the time taken by the system to complete the test cases.
+- Report all the success status and the failure status to the development team or to the respective team regularly.
+- Track the test status again for the already failed test cases and report it to the team.
+- Highly Skilled Testers are required to perform the testing with less or zero failures/defects.
+- Continuous testing is required until success test report is achieved.

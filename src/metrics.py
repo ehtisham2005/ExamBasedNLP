@@ -1,40 +1,57 @@
 import re
 
-def estimate_effort(content):
-    """
-    Estimates study time, difficulty, and math intensity based on the content text.
+def analyze_linguistic_features(text):
+    text = text.lower()
+    words = text.split()
+    total_words = len(words)
+    if total_words == 0: return 0, 0, 0
+
+    # 1. Math Symbols (Excluding common punctuation)
+    # We count =, +, *, /, <, >
+    math_symbols = re.findall(r'[=\+\-\*/\^<>≤≥≈]', text)
+    symbol_density = len(math_symbols) / len(text) if len(text) > 0 else 0
+
+    # 2. Operational Verbs
+    op_verbs = {"calculate", "compute", "derive", "solve", "minimize", "maximize", "estimate"}
+    op_hits = sum(1 for w in words if w in op_verbs)
     
-    Returns:
-        mins (int): Estimated minutes to study.
-        difficulty (str): "Easy", "Moderate", or "Hard".
-        is_math (bool): True if the topic involves calculations/formulas.
-    """
-    if not content:
-        return 15, "Moderate", False  # Default values if no content
+    # 3. Formula Patterns (e.g., "E = MC^2")
+    # IGNORES years (e.g. 1999) to prevent History being marked as Math
+    formula_matches = len(re.findall(r'\b[a-z]\s*=\s*[a-z0-9]', text))
 
-    # 1. Estimate Time (Roughly 150 words per minute reading/study speed)
+    return symbol_density, op_hits, formula_matches
+
+def estimate_effort(content):
+    if not content or len(content.strip()) < 100:
+        return 0, "⚠️ No Data", False
+
+    symbol_density, op_hits, formula_matches = analyze_linguistic_features(content)
+    
+    # --- CLASSIFICATION LOGIC ---
+    is_math = False
+    
+    # Rule A: Strong Formula Evidence
+    if formula_matches >= 2: 
+        is_math = True
+    # Rule B: High Symbol Density + Verbs
+    elif symbol_density > 0.008 and op_hits >= 2:
+        is_math = True
+    # Rule C: Explicit keywords
+    elif "formula" in content.lower() and "calculate" in content.lower():
+        is_math = True
+
+    # --- TIME ESTIMATION (CAPPED) ---
     word_count = len(content.split())
-    # Base time is 10 mins, plus 1 min for every 100 words
-    mins = 10 + (word_count // 100)
+    # Reading speed: 200 wpm. Cap at 45 mins max to avoid outliers.
+    raw_mins = 5 + (word_count // 200)
+    mins = min(raw_mins, 45) 
 
-    # 2. Check for Math/Formulas
-    # Keywords that suggest mathematical or derivation-heavy content
-    math_keywords = [
-        "equation", "formula", "calculate", "derive", "theorem", 
-        "integral", "matrix", "probability", "compute", "solve"
-    ]
-    math_score = sum(1 for word in math_keywords if word in content.lower())
-    is_math = math_score > 2  # If more than 2 math words appear, it's math-heavy
-
-    # 3. Estimate Difficulty
-    # Longer content + Math usually equals harder
-    if is_math and mins > 30:
-        difficulty = "Hard"
-    elif mins > 20:
-        difficulty = "Moderate"
-    elif is_math:
-        difficulty = "Moderate" # Short but mathy
+    # --- DIFFICULTY ---
+    if is_math:
+        difficulty = "Hard" if mins > 25 else "Moderate"
     else:
-        difficulty = "Easy"
+        if mins > 35: difficulty = "Hard"
+        elif mins > 15: difficulty = "Moderate"
+        else: difficulty = "Easy"
 
     return mins, difficulty, is_math

@@ -1,0 +1,1081 @@
+- CMMI - Home
+- CMMI - Overview
+- CMMI - Models
+- CMMI - Representations
+- CMMI - Maturity Levels
+- CMMI - Capability Levels
+- CMMI - Process Areas
+- CMMI - Appraisals
+- CMMI - Major Players
+- CMMI - Summary
+- CMMI Useful Resources
+- CMMI - Quick Guide
+- CMMI - Resources
+CMMI - Quick Guide
+SEI CMMI - Overview
+Process improvement is continuous improvement. We can never reach perfection. In this tutorial, we will learn CMM that is a continuously evolving and improving model where the focus is always on doing better. Our reach should always exceed our grasp.
+What is CMM?
+CMM stands for Capability Maturity Model.
+Focuses on elements of essential practices and processes from various bodies of knowledge.
+Describes common sense, efficient, proven ways of doing business (which you should already be doing) − not a radical new approach.
+CMM is a method to evaluate and measure the maturity of the software development process of an organization.
+CMM measures the maturity of the software development process on a scale of 1 to 5.
+CMM v1.0 was developed by the Software Engineering Institute (SEI) at Carnegie Mellon University in Pittsburgh, USA.
+-
+CMM was originally developed for Software Development and Maintenance but later it was developed for −
+Systems Engineering
+Supplier Sourcing
+Integrated Product and Process Development
+People CMM
+Software Acquisition
+CMM Examples
+People CMM − Develop, motivate and retain project talent.
+Software CMM − Enhance a software focused development and maintenance capability.
+What is Maturity?
+Definitions vary but mature processes are generally thought to be −
+Well-defined,
+Repeatable,
+Measured,
+Analyzed,
+Improved, and
+Effective.
+Poor but mature processes are just as bad as no maturity at all!
+CMM helps to solve the maturity problem by defining a set of practices and providing a general framework for improving them. The focus of CMM is on identifying key process areas and the exemplary practices that may comprise a disciplined software process.
+Immature vs Mature Organization
+An immature organization would have the following characteristics −
+Process improvised during project
+Approved processes being ignored
+Reactive, not proactive
+Unrealistic budget and schedule
+Quality sacrificed for schedule
+No objective measure of quality
+In contrast, the characteristics of a mature organization are as follows −
+Inter-group communication and coordination
+Work accomplished according to plan
+Practices consistent with processes
+Processes updated as necessary
+Well-defined roles/responsibilities
+Management formally commits
+What is CMMI?
+CMM Integration project was formed to sort out the problem of using multiple CMMs. CMMI product team's mission was to combine three Source Models into a single improvement framework for the organizations pursuing enterprise-wide process improvement. These three Source Models are −
+Capability Maturity Model for Software (SW-CMM) - v2.0 Draft C.
+Electronic Industries Alliance Interim Standard (EIA/IS) - 731 Systems Engineering.
+Integrated Product Development Capability Maturity Model (IPD-CMM) v0.98.
+CMM Integration
+Builds an initial set of integrated models.
+Improves best practices from source models based on lessons learned.
+Establishes a framework to enable integration of future models.
+Difference between CMM and CMMI
+CMM is a reference model of matured practices in a specified discipline like Systems Engineering CMM, Software CMM, People CMM, Software Acquisition CMM etc., but they were difficult to integrate as and when needed.
+CMMI is the successor of the CMM and evolved as a more matured set of guidelines and was built combining the best components of individual disciplines of CMM(Software CMM, People CMM, etc.). It can be applied to product manufacturing, people management, software development, etc.
+CMM describes about the software engineering alone where as CMM Integrated describes both software and system engineering. CMMI also incorporates the Integrated Process and Product Development and the supplier sourcing.
+CMMI and Business Objectives
+The objectives of CMMI are very obvious. They are as follows −
+Produce quality products or services − The process-improvement concept in CMMI models evolved out of the Deming, Juran, and Crosby quality paradigm: Quality products are a result of quality processes. CMMI has a strong focus on quality-related activities including requirements management, quality assurance, verification, and validation.
+Create value for the stockholders − Mature organizations are more likely to make better cost and revenue estimates than those with less maturity, and then perform in line with those estimates. CMMI supports quality products, predictable schedules, and effective measurement to support the management in making accurate and defensible forecasts. This process maturity can guard against project performance problems that could weaken the value of the organization in the eyes of investors.
+Enhance customer satisfaction − Meeting cost and schedule targets with highquality products that are validated against customer needs is a good formula for customer satisfaction. CMMI addresses all of these ingredients through its emphasis on planning, monitoring, and measuring, and the improved predictability that comes with more capable processes.
+Increase market share − Market share is a result of many factors, including quality products and services, name identification, pricing, and image. Customers like to deal with suppliers who have a reputation for meeting their commitments.
+Gain an industry-wide recognition for excellence − The best way to develop a reputation for excellence is to consistently perform well on projects, delivering quality products and services within cost and schedule parameters. Having processes that conform to CMMI requirements can enhance that reputation.
+SEI CMMI Models - Disciplines
+The CMM Integration is a model that has integrated several disciplines/bodies of knowledge. Currently there are four bodies of knowledge available to you when selecting a CMMI model.
+Systems Engineering
+Systems engineering covers the development of complete systems, which may or may not include software. Systems engineers focus on transforming customer needs, expectations, and constraints into product solutions and supporting these product solutions throughout the entire lifecycle of the product.
+Software Engineering
+Software engineering covers the development of software systems. Software engineers focus on the application of systematic, disciplined, and quantifiable approaches to the development, operation, and maintenance of software.
+Integrated Product and Process Development
+Integrated Product and Process Development (IPPD) is a systematic approach that achieves a timely collaboration of relevant stakeholders throughout the life of the product to better satisfy customer needs, expectations, and requirements. The processes to support an IPPD approach are integrated with the other processes in the organization.
+If a project or organization chooses IPPD, it performs the IPPD best practices concurrently with other best practices used to produce products (e.g., those related to systems engineering). That is, if an organization or project wishes to use IPPD, it must select one or more disciplines in addition to IPPD.
+Supplier Sourcing
+As work efforts become more complex, project managers may use suppliers to perform functions or add modifications to products that are specifically needed by the project. When those activities are critical, the project benefits from enhanced source analysis and from monitoring supplier activities before product delivery. Under these circumstances, the supplier sourcing discipline covers the acquisition of products from suppliers.
+Similar to IPPD best practices, supplier sourcing best practices must be selected in conjunction with best practices used to produce products.
+CMMI Discipline Selection
+Selecting a discipline may be a difficult step and depends on what an organization wants to improve.
+If you are improving your systems engineering processes, like Configuration Management, Measurement and Analysis, Organizational Process Focus, Project Monitoring and Control, Process and Product Quality Assurance, Risk Management, Supplier Agreement Management etc., then you should select Systems engineering (SE) discipline. The discipline amplifications for systems engineering receive special emphasis.
+If you are improving your integrated product and process development processes like Integrated Teaming, Organizational Environment for Integration, then you should select IPPD. The discipline amplifications for IPPD receive special emphasis.
+If you are improving your source selection processes like Integrated Supplier Management then you should select Supplier sourcing (SS). The discipline amplifications for supplier sourcing receive special emphasis.
+If you are improving multiple disciplines, then you need to work on all the areas related to those disciplines and pay attention to all of the discipline amplifications for those disciplines.
+We will discuss different areas related to CMMI implementation in subsequent chapters.
+SEI CMMI - Representations
+The CMMI is structured as follows −
+- Maturity Levels (staged representation) or Capability Levels (continuous representation)
+- Process Areas
+- Goals: Generic and Specific
+- Common Features
+- Practices: Generic and Specific
+This chapter will discuss about two CMMI representations and rest of the subjects will be covered in subsequent chapters.
+A representation allows an organization to pursue different improvement objectives. An organization can go for one of the following two improvement paths.
+Staged Representation
+The staged representation is the approach used in the Software CMM. It is an approach that uses predefined sets of process areas to define an improvement path for an organization. This improvement path is described by a model component called a Maturity Level. A maturity level is a well-defined evolutionary plateau towards achieving improved organizational processes.
+CMMI Staged Representation
+Provides a proven sequence of improvements, each serving as a foundation for the next.
+Permits comparisons across and among organizations by the use of maturity levels.
+Provides an easy migration from the SW-CMM to CMMI.
+Provides a single rating that summarizes appraisal results and allows comparisons among organizations.
+Thus Staged Representation provides a pre-defined roadmap for organizational improvement based on proven grouping and ordering of processes and associated organizational relationships. You cannot divert from the sequence of steps.
+CMMI Staged Structure
+Following picture illustrates CMMI Staged Model Structure.
+Continuous Representation
+Continuous representation is the approach used in the SECM and the IPD-CMM. This approach allows an organization to select a specific process area and make improvements based on it. The continuous representation uses Capability Levels to characterize improvement relative to an individual process area.
+CMMI Continuous Representation
+Allows you to select the order of improvement that best meets your organization's business objectives and mitigates your organization's areas of risk.
+Enables comparisons across and among organizations on a process-area-by-process-area basis.
+Provides an easy migration from EIA 731 (and other models with a continuous representation) to CMMI.
+Thus Continuous Representation provides flexibility to organizations to choose the processes for improvement, as well as the amount of improvement required.
+CMMI Continuous Structure
+The following picture illustrates the CMMI Continuous Model Structure.
+Continuous vs Staged Representations
+| Continuous Representation | Staged Representation |
+|---|---|
+Process areas are organized by process area categories. |
+Process areas are organized by maturity levels. |
+Improvement is measured using capability levels. Capability levels measure the maturity of a particular process across an organization; it ranges from 0 through 5. |
+Improvement is measured using maturity levels. Maturity levels measure the maturity of a set of processes across an organization: it ranges from 1 through 5. |
+There are two types of specific practices: base and advanced. All specific practices appear in the continuous representation. |
+There is only one type of specific practice. The concepts of base and advanced practices are not used. All specific practices appear in the staged representation except when a related base-advanced pair of practices appears in the continuous representation, in which case only the advanced practice appears in the staged representation. |
+Capability levels are used to organize the generic practices. |
+Common features are used to organize generic practices. |
+All generic practices are included in each process area. |
+Only the level 2 and level 3 generic practices are included. |
+Equivalent staging allows determination of a maturity level from an organization's achievement profile. |
+There is no need for an equivalence mechanism to back the continuous representation because each organization can choose what to improve and how much to improve using the staged representation. |
+Which Representation is Better?
+Each representation has its advantages over the other, some organizations use both representations to address particular requirements at various times in their improvement programs.
+Organizational maturity is the focus of the staged representation, whereas process area capability is the focus of the continuous representation.
+Organizational maturity and process area capability are similar concepts. The difference between them is that organizational maturity pertains to a set of process areas across an organization, while process area capability deals with a set of processes relating to a single process area or specific practice.
+The following diagram depicts both the presentations. In this diagram, ML indicates Maturity Level and PA Indicates Process Area.
+CMMI - Maturity Levels
+A maturity level is a well-defined evolutionary plateau toward achieving a mature software process. Each maturity level provides a layer in the foundation for continuous process improvement.
+CMMI models with staged representation, have five maturity levels designated by the numbers 1 through 5. They are −
+- Initial
+- Managed
+- Defined
+- Quantitatively Managed
+- Optimizing
+CMMI Staged Representation Maturity Levels
+The following image shows the maturity levels in a CMMI staged representation.
+Now we will learn the details about each maturity level. Next section will list down all the process areas related to these maturity levels.
+Maturity Level Details
+Maturity levels consist of a predefined set of process areas. The maturity levels are measured by the achievement of the specific and generic goals that apply to each predefined set of process areas. The following sections describe the characteristics of each maturity level in detail.
+Maturity Level 1 Initial
+At maturity level 1, processes are usually ad hoc and chaotic. The organization usually does not provide a stable environment. Success in these organizations depend on the competence and heroics of the people in the organization and not on the use of proven processes.
+Maturity level 1 organizations often produce products and services that work; however, they frequently exceed the budget and schedule of their projects.
+Maturity level 1 organizations are characterized by a tendency to over commit, abandon processes in the time of crisis, and not be able to repeat their past successes.
+Maturity Level 2 Managed
+At maturity level 2, an organization has achieved all the specific and generic goals of the maturity level 2 process areas. In other words, the projects of the organization have ensured that requirements are managed and that processes are planned, performed, measured, and controlled.
+The process discipline reflected by maturity level 2 helps to ensure that existing practices are retained during times of stress. When these practices are in place, projects are performed and managed according to their documented plans.
+At maturity level 2, requirements, processes, work products, and services are managed. The status of the work products and the delivery of services are visible to management at defined points.
+Commitments are established among relevant stakeholders and are revised as needed. Work products are reviewed with stakeholders and are controlled.
+The work products and services satisfy their specified requirements, standards, and objectives.
+Maturity Level 3 Defined
+At maturity level 3, an organization has achieved all the specific and generic goals of the process areas assigned to maturity levels 2 and 3.
+At maturity level 3, processes are well characterized and understood, and are described in standards, procedures, tools, and methods.
+A critical distinction between maturity level 2 and maturity level 3 is the scope of standards, process descriptions, and procedures. At maturity level 2, the standards, process descriptions, and procedures may be quite different in each specific instance of the process (for example, on a particular project).
+At maturity level 3, the standards, process descriptions, and procedures for a project are tailored from the organization's set of standard processes to suit a particular project or organizational unit. The organization's set of standard processes includes the processes addressed at maturity level 2 and maturity level 3. As a result, the processes that are performed across the organization are consistent except for the differences allowed by the tailoring guidelines.
+Another critical distinction is that at maturity level 3, processes are typically described in more detail and more rigorously than at maturity level 2. At maturity level 3, processes are managed more proactively using an understanding of the interrelationships of the process activities and detailed measures of the process, its work products, and its services.
+Maturity Level 4 Quantitatively Managed
+At maturity level 4, an organization has achieved all the specific goals of the process areas assigned to maturity levels 2, 3, and 4 and the generic goals assigned to maturity levels 2 and 3.
+At maturity level 4, sub-processes are selected that significantly contribute to the overall process performance. These selected sub-processes are controlled using statistical and other quantitative techniques.
+Quantitative objectives for quality and process performance are established and used as criteria in managing the processes. Quantitative objectives are based on the needs of the customer, end users, organization, and process implementers. Quality and process performance are understood in statistical terms and are managed throughout the life of the processes.
+For these processes, detailed measures of process performance are collected and statistically analyzed. Special causes of process variation are identified and, where appropriate, the sources of special causes are corrected to prevent future occurrences.
+Quality and process performance measures are incorporated into the organization's measurement repository to support fact-based decision making in the future.
+A critical distinction between maturity level 3 and maturity level 4 is the predictability of process performance. At maturity level 4, the performance of processes is controlled using statistical and other quantitative techniques, and is quantitatively predictable. At maturity level 3, processes are only qualitatively predictable.
+Maturity Level 5 Optimizing
+At maturity level 5, an organization has achieved all the specific goalsof the process areas assigned to maturity levels 2, 3, 4, and 5 and the generic goals assigned to maturity levels 2 and 3.
+Processes are continually improved based on a quantitative understanding of the common causes of variation inherent in processes.
+This level focuses on continually improving process performance through both incremental and innovative technological improvements.
+The quantitative process-improvement objectives for the organization are established, continually revised to reflect changing business objectives, and used as criteria in managing process improvement.
+The effects of deployed process improvements are measured and evaluated against the quantitative process-improvement objectives. Both the defined processes and the organization's set of standard processes are targets of measurable improvement activities.
+Optimizing processes that are agile and innovative, depends on the participation of an empowered workforce aligned with the business values and objectives of the organization. The organization's ability to rapidly respond to changes and opportunities is enhanced by finding ways to accelerate and share learning. Improvement of the processes is inherently a role that everybody has to play, resulting in a cycle of continual improvement.
+A critical distinction between maturity level 4 and maturity level 5 is the type of process variation addressed. At maturity level 4, processes are concerned with addressing special causes of process variation and providing statistical predictability of the results. Though processes may produce predictable results, the results may be insufficient to achieve the established objectives. At maturity level 5, processes are concerned with addressing common causes of process variation and changing the process (that is, shifting the means of the process performance) to improve process performance (while maintaining statistical predictability) to achieve the established quantitative process-improvement objectives.
+Maturity Levels Should Not be Skipped
+Each maturity level provides a necessary foundation for effective implementation of processes at the next level.
+Higher level processes have less chance of success without the discipline provided by lower levels.
+The effect of innovation can be obscured in a noisy process.
+Higher maturity level processes may be performed by organizations at lower maturity levels, with the risk of not being consistently applied in a crisis.
+Maturity Levels and Process Areas
+Here is a list of all the corresponding process areas defined for a software organization. These process areas may be different for different organization.
+This section provides the names of the related process areas. For more details about these Process Areas go through the CMMI Process Areas Chapter.
+| Level | Focus | Key Process Area | Result |
+|---|---|---|---|
+| 5 Optimizing |
+Continuous Process Improvement |
+Organizational Innovation and Deployment Causal Analysis and Resolution |
+Highest Quality / Lowest Risk |
+| 4 Quantitatively Managed |
+Quantitatively Managed |
+Organizational Process Performance Quantitative Project Management |
+Higher Quality / Lower Risk |
+| 3 Defined |
+Process Standardization |
+Requirements Development Technical Solution Product Integration Verification Validation Organizational Process Focus Organizational Process Definition Organizational Training Integrated Project Mgmt (with IPPD extras) Risk Management Decision Analysis and Resolution Integrated Teaming (IPPD only) Org. Environment for Integration (IPPD only) Integrated Supplier Management (SS only) |
+Medium Quality / Medium Risk |
+| 2 Managed |
+Basic Project Management |
+Requirements Management Project Planning Project Monitoring and Control Supplier Agreement Management Measurement and Analysis Process and Product Quality Assurance Configuration Management |
+Low Quality / High Risk |
+| 1 Initial |
+Process is informal and Adhoc | Lowest Quality / Highest Risk |
+CMMI - Capability Levels
+A capability level is a well-defined evolutionary plateau describing the organization's capability relative to a process area. A capability level consists of related specific and generic practices for a process area that can improve the organization's processes associated with that process area. Each level is a layer in the foundation for continuous process improvement.
+Thus, capability levels are cumulative, i.e., a higher capability level includes the attributes of the lower levels.
+In CMMI models with a continuous representation, there are six capability levels designated by the numbers 0 through 5.
+- 0 − Incomplete
+- 1 − Performed
+- 2 − Managed
+- 3 − Defined
+- 4 − Quantitatively Managed
+- 5 − Optimizing
+A short description of each capability level is as follows −
+Capability Level 0: Incomplete
+An "incomplete process" is a process that is either not performed or partially performed. One or more of the specific goals of the process area are not satisfied and no generic goals exist for this level since there is no reason to institutionalize a partially performed process.
+This is tantamount to Maturity Level 1 in the staged representation.
+Capability Level 1: Performed
+A Capability Level 1 process is a process that is expected to perform all of the Capability Level 1 specific and generic practices. Performance may not be stable and may not meet specific objectives such as quality, cost, and schedule, but useful work can be done. This is only a start, or baby-step, in process improvement. It means that you are doing something but you cannot prove that it is really working for you.
+Capability Level 2: Managed
+A managed process is planned, performed, monitored, and controlled for individual projects, groups, or stand-alone processes to achieve a given purpose. Managing the process achieves both the model objectives for the process as well as other objectives, such as cost, schedule, and quality. As the title of this level indicates, you are actively managing the way things are done in your organization. You have some metrics that are consistently collected and applied to your management approach.
+Note − metrics are collected and used at all levels of the CMMI, in both the staged and continuous representations. It is a bitter fallacy to think that an organization can wait until Capability Level 4 to use the metrics.
+Capability Level 3: Defined
+A capability level 3 process is characterized as a "defined process." A defined process is a managed (capability level 2) process that is tailored from the organization's set of standard processes according to the organization's tailoring guidelines, and contributes work products, measures, and other process-improvement information to the organizational process assets.
+Capability Level 4: Quantitatively Managed
+A capability level 4 process is characterized as a "quantitatively managed process." A quantitatively managed process is a defined (capability level 3) process that is controlled using statistical and other quantitative techniques. Quantitative objectives for quality and process performance are established and used as criteria in managing the process. Quality and process performance is understood in statistical terms and is managed throughout the life of the process.
+Capability Level 5: Optimizing
+An optimizing process is a quantitatively managed process that is improved, based on an understanding of the common causes of process variation inherent to the process. It focuses on continually improving process performance through both incremental and innovative improvements. Both the defined processes and the organization's set of standard processes are the targets of improvement activities.
+Capability Level 4 focuses on establishing baselines, models, and measurements for process performance. Capability Level 5 focuses on studying performance results across the organization or entire enterprise, finding common causes of problems in how the work is done (the process[es] used), and fixing the problems in the process. The fix would include updating the process documentation and training involved where the errors were injected.
+Organization of Process Areas in Continuous Representation
+| Category | Process Area |
+|---|---|
+| Project Management |
+|
+| Support |
+|
+| Engineering |
+|
+| Process Management |
+|
+CMMI - Key Process Areas
+A Process Area is a cluster of related practices in an area that, when implemented collectively, satisfy a set of goals considered important for making significant improvement in that area. All CMMI process areas are common to both continuous and staged representations.
+The continuous representation enables the organization to choose the focus of its process improvement efforts by choosing those process areas, or sets of interrelated process areas, that best benefit the organization and its business objectives. Although there are some limits on what an organization can choose because of the dependencies among process areas, the organization has considerable freedom in its selection.
+Once you select the process areas, you must also select how much you would like to improve the processes associated with those process areas (i.e., select the appropriate capability level). Capability levels, and generic goals and practices, support the improvement of processes in individual process areas.
+Conversely, you will see that the staged representation encourages you to always look at process areas in the context of the maturity level to which they belong. The process areas are organized by maturity levels to reinforce this concept. When you use a process area, you use the entire process area i.e, all goals and all practices.
+The CMMI Process Areas (PAs) can be grouped into the following four categories to understand their interactions and links with one another regardless of their defined levels:
+Process Management
+Project Management
+Engineering
+Support
+Each process area is defined by a set of goals and practices. There are two categories of goals and practices −
+Generic goals and practices − They are a part of every process area.
+Specific goals and practices − They are specific to a given process area.
+A process area is satisfied when the processes of a company cover all of the generic and specific goals and practices for that process area.
+Generic Goals and Practices
+Generic goals and practices are a part of every process area.
+NOTATIONS − GG --> Generic Goals and GP --> Generic Practice
+-
+GG 1 Achieve Specific Goals
+GP 1.1 Perform Specific Practices
+-
+GG 2 Institutionalize a Managed Process
+GP 2.1 Establish an Organizational Policy
+GP 2.2 Plan the Process
+GP 2.3 Provide Resources
+GP 2.4 Assign Responsibility
+GP 2.5 Train People
+GP 2.6 Manage Configurations
+GP 2.7 Identify and Involve Relevant Stakeholders
+GP 2.8 Monitor and Control the Process
+GP 2.9 Objectively Evaluate Adherence
+GP 2.10 Review Status with Higher Level Management
+-
+GG 3 Institutionalize a Defined Process
+GP 3.1 Establish a Defined Process
+GP 3.2 Collect Improvement Information
+-
+GG 4 Institutionalize a Quantitatively Managed Process
+GP 4.1 Establish Quantitative Objectives for the Process
+GP 4.2 Stabilize Sub process Performance
+-
+GG 5 Institutionalize an Optimizing Process
+GP 5.1 Ensure Continuous Process Improvement
+GP 5.2 Correct Root Causes of Problems
+Common Features
+The common features are attributes that indicate whether the implementation and institutionalization of a key process area is effective, repeatable, and lasting. The five common features are listed below −
+Commitment to Perform − Commitment to Perform describes the actions, the organization must take to ensure that the process is established and will endure. Commitment to Perform typically involves establishing organizational policies and senior management sponsorship.
+Ability to Perform − Ability to Perform describes the preconditions that must exist in the project or organization to implement the software process competently. Ability to Perform typically involves resources, organizational structures, and training.
+Activities Performed − Activities Performed describes the roles and procedures necessary to implement a key process area. Activities Performed typically involve establishing plans and procedures, performing the work, tracking it, and taking corrective actions as necessary.
+Measurement and Analysis − Measurement and Analysis describes the need to measure the process and analyze the measurements. Measurement and Analysis typically includes examples of the measurements that could be taken to determine the status and effectiveness of the Activities Performed.
+Verifying Implementation − Verifying Implementation describes the steps to ensure that the activities are performed in compliance with the process that has been established. Verification typically encompasses reviews and audits by management and software quality assurance.
+The practices in the common feature Activities Performed describe what must be implemented to establish a process capability. The other practices, taken as a whole, form the basis by which an organization can institutionalize the practices described in the Activities Performed common feature.
+Process Areas in Detail
+The CMMI contains 22 process areas indicating the aspects of product development that are to be covered by company processes.
+Causal Analysis and Resolution
+It is a support process area at Maturity Level 5.
+Purpose
+The purpose of Causal Analysis and Resolution (CAR) is to identify causes of defects and other problems and take action to prevent them from occurring in the future.
+Specific Practices by Goal
+-
+SG 1 Determine Causes of Defects
+SP 1.1 Select Defect Data for Analysis
+SP 1.2 Analyze Causes
+-
+SG 2 Address Causes of Defects
+SP 2.1 Implement the Action Proposals
+SP 2.2 Evaluate the Effect of Changes
+SP 2.3 Record Data
+Configuration Management
+It is a support process area at Maturity Level 2.
+Purpose
+The purpose of Configuration Management (CM) is to establish and maintain the integrity of work products using configuration identification, configuration control, configuration status accounting, and configuration audits.
+Specific Practices by Goal
+-
+SG 1 Establish Baselines
+SP 1.1 Identify Configuration Items
+SP 1.2 Establish a Configuration Management System
+SP 1.3 Create or Release Baselines
+-
+SG 2 Track and Control Changes
+SP 2.1 Track Change Requests
+SP 2.2 Control Configuration Items
+-
+SG 3 Establish Integrity
+SP 3.1 Establish Configuration Management Records
+SP 3.2 Perform Configuration Audits
+Decision Analysis and Resolution
+It is a support process area at Maturity Level 3.
+Purpose
+The purpose of Decision Analysis and Resolution (DAR) is to analyze possible decisions using a formal evaluation process that evaluates identified alternatives against established criteria.
+Specific Practices by Goal
+-
+SG 1 Evaluate Alternatives
+SP 1.1 Establish Guidelines for Decision Analysis
+SP 1.2 Establish Evaluation Criteria
+SP 1.3 Identify Alternative Solutions
+SP 1.4 Select Evaluation Methods
+SP 1.5 Evaluate Alternatives
+SP 1.6 Select Solutions
+Integrated Project Management + IPPD
+It is a Project Management process area at Maturity Level 3.
+Purpose
+The purpose of Integrated Project Management + IPPD (IPM) is to establish and manage the project and the involvement of the relevant stakeholders according to an integrated and defined process that is tailored from the organization's set of standard processes.
+Specific Practices by Goal
+-
+SG 1 Use the Project's Defined Process
+SP 1.1 Establish the Project's Defined Process
+SP 1.2 Use Organizational Process Assets for Planning Project Activities
+SP 1.3 Establish the Project's Work Environment
+SP 1.4 Integrate Plans
+SP 1.5 Manage the Project Using the Integrated Plans
+SP 1.6 Contribute to the Organizational Process Assets
+-
+SG 2 Coordinate and Collaborate with Relevant Stakeholders
+SP 2.1 Manage Stakeholder Involvement
+SP 2.2 Manage Dependencies
+SP 2.3 Resolve Coordination Issues
+IPPD Addition −
+-
+SG 3 Apply IPPD Principles
+SP 3.1 Establish the Project's Shared Vision
+SP 3.2 Establish the Integrated Team Structure
+SP 3.3 Allocate Requirements to Integrated Teams
+SP 3.4 Establish Integrated Teams
+SP 3.5 Ensure Collaboration among Interfacing Teams
+Measurement and Analysis
+It is a support process area at Maturity Level 2.
+Purpose
+The purpose of Measurement and Analysis (MA) is to develop and sustain a measurement capability that is used to support management information needs.
+Specific Practices by Goal
+-
+SG 1 Align Measurement and Analysis Activities
+SP 1.1 Establish Measurement Objectives
+SP 1.2 Specify Measures
+SP 1.3 Specify Data Collection and Storage Procedures
+SP 1.4 Specify Analysis Procedures
+-
+SG 2 Provide Measurement Results
+SP 2.1 Collect Measurement Data
+SP 2.2 Analyze Measurement Data
+SP 2.3 Store Data and Results
+SP 2.4 Communicate Results
+Organizational Innovation and Deployment
+It is a Process Management process area at Maturity Level 5.
+Purpose
+The purpose of Organizational Innovation and Deployment (OID) is to select and deploy incremental and innovative improvements that measurably improve the organization's processes and technologies. The improvements support the organization's quality and process-performance objectives as derived from the organization's business objectives.
+Specific Practices by Goal
+-
+SG 1 Select Improvements
+SP 1.1 Collect and Analyze Improvement Proposals
+SP 1.2 Identify and Analyze Innovations
+SP 1.3 Pilot Improvements
+SP 1.4 Select Improvements for Deployment
+-
+SG 2 Deploy Improvements
+SP 2.1 Plan the Deployment areas
+SP 2.2 Manage the Deployment
+SP 2.3 Measure Improvement Effects
+Organizational Process Definition + IPPD (OPD)
+It is a Process Management process area at Maturity Level 3.
+Purpose
+The purpose of Organizational Process Definition + IPPD (OPD) is to establish and maintain a usable set of organizational process assets.
+Specific Practices by Goal
+-
+SG 1 Establish Organizational Process Assets
+SP 1.1 Establish Standard Processes
+SP 1.2 Establish Life-Cycle Model Descriptions
+SP 1.3 Establish Tailoring Criteria and Guidelines
+SP 1.4 Establish the Organization's Measurement Repository
+SP 1.5 Establish the Organization's Process Asset Library
+IPPD Addition −
+-
+SG 2 Enable IPPD Management
+SP 2.1 Establish Empowerment Mechanisms
+SP 2.2 Establish Rules and Guidelines for Integrated Teams
+SP 2.3 Balance Team and Home Organization Responsibilities
+Organizational Process Focus
+It is a Process Management process area at Maturity Level 3.
+Purpose
+The purpose of Organizational Process Focus (OPF) is to plan and implement organizational process improvement based on a thorough understanding of the current strengths and weaknesses of the organization's processes and process assets.
+Specific Practices by Goal
+-
+SG 1 Determine Process Improvement Opportunities
+SP 1.1 Establish Organizational Process Needs
+SP 1.2 Appraise the Organization's Processes
+SP 1.3 Identify the Organization's Process Improvements
+-
+SG 2 Plan and Implement Process Improvement Activities
+SP 2.1 Establish Process Action Plans
+SP 2.2 Implement Process Action Plans
+-
+SG 3 Deploy Organizational Process Assets and Incorporate Lessons Learned
+SP 3.1 Deploy Organizational Process Assets
+SP 3.2 Deploy Standard Processes
+SP 3.3 Monitor Implementation
+SP 3.4 Incorporate Process-Related Experiences into the Organizational Process Assets
+Organizational Process Performance
+It is a Process Management process area at Maturity Level 4.
+Purpose
+The purpose of Organizational Process Performance (OPP) is to establish and maintain a quantitative understanding of the performance of the organization's set of standard processes in support of quality and process-performance objectives, and to provide the process performance data, baselines, and models to quantitatively manage the organization's projects.
+Specific Practices by Goal
+-
+SG 1 Establish Performance Baselines and Models
+SP 1.1 Select Processes
+SP 1.2 Establish Process Performance Measures
+SP 1.3 Establish Quality and Process Performance Objectives
+SP 1.4 Establish Process Performance Baselines
+SP 1.5 Establish Process Performance Models
+Organizational Training
+It is a Process Management process area at Maturity Level 3.
+Purpose
+The purpose of Organizational Training (OT) is to develop the skills and knowledge of people so they can perform their roles effectively and efficiently.
+Specific Practices by Goal
+-
+SG 1 Establish an Organizational Training Capability
+SP 1.1 Establish the Strategic Training Needs
+SP 1.2 Determine Which Training Needs Are the Responsibility of the Organization
+SP 1.3 Establish an Organizational Training Tactical Plan
+SP 1.4 Establish Training Capability
+-
+SG 2 Provide Necessary Training
+SP 2.1 Deliver Training
+SP 2.2 Establish Training Records
+SP 2.3 Assess Training Effectiveness
+Product Integration
+It is an Engineering process area at Maturity Level 3.
+Purpose
+The purpose of Product Integration (PI) is to assemble the product from the product components, ensure that the product, as integrated, functions properly, and deliver the product.
+Specific Practices by Goal
+-
+SG 1 Prepare for Product Integration
+SP 1.1 Determine Integration Sequence
+SP 1.2 Establish the Product Integration Environment
+SP 1.3 Establish Product Integration Procedures and Criteria
+-
+SG 2 Ensure Interface Compatibility
+SP 2.1 Review Interface Descriptions for Completeness
+SP 2.2 Manage Interfaces
+-
+SG 3 Assemble Product Components and Deliver the Product
+SP 3.1 Confirm Readiness of Product Components for Integration
+SP 3.2 Assemble Product Components
+SP 3.3 Evaluate Assembled Product Components
+SP 3.4 Package and Deliver the Product or Product Component
+Project Monitoring and Control
+It is a Project Management process area at Maturity Level 2.
+Purpose
+The purpose of Project Monitoring and Control (PMC) is to provide an understanding of the project's progress so that appropriate corrective actions can be taken when the project's performance deviates significantly from the plan.
+Specific Practices by Goal
+-
+SG 1 Monitor Project Against Plan
+SP 1.1 Monitor Project Planning Parameters
+SP 1.2 Monitor Commitments
+SP 1.3 Monitor Project Risks
+SP 1.4 Monitor Data Management
+SP 1.5 Monitor Stakeholder Involvement
+SP 1.6 Conduct Progress Reviews
+SP 1.7 Conduct Milestone Reviews
+-
+SG 2 Manage Corrective Action to Closure
+SP 2.1 Analyze Issues
+SP 2.2 Take Corrective Action
+SP 2.3 Manage Corrective Action
+Project Planning
+It is a Project Management process area at Maturity Level 2.
+Purpose
+The purpose of Project Planning (PP) is to establish and maintain plans that define project activities.
+Specific Practices by Goal
+-
+SG 1 Establish Estimates
+SP 1.1 Estimate the Scope of the Project
+SP 1.2 Establish Estimates of Work Product and Task Attributes
+SP 1.3 Define Project Life Cycle
+SP 1.4 Determine Estimates of Effort and Cost
+-
+SG 2 Develop a Project Plan
+SP 2.1 Establish the Budget and Schedule
+SP 2.2 Identify Project Risks
+SP 2.3 Plan for Data Management
+SP 2.4 Plan for Project Resources
+SP 2.5 Plan for Needed Knowledge and Skills
+SP 2.6 Plan Stakeholder Involvement
+SP 2.7 Establish the Project Plan
+-
+SG 3 Obtain Commitment to the Plan
+SP 3.1 Review Plans that Affect the Project
+SP 3.2 Reconcile Work and Resource Levels
+SP 3.3 Obtain Plan Commitment
+Process and Product Quality Assurance
+It is a support process area at Maturity Level 2.
+Purpose
+The purpose of Process and Product Quality Assurance (PPQA) is to provide staff and management with objective insight into processes and associated work products.
+Specific Practices by Goal
+-
+SG 1 Objectively Evaluate Processes and Work Products
+SP 1.1 Objectively Evaluate Processes
+SP 1.2 Objectively Evaluate Work Products and Services
+-
+SG 2 Provide Objective Insight
+SP 2.1 Communicate and Ensure Resolution of Noncompliance Issues
+SP 2.2 Establish Records
+Quantitative Project Management
+It is a Project Management process area at Maturity Level 4.
+Purpose
+The purpose of the Quantitative Project Management (QPM) process area is to quantitatively manage the project's defined process to achieve the project's established quality and process-performance objectives.
+Specific Practices by Goal
+-
+SG 1 Quantitatively Manage the Project
+SP 1.1 Establish the Project's Objectives
+SP 1.2 Compose the Defined Processes
+SP 1.3 Select the Sub-processes that Will Be Statistically Managed
+SP 1.4 Manage Project Performance
+-
+SG 2 Statistically Manage Sub-process Performance
+SP 2.1 Select Measures and Analytic Techniques
+SP 2.2 Apply Statistical Methods to Understand Variation
+SP 2.3 Monitor Performance of the Selected Sub-processes
+SP 2.4 Record Statistical Management Data
+Requirements Development
+It is an Engineering process area at Maturity Level 3.
+Purpose
+The purpose of Requirements Development (RD) is to produce and analyze customer, product, and product-component requirements.
+Specific Practices by Goal
+-
+SG 1 Develop Customer Requirements
+SP 1.1 Elicit Needs
+SP 1.2 Develop the Customer Requirements
+-
+SG 2 Develop Product Requirements
+SP 2.1 Establish Product and Product-Component Requirements
+SP 2.2 Allocate Product-Component Requirements
+SP 2.3 Identify Interface Requirements
+-
+SG 3 Analyze and Validate Requirements
+SP 3.1 Establish Operational Concepts and Scenarios
+SP 3.2 Establish a Definition of Required Functionality
+SP 3.3 Analyze Requirements
+SP 3.4 Analyze Requirements to Achieve Balance
+SP 3.5 Validate Requirements
+Requirements Management
+It is an Engineering process area at Maturity Level 2.
+Purpose
+The purpose of Requirements Management (REQM) is to manage the requirements of the project's products and product components and to identify inconsistencies between those requirements and the project's plans and work products.
+Specific Practices by Goal
+-
+SG 1 Manage Requirements
+SP 1.1 Obtain an Understanding of Requirements
+SP 1.2 Obtain Commitment to Requirements
+SP 1.3 Manage Requirements Changes
+SP 1.4 Maintain Bidirectional Traceability of Requirements
+SP 1.5 Identify Inconsistencies between Project Work and Requirements
+Risk Management
+It is a Project Management process area at Maturity Level 3.
+Purpose
+The purpose of Risk Management (RSKM) is to identify potential problems before they occur so that risk-handling activities can be planned and invoked as needed across the life of the product or project to mitigate adverse impacts on achieving objectives.
+Specific Practices by Goal
+-
+SG 1 Prepare for Risk Management
+SP 1.1 Determine Risk Sources and Categories
+SP 1.2 Define Risk Parameters
+SP 1.3 Establish a Risk Management Strategy
+-
+SG 2 Identify and Analyze Risks
+SP 2.1 Identify Risks
+SP 2.2 Evaluate, Categorize, and Prioritize Risks
+-
+SG 3 Mitigate Risks
+SP 3.1 Develop Risk Mitigation Plans
+SP 3.2 Implement Risk Mitigation Plans
+Supplier Agreement Management
+It is a Project Management process area at Maturity Level 2.
+Purpose
+The purpose of Supplier Agreement Management (SAM) is to manage the acquisition of products from suppliers for which there exists a formal agreement.
+Specific Practices by Goal
+-
+SG 1 Establish Supplier AgreementsM
+SP 1.1 Determine Acquisition Type
+SP 1.2 Select Suppliers
+SP 1.3 Establish Supplier Agreements
+-
+SG 2 Satisfy Supplier Agreements
+SP 2.1 Execute the Supplier Agreement
+SP 2.2 Monitor Selected Supplier Processes
+SP 2.3 Evaluate Selected Supplier Work Products
+SP 2.4 Accept the Acquired Product
+SP 2.5 Transition Products
+Technical Solution
+It is an Engineering process area at Maturity Level 3.
+Purpose
+The purpose of Technical Solution (TS) is to design, develop, and implement solutions to requirements. Solutions, designs, and implementations encompass products, product components, and product-related life-cycle processes either single or in combination as appropriate.
+Specific Practices by Goal
+-
+SG 1 Select Product-Component Solutions
+SP 1.1 Develop Alternative Solutions and Selection Criteria
+SP 1.2 Select Product Component Solutions
+-
+SG 2 Develop the Design
+SP 2.1 Design the Product or Product Component
+SP 2.2 Establish a Technical Data Package
+SP 2.3 Design Interfaces Using Criteria
+SP 2.4 Perform Make, Buy, or Reuse Analysis
+-
+SG 3 Implement the Product Design
+SP 3.1 Implement the Design
+SP 3.2 Develop Product Support Documentation
+Validation
+It is an Engineering process area at Maturity Level 3.
+Purpose
+The purpose of Validation (VAL) is to demonstrate that a product or product component fulfills its intended use when placed in its intended environment.
+Specific Practices by Goal
+-
+SG 1 Prepare for Validation
+SP 1.1 Select Products for Validation
+SP 1.2 Establish the Validation Environment
+SP 1.3 Establish Validation Procedures and Criteria
+-
+SG 2 Validate Product or Product Components
+SP 2.1 Perform Validation
+SP 2.2 Analyze Validation Results.
+Verification
+It is an Engineering process area at Maturity Level 3.
+Purpose
+The purpose of Verification (VER) is to ensure that selected work products meet their specified requirements.
+Specific Practices by Goal
+-
+SG 1 Prepare for Verification
+SP 1.1 Select Work Products for Verification
+SP 1.2 Establish the Verification Environment
+SP 1.3 Establish Verification Procedures and Criteria
+-
+SG 2 Perform Peer Reviews
+SP 2.1 Prepare for Peer Reviews
+SP 2.2 Conduct Peer Reviews
+SP 2.3 Analyze Peer Review Data
+-
+SG 3 Verify Selected Work Products
+SP 3.1 Perform Verification
+SP 3.2 Analyze Verification Results
+Changes Made into Version 1.2
+Only those changes that are made to the set of Process Areas are considered here. For a comprehensive detail, visit the SEI homepage.
+-
+The following Process Areas have been removed (all on Maturity Level 3) −
+Organizational Environment for Integration (OEI)
+Integrated Teaming (IT)
+Integrated Supplier Management (ISM)
+-
+The following additions have been made within existing Process Areas −
+IPM . SG3 and SG4 were eliminated, new SG3 was added (all IPPD PAs)
+OPD . SG was added, turning it in an IPPD PA
+OPF . two SPs were extracted from SG and created SG3 together with two new SPs
+REQD . SP3.5 was renamed Validate Requirements
+SAM . SP2.1 was eliminated, two new SPs added in SG2
+TS . SP1.2 was eliminated
+VER . SP3.2 was renamed Analyze Verification Results
+CMMI - Appraisals
+The CMMI Appraisal is an examination of one or more processes by a trained team of professionals using an appraisal reference model as the basis for determining strengths and weaknesses of an organization.
+Appraisals require planning. When planning an appraisal of your organization, determine the scope of the organizational unit, which disciplines to include, whether the appraisal team will consist of members internal or external to your organization, projects to be included, individuals to be interviewed, and the type or class of appraisal necessary.
+Appraisals consider three categories of model components as defined in the CMMI −
+Required − specific and generic goals only.
+Expected − specific and generic practices only.
+Informative − includes sub-practices and typical work products.
+The SEI has released two guiding documents for CMMI assessments −
+Appraisal Requirements for CMMI (ARC) − It contains the requirements for three classes of appraisal methods Class A, Class B, and Class C. These requirements are the rules for defining each class of appraisal method.
+Standard CMMI Appraisal Method for Process Improvement (SCAMPI) − Method Description Document (MDD) is currently the only approved Class A appraisal method.
+SCAMPI is currently the only approved CMMI Class A Appraisal Method. That is, SCAMPI satisfies all the requirements of an ARC Class A Appraisal Method and has been approved by the SEI.
+There are three classes of CMMI Appraisal Methods: Class A, Class B, and Class C.
+SCAMPI Class A Appraisal
+A SCAMPI Class A appraisal is typically conducted when an organization has implemented a number of significant process improvements and needs to formally benchmark its process relative to the CMMI. A SCAMPI A is the only appraisal method that provides CMMI Maturity Level or Capability Level ratings.
+You can expect following outcomes from a SCAMPI A −
+A Maturity Level rating or Capability Level ratings.
+Findings that describe the strengths and weaknesses of your organization's process relative to the CMMI.
+Consensus regarding the organization's key process issues.
+An appraisal database that the organization can continue to use, to monitor process improvement progress and to support future appraisals.
+SCAMPI Class B Appraisal
+A SCAMPI B is called for when an organization needs to assess its progress towards a target CMMI Maturity Level, but at a lower cost than a SCAMPI A. SCAMPI B appraisals provide detailed findings and indicate the likelihood that the evaluated practices would be rated as satisfactorily implemented in a SCAMPI A appraisal.
+A SCAMPI Class B appraisal, one of three SEI appraisal methods, helps an organization understand, with a relatively high degree of confidence, the status of its software and systems engineering process relative to the CMMI. A SCAMPI B is often performed when an organization needs to accurately assess its progress towards a target CMMI Maturity Level.
+You can expect following outcomes from a SCAMPI B −
+Detailed findings that describe the strengths and weaknesses of your organization's process relative to the CMMI.
+Practice characterizations indicating the likelihood that the examined practices would satisfy the goals and meet the intent of the CMMI.
+Consensus regarding the organization's key process issues.
+A FIDO database that the organization can continue to use, to monitor process improvement progress and to support future appraisals.
+SCAMPI Class C Appraisal
+SCAMPI C appraisals are shorter and more flexible than SCAMPI A and B appraisals and are conducted to address a variety of special needs, from a quick gap analysis to determining an organization's readiness for a SCAMPI A.
+SCAMPI Class C appraisals, the least formal of the SEI's suite of appraisal methods, are highly flexible and can be conducted to address a variety of needs. Typically much shorter in duration than Class A and B appraisals, SCAMPI C appraisals are often performed for reasons such as −
+Provide a quick gap analysis of an organization's process relative to the CMMI.
+Assess the adequacy of a new process before it is implemented.
+Monitor the implementation of a process.
+Determine an organization's readiness for a SCAMPI A.
+Support the selection of a supplier.
+You can expect following outcomes from a SCAMPI C −
+Findings that describe the strengths and weaknesses of the assessed processes. Depending on the appraisal scope and strategy, findings may be mapped to the relevant CMMI components.
+Characterizations that summarize the adequacy of the assessed processes vis-a-vis the CMMI.
+Recommended process improvement actions.
+A FIDO database that the organization can continue to use to monitor process improvement progress and to support future appraisals.
+Appraisal Class Characteristics
+Each class is distinguished by the degree of rigor associated with the application of the method. Class A is the most rigorous, Class B is slightly less rigorous, and Class C is the least rigorous. Following table gives some idea of the expected differences between the methods in each class.
+| Characteristics | Class A | Class B | Class C |
+|---|---|---|---|
+| Amount of objective evidence gathered | High | Medium | Low |
+| Rating generated | Yes | No | No |
+| Resource needs | High | Medium | Low |
+| Team size | Large | Medium | Small |
+| Data sources (instruments, interviews, and documents) | Requires all three data sources | Requires only two data sources (one must be interviews) | Requires only one data source |
+| Appraisal team leader requirement | Authorized Lead Appraiser | Authorized Lead Appraiser or person trained and experienced | Person trained and experienced |
+SCAMPI Fundamentals
+SCAMPI is an acronym that stands for Standard CMMI Appraisal Method for Process Improvement. A SCAMPI assessment must be led by an SEI authorized SCAMPI Lead Appraiser. SCAMPI is supported by the SCAMPI Product Suite, which includes the SCAMPI Method Description, maturity questionnaire, work aids, and templates.
+Currently, SCAMPI is the only method that can provide a rating, the only method recognized by the SEI, and the method of most interest to organizations.
+SCAMPI is based on experience from previous methods, including −
+CBA IPI − CMM-Based Appraisal for Internal Process Improvement.
+SCE − Software Capability Evaluation.
+EIA/IS 732.2 − The interim international standard entitled Systems Engineering Assessment Method.
+SDCE − Software Development Capability Evaluation.
+FAA Appraisal Method.
+CMMI Players - Roles Responsibilities
+This chapter discusses the major players involved with a process improvement effort. However, your organization may require more or fewer groups.
+Note that one person can fulfill many of these roles simultaneously or serially, depending on the size of your organization and the complexity of your process improvement (PI) effort.
+Process Improvement
+Process improvement efforts generally require the following individuals and groups −
+PI Sponsor − The person from the organization responsible for over-seeing the entire PI effort. This person generally has the power to allocate funds and personnel. This person is usually at the directorate level or above.
+PI Champion − This is the public relations person for the PI effort, who may or may not serve as the EPG Lead. This person markets the idea, approach, and results of PI.
+Engineering Process Group (EPG) Lead − This person leads the group that reviews processes. This person assigns tasks to the EPG members, monitors their efforts, and plans the daily duties of the EPG.
+EPG Members − These individuals serve on the EPG as committee members. They are responsible for ensuring that process improvement documentation is written and followed. They are also responsible for generating metrics to track the process improvement process. They lead the PATs.
+Process Action Teams (PATs) − These teams generate the process improvement documentation, policies, processes, procedures, charters, and Action Plans.
+Transition Partner − Usually one or two individuals who are outside consultants brought in to help set up, plan, lead, and monitor progress in organizational process improvement. These individuals bring experience doing process improvement from several other organizations and industries.
+CMMI - Summary
+This tutorial covered the Structure of CMMI that consists of the following components −
+- Maturity Levels (staged representation) or Capability Levels (continuous representation)
+- Process Areas
+- Goals: Generic and Specific
+- Common Features
+- Practices: Generic and Specific
+We have covered all the maturity levels and capability levels. In addition, we discussed all the Key Process Areas and related Generic Goals, Specific Goals, Common Features and Practices.
+Later, we have given you a brief introduction on CMMI Appraisals and showed you the different Appraisal Classes.
+What is Next?
+SEI CMMI is a big subject that cannot be explained in a small tutorial. So we strongly recommend you to go through other CMMI resources and collect more information on this subject. These resources are listed in the CMMI Resources chapter.
+Please send me your feedback at webmaster@tutorialspoint.com
+CMMI - Glossary
+Ability to perform − A common feature of CMMI model process areas with a staged representation that groups the generic practices related to ensuring that the project and/or organization has the resources it needs.
+Acceptance criteria − The criteria that a product or product component must satisfy to be accepted by a user, customer, or other authorized entity.
+Acceptance testing − Formal testing conducted to enable a user, customer, or other authorized entity to determine whether to accept a product or product component.
+Achievement profile − In the continuous representation, a list of process areas and their corresponding capability levels that represent the organization's progress for each process area while advancing through the capability levels.
+Acquisition − The process of obtaining, through contract, any discrete action or proposed action by the acquisition entity that would commit to invest for obtaining products and services.
+Acquisition strategy − The specific approach to acquiring products and services that is based on considerations of supply sources, acquisition methods, requirements specification types, contract or agreement types, and the related acquisition risk.
+Adequate − Adequate, appropriate, and as needed appear in CMMI to allow managers at all levels and practitioners to interpret the specific and generic goals and practices in light of the organization's business objectives. For example, a Generic Practice for the process area of Risk Management states− "Provide adequate resources for performing the risk management process, developing the work products, and providing the services of the process." Adequate could be satisfied by Numbers of people, People who must monitor the risks etc.
+Advanced practices − In the continuous representation, all the specific practices with a capability level of two or higher.
+Agreement/contract requirements − All technical and non-technical requirements related to an acquisition.
+Allocated requirement − Requirement that levies all or part of the performance and functionality of a higher level requirement on a lower level architectural element or design component.
+Alternative practice − A practice that is a substitute for one or more generic or specific practices contained in CMMI models that achieves an equivalent effect toward satisfying the generic or specific goal associated with model practices. Alternative practices are not necessarily one-for-one replacements for the generic or specific practices.
+Appraisal − An appraisal is an examination of one or more processes by a trained team of professionals using an appraisal reference model as the basis for determining strengths and weaknesses.
+Appraisal findings − The conclusions of an appraisal that identify the most important issues, problems, or opportunities within the appraisal scope. It includes, at a minimum, strengths and weaknesses based on valid observations.
+Appraisal participants − Members of the organizational unit who participate in providing information during the appraisal.
+Appraisal rating − As used in CMMI appraisal materials, the value assigned by an appraisal team to either (1) a CMMI goal or process area, (2) the capability level of a process area, or (3) the maturity level of an organizational unit. The rating is determined by enacting the defined rating process for the appraisal method being employed.
+Appraisal reference model − As used in CMMI appraisal materials, the CMMI model to which an appraisal team correlates implemented process activities.
+Appraisal scope − The definition of the boundaries of the appraisal encompassing the organizational limits and the CMMI model limits.
+Appraisal team leader − A person who leads the activities of an appraisal and has satisfied the qualification criteria for experience, knowledge, and skills defined by the appraisal method.
+Appropriate − See definition for Adequate.
+As needed − See definition for Adequate.
+Assessment − An assessment is an appraisal that an organization conducts for itself for the purposes of process improvement.
+Assignable cause of process variation − In CMMI, the term "special cause of process variation" is used in place of "assignable cause of process variation" to ensure consistency. Both terms are defined identically.
+Audit − An independent examination of a work product or set of work products to determine whether requirements are being met.
+Base measure − A distinct property or characteristic of an entity and the method for quantifying it.
+Base practices − In the continuous representation, all the specific practices with a capability level of 1.
+Baseline − The term baseline is normally used to denote such a reference point. A baseline is an approved snapshot of the system at appropriate points in the development life cycle. A baseline establishes a formal base for defining subsequent change. Without this line or reference point, the notion of change is meaningless.
+Business objectives − Senior-management-developed strategies designed to ensure an organization's continued existence and enhance its profitability, market share, and other factors influencing the organization's success.
+Capability evaluation − An appraisal by a trained team of professionals used as a discriminator to select suppliers, for contract monitoring, or for incentives. Evaluations are used to help decision makers make better acquisition decisions, improve subcontractor performance, and provide insight to a purchasing organization.
+Capability level − Achievement of process improvement within an individual process area. A capability level is defined by the appropriate specific and generic practices for a process area.
+Capability level profile − In the continuous representation, a list of process areas and their corresponding capability levels. The profile may be an achievement profile when it represents the organization's progress for each process area while advancing through the capability levels. Or, the profile may be a target profile when it represents an objective for process improvement.
+Capability maturity model − A capability maturity model (CMM) contains the essential elements of effective processes for one or more disciplines. It also describes an evolutionary improvement path from ad hoc, immature processes to disciplined, mature processes with improved quality and effectiveness.
+Capable process − A process that can satisfy its specified product quality, service quality, and process performance objectives.
+Causal analysis − The analysis of defects to determine their cause.
+Change management − Judicious use of means to effect a change, or proposed change, on a product or service.
+CMMI appraisal tailoring − Selection of options within the appraisal method for use in a specific instance. The intent of appraisal tailoring is to assist an organization in aligning application of the method with its business objectives.
+CMMI model component − Any of the main architectural elements that compose a CMMI model. Some of the main elements of a CMMI model include specific practices, generic practices, specific goals, generic goals, process areas, capability levels, and maturity levels.
+CMMI model tailoring − The use of a subset of a CMMI model for the purpose of making it suitable for a specific application. The intent of model tailoring is to assist an organization in aligning application of a model with its business objectives.
+CMMI Product Suite − This term has been used for a complete CMMI Framework.
+Commitment to perform − A common feature of CMMI model process areas with a staged representation that groups the generic practices related to creating policies and securing sponsorship.
+Common cause of process variation − The variation of a process that exists because of normal and expected interactions among the components of a process.
+Concept of operations − A general description of the way in which an entity is used or operates.
+Configuration audit − An audit conducted to verify that a configuration item conforms to a specified standard or requirement.
+Configuration baseline − The configuration information formally designated at a specific time during a product's or product component's life. Configuration baselines, plus approved changes from those baselines, constitute the current configuration information.
+Configuration control − An element of configuration management consisting of the evaluation, coordination, approval or disapproval, and implementation of changes to configuration items after formal establishment of their configuration identification.
+Configuration control board − A group of people responsible for evaluating and approving or disapproving proposed changes to configuration items, and for ensuring implementation of approved changes.
+Configuration identification − An element of configuration management consisting of selecting the configuration items for a product, assigning unique identifiers to them, and recording their functional and physical characteristics in technical documentation.
+Configuration item − An aggregation of work products that is designated for configuration management and treated as a single entity in the configuration management process.
+Configuration management − A discipline applying technical and administrative direction and surveillance to (1) identify and document the functional and physical characteristics of a configuration item, (2) control changes to those characteristics, (3) record and report change processing and implementation status, and (4) verify compliance with specified requirements. [IEEE Std 610.1990]
+CMMI Model − Since the CMMI Framework can generate different models based on the needs of the organization using it, there are multiple CMMI models. Consequently, the phrase "CMMI MODEL" could be any one of many collections of information. The phrase "CMMI models" refers to one, some, or the entire collection of possible models that can be generated from the CMMI Framework.
+Configuration status accounting − An element of configuration management consisting of the recording and reporting of information needed to manage a configuration effectively. This information includes a listing of the approved configuration identification, the status of proposed changes to the configuration, and the implementation status of approved changes.
+Continuous representation − A capability maturity model structure wherein capability levels provide a recommended order for approaching process improvement within each specified process area.
+Corrective action − Acts or deeds used to remedy a situation, remove an error, or adjust a condition.
+COTS − Items that can be purchased from a commercial vendor.
+Customer − A customer is the individual, project, organization, group, and so forth that is responsible for accepting the product or for authorizing payment. The customer is external to the project but not necessarily external to the organization. The term customer also serves as a variable when we discuss requirements gathering or elicitation.
+Data management − Principles, processes, and systems for the sharing and management of data.
+Defect density − Number of defects per unit of product size (e.g., problem reports per 1000 lines of code).
+Defined process − A defined set of steps to be followed as a part of the improvement.
+Derived measures − Data resulting from the mathematical function of two or more base measures.
+Derived requirements − Requirements that are not explicitly stated in the customer requirements, but are inferred (1) from contextual requirements (e.g., applicable standards, laws, policies, common practices, and management decisions), or (2) from requirements needed to specify a product component. Derived requirements can also arise during analysis and design of components of the product or system.
+Design review − A formal, documented, comprehensive, and systematic examination of a design to evaluate the design requirements and the capability of the design to meet these requirements, and to identify problems and propose solutions.
+Development − Development, as it is used throughout CMMI, implies maintenance activities as well as development activities. Experience has shown that best practices should be applied to both development and maintenance projects if an organization is in pursuit of engineering excellence.
+Developmental plan − A plan for guiding, implementing, and controlling the design and development of one or more products.
+Directing implementation − A common feature of CMMI model process areas with a staged representation that groups the generic practices related to managing the performance of the process, managing the integrity of its work products, and involving relevant stakeholders.
+Discipline amplification − Model components that provide guidance for interpreting model information for specific disciplines (e.g., systems engineering, or software engineering) are called "DISCIPLINE AMPLIFICATIONS." Discipline amplifications are added to other model components where necessary. These are easy to locate because they appear on the right side of the page and have a title indicating the discipline that they address (for example, "For Software Engineering").
+Document − A document is a collection of data, regardless of the medium on which it is recorded. It generally has permanence and can be read by humans or machines. Documents include both paper and electronic documents.
+Enterprise − Enterprise is used to refer to very large companies that consist of many organizations in many different locations with different customers.
+Entry criteria − States of being that must be present before an effort can begin successfully.
+Equivalent staging − Equivalent staging is a target staging, created using the continuous representation that is defined so that the results of using the target staging can be compared to the maturity levels of the staged representation.
+Exit criteria − States of being that must be present before an effort can end successfully.
+Expected CMMI components − CMMI components that explain what may be done to satisfy a required CMMI component. Model users can implement the expected components explicitly or implement equivalent alternative practices to these components. Specific and generic practices are expected model components
+Finding − See appraisal findings.
+Formal evaluation process − In the Decision Analysis and Resolution process area, see the definition of a "formal evaluation process" in the introductory notes.
+Functional analysis − Examination of a defined function to identify all the sub-functions necessary to the accomplishment of that function; identification of functional relationships and interfaces (internal and external) and capturing these in a functional architecture; and flow down of upper level performance requirements and assignment of these requirements to lower level sub-functions.
+Functional architecture − The hierarchical arrangement of functions, their internal and external (external to the aggregation itself) functional interfaces and external physical interfaces, their respective functional and performance requirements, and their design constraints.
+Generic goal − GENERIC GOALS are called "generic" because the same goal statement appears in multiple process areas. In the staged representation, each process area has only one generic goal. Achievement of a generic goal in a process area signifies improved control in planning and implementing the processes associated with that process area, thus indicating whether these processes are likely to be effective, repeatable, and lasting. Generic goals are required model components and are used in appraisals to determine whether a process area is satisfied.
+Generic practice − GENERIC PRACTICES provide institutionalization to ensure that the processes associated with the process area will be effective, repeatable, and lasting. Generic practices are categorized by generic goals and common features and are expected components in CMMI models. (Only the generic practice title, statement, and elaborations appear in the process areas.)
+Generic practice elaboration − After the specific practices, the generic practice titles and statements appear that apply to the process area. After each generic practice statement, an elaboration may appear in plain text with the heading "Elaboration". The GENERIC PRACTICE ELABORATION provides information about how the generic practice should be interpreted for the process area. If there is no elaboration present, the application of the generic practice is obvious without an elaboration.
+Goal − A "GOAL" is a required CMMI component that can be either a generic goal or a specific goal. When you see the word "goal" in a CMMI model, it always refers to model components (for example, generic goal, specific goal).
+Incomplete process − A process that is not performed or is only performed partially (also known as capability level 0). One or more of the specific goals of the process area are not satisfied.
+Independent group − In the Process and Product Quality Assurance process area, see the discussion of a "group that is independent" in the introductory notes.
+Informative CMMI components − CMMI components that help model users understand the required and expected components of a model. These components may contain examples, detailed explanations, or other helpful information. Sub-practices, notes, references, goal titles, practice titles, sources, typical work products, discipline amplifications, and generic practice elaborations are informative model components.
+Institutionalization − The ingrained way of doing business that an organization follows routinely as part of its corporate culture.
+Integrated Product and Process Development − A systematic approach to product development that achieves a timely collaboration of relevant stakeholders throughout the product life cycle to better satisfy customer needs.
+Integrated team − A group of people with complementary skills and expertise who are committed to delivering specified work products in timely collaboration. Integrated team members provide skills and advocacy appropriate to all phases of the work products and are collectively responsible for delivering the work products as specified. An integrated team should include empowered representatives from organizations, disciplines, and functions that have a stake in the success of the work products.
+Interface control − In configuration management, the process of (1) identifying all functional and physical characteristics relevant to the interfacing of two or more configuration items provided by one or more organizations, and (2) ensuring that the proposed changes to these characteristics are evaluated and approved prior to implementation. [IEEE 828-1983].
+Lead appraiser − As used in the CMMI Product Suite, a person who has achieved recognition from an authorizing body to perform as an appraisal team leader for a particular appraisal method.
+Life-cycle model − A partitioning of the life of a product into phases that guide the project from identifying customer needs through product retirement.
+Manager − A project manager is the person responsible for planning, directing, controlling, structuring, and motivating the project. He or she may provide both technical and administrative direction and control to those performing project tasks or activities within his or her area of responsibility. The project manager is ultimately responsible to the customer.
+Maturity level − Degree of process improvement across a predefined set of process areas in which all goals within the set are attained.
+Memorandum of agreement − Binding documents of understanding or agreements between two or more parties.
+Natural bounds − The inherent process reflected by measures of process performance, sometimes referred to as "voice of the process." Techniques such as control charts, confidence intervals, and prediction intervals are used to determine whether the variation is due to common causes (i.e., the process is predictable or "stable") or is due to some special cause that can and should be identified and removed.
+Non-developmental item − An item of supply that was developed previous to its current use in an acquisition or development process. Such an item may require minor modifications to meet the requirements of its current intended use.
+Nontechnical requirements − Contractual provisions, commitments, conditions, and terms that affect how products or services are to be acquired. Examples include products to be delivered, data rights for delivered commercial off-the-shelf (COTS) non-developmental items (NDIs), delivery dates, and milestones with exit criteria. Other non-technical requirements include training requirements, site requirements, and deployment schedules.
+Objective − The term objective is used in CMMI in the common everyday sense; this is our objective or goal to be accomplished.
+Objective evidence − As used in CMMI appraisal materials, qualitative or quantitative information, records, or statements of fact pertaining to the characteristics of an item or service or to the existence and implementation of a process element, which are based on observation, measurement, or test and which are verifiable.
+Objectively evaluate − To review activities and work products against criteria that minimize subjectivity and bias by the reviewer. An example of an objective evaluation is an audit against requirements, standards, or procedures by an independent quality assurance function.
+Observation − As used in CMMI appraisal materials, a written record that represents the appraisal team members understanding of information either seen or heard during the appraisal data collection activities. The written record may take the form of a statement or may take alternative forms as long as the information content is preserved.
+Operational concept − A general description of the way in which an entity is used or operates.
+Operational scenario − A description of an imagined sequence of events that includes the interaction of the product with its environment and users, as well as interaction among its product components. Operational scenarios are used to evaluate the requirements and design of the system and to verify and validate the system.
+Optimizing process − A quantitatively managed process that is improved based on an understanding of the common causes of variation inherent in the process. A process that focuses on continually improving the range of process performance through both incremental and innovative improvements.
+Organization − An organization is a structure in which people collectively manage one or more projects as a whole and whose projects share a senior manager and operate under the same policies.
+Organization's business objectives − Strategies developed by the Senior Management to ensure an organization's continued existence and enhance its profitability, market share, and other factors influencing the organization's success.
+Organizational maturity − The extent to which an organization has explicitly and consistently deployed processes that are documented, managed, measured, controlled, and continually improved. Organizational maturity may be measured via appraisals.
+Organizational policy − A guiding principle typically established by senior management that is adopted by an organization to influence and determine decisions.
+Organizational unit − That part of an organization that is the subject of an appraisal (also known as the organizational scope of the appraisal).An organizational unit deploys one or more processes that have a coherent process context and operates within a coherent set of business objectives. An organizational unit is typically part of a larger organization, although in a small organization, the organizational unit may be the whole organization.
+Outsourcing − The process of obtaining, through contract, any discrete action or proposed action by the acquisition entity that would commit to invest for obtaining products and services.
+Peer review − A review done by the peer to find out defects in a deliverable.
+Performance parameters − The measures of effectiveness and other key measures used to guide and control progressive development.
+Performed process − A process that accomplishes the needed work to produce identified output work products using identified input work products (also known as capability level 1). The specific goals of the process area are satisfied.
+Planned process − A process that is documented both by a description and a plan. The description and plan should be coordinated, and the plan should include standards, requirements, objectives, resources, assignments, etc.
+Process − A set of activities, methods, practices, and transformations that people use to develop and maintain systems and associated products.
+Process action plan − In the Organizational Process Focus process area, see the definition of "process action plan" in the introductory notes.
+Process action team − A team that has the responsibility to develop and implement process-improvement activities for an organization as documented in the process-improvement action plan.
+Process and technology improvements − In the Organizational Innovation and Deployment process area, see the discussion of "process and technology improvements" in the introductory notes.
+Process area − A Process area is a cluster of related practices in an area that, when performed collectively, satisfy a set of goals considered important for making significant improvement in that area. All CMMI process areas are common to both continuous and staged representations. In the staged representation, process areas are organized by maturity levels.
+Process asset − Anything that the organization considers useful in attaining the goals of a process area.
+Process asset library − A collection of process asset holdings that can be used by an organization or project.
+Process attribute − A measurable characteristic of process capability applicable to any process.
+Process capability − The range of expected results that can be achieved by following a process.
+Process context − The set of factors, documented in the appraisal input, that influences the judgement and comparability of appraisal ratings. These include, but are not limited to, the size of the organizational unit to be appraised; the demographics of the organizational unit; the application discipline of the products or services; the size, criticality, and complexity of the products or services; and the quality characteristics of the products or services.
+Process definition − The act of defining and describing a process. The result of process definition is a process description.
+Process description − A documented expression of a set of activities performed to achieve a given purpose that provides an operational definition of the major components of a process. The documentation specifies, in a complete, precise, and verifiable manner, the requirements, design, behavior, or other characteristics of a process. It also may include procedures for determining whether these provisions have been satisfied. Process descriptions may be found at the activity, project, or organizational level.
+Process element − The fundamental unit of a process. A process may be defined in terms of sub-processes or process elements. A sub-process can be further decomposed; a process element cannot. Each process element covers a closely related set of activities (for example, estimating element, peer review element). Process elements can be portrayed using templates to be completed, abstractions to be refined, or descriptions to be modified or used. A process element can be an activity or task.
+Process group − A collection of specialists that facilitate the definition, maintenance, and improvement of the process(es) used by the organization.
+Process improvement − A program of activities designed to improve the performance and maturity of the organization's processes, and the results of such a program.
+Process-improvement objectives − A set of target characteristics established to guide the effort to improve an existing process in a specific measurable way either in terms of resultant product characteristics (e.g., quality, performance, conformance to standards, etc.) or in the way in which the process is executed (e.g., elimination of redundant process steps, combining process steps, improving cycle time, etc.)
+Process-improvement plan − In the Organizational Process Focus process area, see the definition of "process improvement plan" in the introductory notes.
+Process measurement − The set of definitions, methods, and activities used to take measurements of a process and its resulting products for the purpose of characterizing and understanding the process.
+Process owner − The person (or team) responsible for defining and maintaining a process. At the organizational level, the process owner is the person (or team) responsible for the description of a standard process; at the project level, the process owner is the person (or team) responsible for the description of the defined process. A process may therefore have multiple owners at different levels of responsibility.
+Process performance − A measure of actual results achieved by following a process. It is characterized by both process measures (e.g., effort, cycle time, and defect removal efficiency) and product measures (e.g., reliability, defect density, and response time).
+Process performance baseline − A documented characterization of the actual results achieved by following a process, which is used as a benchmark for comparing actual process performance against expected process performance.
+Process performance model − A description of the relationships among attributes of a process and its work products that are developed from historical process performance data and calibrated using collected process and product measures from the project and which are used to predict results to be achieved by following a process.
+Process tailoring − To make, alter, or adapt a process description for a particular end. For example, a project tailors its defined process from the organization's set of standard processes to meet the objectives, constraints, and environment of the project.
+Product − A product may be thought of as any tangible output or service that is the result of following a process and is intended for delivery to a customer or end user. A product can also be any work product that is delivered to the customer according to contract.
+Product component − Product components are generally lower-level components of the product and are integrated to "build" the product. Product components may be a part of the product delivered to the customer or serve in the manufacture or use of the product. For example, for those companies that manufacture mobile phone batteries, the mobile phone battery is a product. For those companies that build and deliver mobile phones, the battery is a product component.
+Product baseline − In configuration management, the initial approved technical data package (including, for software, the source code listing) defining a configuration item during the production, operation, maintenance, and logistic support of its life cycle.
+Product-component requirements − Product-component requirements provide a complete specification of a product component, including fit, form, function, performance, and any other requirement.
+Product life cycle − A work product is any artifact produced by a life-cycle process and can also be referred to as a life-cycle work product. Life-cycle work products can include Requirements specifications, Interface specifications, Architecture specifications, Project plans, Design documents, Unit test plans, Integration and system test plans, A process such as a manufacturing product assembly process.
+Project − A project is a managed set of interrelated resources that delivers one or more products to a customer or end user. The set of resources has a definite beginning and end and operates according to a plan.
+Product line − A group of products sharing a common, managed set of features that satisfy specific needs of a selected market or mission.
+Product-related life-cycle processes − Processes associated with a product throughout one or more phases of its life (i.e., from conception through disposal), such as the manufacturing and support processes.
+Product requirements − A refinement of the customer requirements into the developers' language, making implicit requirements into explicit derived requirements.
+Program − (1) A project. (2) A collection of related projects and the infrastructure that supports them, including objectives, methods, activities, plans, and success measures.
+Project manager − A project manager is the person responsible for planning, directing, controlling, structuring, and motivating the project. He or she may provide both technical and administrative direction and control to those performing project tasks or activities within his or her area of responsibility. The project manager is ultimately responsible to the customer. The project manager takes on different roles and responsibilities as the size, diversity, and complexity of the project changes.
+Project progress and performance − What a project achieves with respect to implementing project plans, including effort, cost, schedule, and technical performance.
+Project's defined process − In the Integrated Project Management process area, see the definition of "Project's defined process" in the introductory notes and in the Establish the Projects Defined Process specific practice.
+Prototype − A preliminary type, form, or instance of a product or product component that serves as a model for later stages or for the final, complete version of the product.
+Quality − The ability of a set of inherent characteristics of a product, product component, or process to fulfill requirements of customers.
+Quality assurance − A planned and systematic means for assuring management that defined standards, practices, procedures, and methods of the process are applied.
+Quality control − The operational techniques and activities that are used to fulfill requirements for quality.
+Quantitative objective − Desired target value expressed as quantitative measures.
+Quantitatively managed process − A defined process that is controlled using statistical and other quantitative techniques. The product quality, service quality, and process performance attributes are measurable and controlled throughout the project.
+Reference mode − A model that is used as a benchmark for measuring some attribute.
+Relevant stakeholder − A relevant stakeholder is used to designate a stakeholder that is identified for involvement in specified activities and is included in an appropriate plan such as the project plan.
+Required CMMI components − CMMI components that are essential to achieving process improvement in a given process area. These components are used in appraisals to determine process capability. Specific goals and generic goals are required model components.
+Requirement − (1) A condition or capability needed by a user to solve a problem or achieve an objective. (2) A condition or capability that must be met or possessed by a product or product component to satisfy a contract, standard, specification, or other formally imposed documents. (3) A documented representation of a condition or capability as in (1) or (2).
+Requirements analysis − The determination of product-specific performance and functional characteristics based on analyses of customer needs, expectations, and constraints; operational concept; projected utilization environments for people, products, and processes; and measures of effectiveness.
+Requirements elicitation − Using systematic techniques, like prototypes and structured surveys, to proactively identify and document customer and end-user needs.
+Requirements management − The management of all requirements received by or generated by the project, including both technical and non-technical requirements as well as those requirements levied on the project by the organization.
+Requirements traceability − The evidence of an association between a requirement and its source requirement, its implementation, and its verification.
+Return on investment − The ratio of revenue from output (product) to production costs, which determines whether an organization benefits from performing an action to produce something.
+Risk analysis − The evaluation, classification, and prioritization of risks.
+Risk identification − An organized, thorough approach to seek out probable or realistic risks in achieving objectives.
+Risk management − An organized, analytic process to identify what might cause harm or loss (identify risks), assess and quantify the identified risks, and to develop and, if needed, implement an appropriate approach to prevent or handle risk causes that could result in significant harm or loss.
+Risk management strategy − An organized, technical approach to identify what might cause harm or loss (identify risks), assess and quantify the identified risks, and to develop and if needed implement an appropriate approach to prevent or handle risk causes that could result in significant harm or loss. Typically, risk management is performed for project, organization, or product-developing organizational units.
+Root cause − A root cause is a source of a defect such that if it is removed, the defect is decreased or removed.
+Senior manager − The term senior manager as it is used in CMMI refers to a management role at a high enough level in an organization that the primary focus of the person is the long-term health and success of the organization rather than the short-term project and contractual concerns and pressures. A senior manager may be responsible for the oversight of a program that may contain many projects that are managed by project managers.
+Software engineering − (1) The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software. (2) The study of approaches as in (1).
+Solicitation − The process of preparing a solicitation package and selecting a supplier (contractor).
+Solicitation package − A formal document delineating technical and non-technical requirements that is used to request offers on invitations for bids (bids) and requests for proposal (proposals), or to request statements of capabilities and price quotations (quotes). It is otherwise used as a basis for selecting a supply source or sources to provide products or services.
+Special cause of process variation − A cause of a defect that is specific to some transient circumstance and not an inherent part of a process.
+Specific goal − SPECIFIC GOALS apply to a process area and address the unique characteristics that describe what must be implemented to satisfy the process area. Specific goals are required model components and are used in appraisals to help determine whether a process area is satisfied.
+Specific practice − A SPECIFIC PRACTICE is an activity that is considered important in achieving the associated specific goal. The specific practices describe the activities expected to result in achievement of the specific goals of a process area. Specific practices are expected model components.
+Stable process − The state in which all special causes of process variation have been removed and prevented from recurring so that only the common causes of process variation of the process remain.
+Staged representation − A model structure wherein attaining the goals of a set of process areas establishes a maturity level; each level builds a foundation for subsequent levels.
+Stakeholder − A stakeholder is a group or individual that is affected by the outcome of a project or can affect the activities or output of the project.
+Standard process − An operational definition of the basic process that guides the establishment of a common process in an organization. A standard process describes the fundamental process elements that are expected to be incorporated into any defined process. It also describes the relationships (e.g., ordering and interfaces) between these process elements.
+Statement of work − A description of contracted work required to complete a project.
+Statistical predictability − The performance of a quantitative process that is controlled using statistical and other quantitative techniques.
+Statistical process control − Statistically based analysis of a process and measurements of process performance, which will identify common and special causes of variation in the process performance, and maintain process performance within limits.
+Statistical techniques − An analytic technique that employs statistical methods (e.g., statistical process control, confidence intervals, prediction intervals).
+Statistically managed process − A process that is managed by a statistically based technique in which processes are analyzed, special causes of process variation are identified, and performance is contained within well-defined limits.
+Strength − As used in CMMI appraisal materials, an exemplary or noteworthy implementation of a CMMI model practice.
+Sub-process − A process that is part of a larger process.
+Supplier − (1) An entity delivering products or performing services being acquired. (2) An individual, partnership, company, corporation, association, or other service having an agreement (contract) with an acquire for the design, development, manufacture, maintenance, modification, or supply of items under the terms of an agreement (contract).
+Sustainment − The processes used to ensure that a product can be utilized operationally by its end users or customers. Sustainment ensures that maintenance is done such that the product is in an operable condition whether the product is in use or not by customers or end users.
+Systems engineering − The interdisciplinary approach governing the total technical and managerial effort required to transform a set of customer needs, expectations, and constraints into a product solution and support that solution throughout the products life. This includes the definition of technical performance measures, the integration of engineering specialities towards the establishment of a product architecture, and the definition of supporting life-cycle processes that balance cost, performance, and schedule objectives.
+Tailoring guidelines − Tailoring a process makes, alters, or adapts process descriptions, normally described at the organizational level, for use on a particular project. For most organizations, one organizational process definition cannot or will not be followed 100% for all of the projects. Some adaptation is normally needed. Tailoring guidelines then describe what can and cannot be modified and identify process components that are allowable candidates for modification.
+Target profile − In the continuous representation, a list of process areas and their corresponding capability levels that represent an objective for process improvement.
+Target staging − In the continuous representation, a sequence of target profiles that describes the path of process improvement to be followed by the organization.
+Technical data package − A collection of items that may include the following if such information is appropriate to the type of product and product component.
+Technical requirements − Properties (attributes) of products or services to be acquired or developed.
+Test procedure − Detailed instructions for the setup, execution, and evaluation of results for a given test.
+Trade study − An evaluation of alternatives based on criteria and systematic analysis, to select the best alternative for attaining determined objectives.
+Training − In the Organizational Training process area, see the definition of .training. in the introductory notes.
+Unit testing − Testing of individual hardware or software units or groups of related units.
+Validation − Validation demonstrates that the product, as provided, (or as it will be provided) will fulfill its intended use in the operational environment. Validation assures that "You built the right thing."
+Verification − Verification includes verification of the product and intermediate work products against all selected requirements, including customer, product, and product component requirements. Verification is inherently an incremental process. It begins with the verification of the requirements, progresses through the verification of the evolving work products, and culminates in the verification of the completed product. Verification addresses whether the work product properly reflects the specified requirements. Verification assures "You built it right."
+Verifying implementation − A common feature of CMMI model process areas with a staged representation that groups the generic practices related to review by higher level management, and objective evaluation of conformance to process descriptions, procedures, and standards.
+Version control − The establishment and maintenance of baselines and the identification of changes to baselines that make it possible to return to the previous baseline.
+Weakness − As used in CMMI appraisal materials, the ineffective, or lack of, implementation of one or more CMMI model practices.
+Work breakdown structure − An arrangement of work elements and their relationship to each other and to the end product.
+Work product − The term WORK PRODUCT is used throughout the CMMI Product Suite to mean any artifact produced by a process. These artifacts can include files, documents, parts of the product, services, processes, specifications, and invoices. Examples of processes to be considered as work products include a manufacturing process, a training process, and a disposal process for the product. A key distinction between a WORK PRODUCT and a product component is that a work product need not be engineered or part of the end product.
+Work product and task attributes − Characteristics of products, services, and project tasks used to help in estimating project work. These characteristics include items such as size, complexity, weight, form, fit, or function. They are typically used as one input to deriving other project and resource estimates (e.g., effort, cost, schedule)
+CMMI - Acronyms
+Here is the list of all the CMMI Acronyms arranged in an alphabetical order.
+| Acronym | Expanded Form |
+|---|---|
+| ARC | Appraisal Requirements for CMMI |
+| CAF | CMM Appraisal Framework |
+| CAR | Causal Analysis and Resolution (process area) |
+| CAU | Cockpit Avionics Upgrade |
+| CBA IPI | CMM-Based Appraisal for Internal Process Improvement |
+| CBT | Computer-Based training |
+| CCB | Configuration Control Board |
+| CM | Configuration Management (process area) |
+| CMM | Capability Maturity Model |
+| CMMI | Capability Maturity Model Integration |
+| CMMI-SE/SW | Capability Maturity Model Integration for Systems Engineering and Software Engineering |
+| CMMI-SE/SW/IPPD | Capability Maturity Model Integration for Systems Engineering, Software Engineering, and Integrated Product and Process Development |
+| CMMI-SE/SW/IPPD/SS | Capability Maturity Model Integration for Systems Engineering, Software Engineering, Integrated Product and Process Development, and Supplier Sourcing |
+| COTS | Commercial Off The Shelf |
+| CPM | Critical Path Method |
+| DAR | Decision Analysis and Resolution (process area) |
+| EIA | Electronic Industries Alliance |
+| EIA/IS | Electronic Industries Alliance Interim Standard |
+| FAA | Federal Aviation Administration |
+| FAA-iCMM | Federal Aviation Administration Integrated Capability Maturity Model |
+| GG | Generic Goal |
+| GP | Generic Practice |
+| IDEAL | Initiating, Diagnosing, Establishing, Acting, Learning |
+| IEEE | Institute of Electrical and Electronics Engineers |
+| INCOSE | International Council on Systems Engineering |
+| IPD-CMM | Integrated Product Development Capability Maturity Model |
+| IPM | Integrated Project Management (process area) |
+| IPPD | Integrated Product and Process Development |
+| IPT | Integrated Product Team |
+| ISM | Integrated Supplier Management (process area) |
+| ISO | International Organization for Standardization |
+| ISO/IEC | International Organization for Standardization and International Electro technical Commission |
+| IT | Integrated Teaming (process area) |
+| KSLOC | Thousand Source Lines of Code |
+| MA | Measurement and Analysis (process area) |
+| MOA | Memorandum of Agreement |
+| NDI | Non Developmental Item |
+| NDIA | National Defense Industrial Association |
+| OEI | Organizational Environment for Integration (process area) |
+| OID | Organizational Innovation and Deployment (process area) |
+| OPD | Organizational Process Definition (process area) |
+| OPF | Organizational Process Focus (process area) |
+| OPP | Organizational Process Performance (process area) |
+| OT | Organizational Training (process area) |
+| OUSD/AT&L | Office of the Under Secretary of Defense, Acquisition, Technology, and Logistics |
+| P-CMM | People Capability Maturity Model |
+| PA | Process Area |
+| PAIS | Process Appraisal Information System |
+| PASS | Primary Avionics Software System |
+| PERT | Program Evaluation and Review Technique |
+| PI | Product Integration (process area) |
+| PMC | Project Monitoring and Control (process area) |
+| PP | Project Planning (process area) |
+| PPQA | Process and Product Quality Assurance (process area) |
+| QFD | Quality Function Deployment |
+| QPM | Quantitative Project Management (process area) |
+| RD | Requirements Development (process area) |
+| REQM | Requirements Management (process area) |
+| RSKM | Risk Management (process area) |
+| SA-CMM | Software Acquisition Capability Maturity Model |
+| SAM | Supplier Agreement Management (process area) |
+| SCAMPI | Standard CMMI Appraisal Method for Process Improvement |
+| SDMP | Software development management plan |
+| SE | Systems Engineering |
+| SE-CMM | Systems Engineering Capability Maturity Model |
+| SEC | Software Executive Council |
+| SECAM | Systems Engineering Capability Assessment Model |
+| SECM | Systems Engineering Capability Model |
+| SEI | Software Engineering Institute |
+| SE/SW | Systems Engineering and Software Engineering |
+| SEPG | Software Engineering Process Group |
+| SG | Specific Goal |
+| SP | Specific Practice |
+| SPMN | Software Program Managers Network |
+| SS | Supplier Sourcing |
+| STSC | Software Technology Support Center |
+| SW | Software Engineering |
+| SW-CMM | Capability Maturity Model for Software |
+| TS | Technical Solution (process area) |
+| VAL | Validation (process area) |
+| VER | Verification (process area) |
+| WBS | Work Breakdown Structure |

@@ -4,65 +4,40 @@ from fetcher import fetch_topic_content
 from loader import load_text_file
 
 def analyze_deep_relations(topics):
-    print(f"\n🧠 Starting Deep Content Analysis on {len(topics)} topics...")
+    """
+    Builds a Semantic Knowledge Graph using SBERT.
+    Pro Feature: Connects topics based on 'Conceptual Meaning' 
+    rather than just sharing keywords.
+    """
+    print("🕸️  Mapping Semantic Relationships...")
     
-    valid_topics = []
-    topic_contents = []
-    
-    # 1. FETCHING PHASE
-    print("\n--- PHASE 1: GATHERING INTELLIGENCE ---")
-    for topic in topics:
-        # This uses your new Google API fetcher
-        content = fetch_topic_content(topic)
-        
-        # We only analyze topics where we found good data (>500 chars)
-        if content and len(content) > 500:
-            topic_contents.append(content)
-            valid_topics.append(topic)
-        else:
-            print(f"⚠️  Skipping '{topic}' (Insufficient data)")
-
-    if not valid_topics:
-        print("❌ Critical Error: No valid content content fetched.")
-        return []
-
-    # 2. AI ANALYSIS PHASE
-    print("\n--- PHASE 2: CALCULATING SEMANTIC OVERLAP ---")
-    print("Loading AI Model (this takes 2 seconds)...")
+    # Use the standard efficient Transformer model
     model = SentenceTransformer('all-MiniLM-L6-v2')
+    #model = SentenceTransformer('all-mpnet-base-v2')
     
-    # Encode the FULL TEXT content (not just titles)
-    embeddings = model.encode(topic_contents, convert_to_tensor=True)
+    # Encode all topics into the semantic vector space
+    embeddings = model.encode(topics, convert_to_tensor=True)
     
-    # Compare every topic against every other topic
+    # Calculate affinity matrix (How close is every topic to every other topic?)
     cosine_scores = util.cos_sim(embeddings, embeddings)
-    
+
     relations = []
-    
-    print("\n🔍 DEBUG: Raw Similarity Scores (Internal Logic)")
-    print("-" * 50)
-    
-    for i in range(len(valid_topics)):
-        for j in range(i + 1, len(valid_topics)):
+    num_topics = len(topics)
+
+    # Iterate through the matrix (Upper Triangle only to avoid duplicates)
+    for i in range(num_topics):
+        for j in range(i + 1, num_topics):
             score = float(cosine_scores[i][j])
             
-            # Print the raw score so you know the AI is working
-            # Truncate titles to keep the console clean
-            t1 = (valid_topics[i][:20] + '..') if len(valid_topics[i]) > 20 else valid_topics[i]
-            t2 = (valid_topics[j][:20] + '..') if len(valid_topics[j]) > 20 else valid_topics[j]
-            
-            print(f"   {t1:<22} vs {t2:<22} = {score:.4f}")
-            
-            # Threshold: 0.30 is a good balance for "Related Concepts"
-            if score > 0.30:
+            # Threshold 0.45: Ensures we only draw edges for Strong connections.
+            # (e.g., 'Coupling' <-> 'Cohesion' will pass, 'Coupling' <-> 'Cost' will fail)
+            if score > 0.45:
                 relations.append({
-                    "topic_a": valid_topics[i],
-                    "topic_b": valid_topics[j],
-                    "score": score
+                    "topic_a": topics[i],
+                    "topic_b": topics[j],
+                    "score": round(score, 2)
                 })
-    
-    # Sort by strongest connection first
-    relations.sort(key=lambda x: x['score'], reverse=True)
+                
     return relations
 
 if __name__ == "__main__":

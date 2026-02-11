@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 500px;
+                 background-color: #1e1e1e;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#ffff00", "font": {"color": "white"}, "id": "Agile Principles", "label": "Agile Principles", "shape": "dot", "size": 16, "title": "Agile Principles\n\ud83d\udfe1 MED"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Agile Process: Extreme Programming", "label": "Agile Process: Extreme Programming", "shape": "dot", "size": 16, "title": "Agile Process: Extreme Programming\n\ud83d\udfe1 MED"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Agile Project Management", "label": "Agile Project Management", "shape": "dot", "size": 16, "title": "Agile Project Management\n\ud83d\udfe1 MED"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Requirements management in Agile", "label": "Requirements management in Agile", "shape": "dot", "size": 16, "title": "Requirements management in Agile\n\ud83d\udfe1 MED"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Project Planning", "label": "Project Planning", "shape": "dot", "size": 19, "title": "Project Planning\n\ud83d\udd34 HIGH"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Analysis", "label": "Analysis", "shape": "dot", "size": 15, "title": "Analysis\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Metrics and Measurement", "label": "Metrics and Measurement", "shape": "dot", "size": 15, "title": "Metrics and Measurement\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Architectural Design", "label": "Architectural Design", "shape": "dot", "size": 15, "title": "Architectural Design\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Design concepts: Abstraction", "label": "Design concepts: Abstraction", "shape": "dot", "size": 15, "title": "Design concepts: Abstraction\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Detailed Design", "label": "Detailed Design", "shape": "dot", "size": 15, "title": "Detailed Design\n\ud83d\udfe2 LOW"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Object Oriented Design", "label": "Object Oriented Design", "shape": "dot", "size": 16, "title": "Object Oriented Design\n\ud83d\udd34 HIGH"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Overview of System Engineering", "label": "Overview of System Engineering", "shape": "dot", "size": 15, "title": "Overview of System Engineering\n\ud83d\udfe2 LOW"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "System Modeling", "label": "System Modeling", "shape": "dot", "size": 16, "title": "System Modeling\n\ud83d\udfe1 MED"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "User-Interface Design", "label": "User-Interface Design", "shape": "dot", "size": 15, "title": "User-Interface Design\n\ud83d\udfe2 LOW"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Auditing", "label": "Auditing", "shape": "dot", "size": 16, "title": "Auditing\n\ud83d\udfe1 MED"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Inspection", "label": "Inspection", "shape": "dot", "size": 15, "title": "Inspection\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Cloud and Big Data Testing", "label": "Cloud and Big Data Testing", "shape": "dot", "size": 15, "title": "Cloud and Big Data Testing\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "DevOps Testing", "label": "DevOps Testing", "shape": "dot", "size": 15, "title": "DevOps Testing\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Web Based System Testing", "label": "Web Based System Testing", "shape": "dot", "size": 15, "title": "Web Based System Testing\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Object Oriented Testing", "label": "Object Oriented Testing", "shape": "dot", "size": 15, "title": "Object Oriented Testing\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Regression Testing", "label": "Regression Testing", "shape": "dot", "size": 15, "title": "Regression Testing\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Strategic Approach to Software Testing", "label": "Strategic Approach to Software Testing", "shape": "dot", "size": 15, "title": "Strategic Approach to Software Testing\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Test Design", "label": "Test Design", "shape": "dot", "size": 15, "title": "Test Design\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Test Execution", "label": "Test Execution", "shape": "dot", "size": 15, "title": "Test Execution\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Product and Process Metrics", "label": "Product and Process Metrics", "shape": "dot", "size": 15, "title": "Product and Process Metrics\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Mobile App Testing and Automation", "label": "Mobile App Testing and Automation", "shape": "dot", "size": 15, "title": "Mobile App Testing and Automation\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Mutation Testing", "label": "Mutation Testing", "shape": "dot", "size": 15, "title": "Mutation Testing\n\ud83d\udfe2 LOW"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Nature of Software", "label": "Nature of Software", "shape": "dot", "size": 18, "title": "Nature of Software\n\ud83d\udd34 HIGH"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Software Configuration Management  and Tools", "label": "Software Configuration Management  and Tools", "shape": "dot", "size": 17, "title": "Software Configuration Management  and Tools\n\ud83d\udd34 HIGH"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Software Maintenance", "label": "Software Maintenance", "shape": "dot", "size": 15, "title": "Software Maintenance\n\ud83d\udfe2 LOW"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Software Process", "label": "Software Process", "shape": "dot", "size": 23, "title": "Software Process\n\ud83d\udd34 HIGH"}, {"color": "#ffff00", "font": {"color": "white"}, "id": "Software Requirements and types", "label": "Software Requirements and types", "shape": "dot", "size": 16, "title": "Software Requirements and types\n\ud83d\udfe1 MED"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Software Reuse", "label": "Software Reuse", "shape": "dot", "size": 15, "title": "Software Reuse\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Test Plan", "label": "Test Plan", "shape": "dot", "size": 15, "title": "Test Plan\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Process Models: Classical Evolutionary models", "label": "Process Models: Classical Evolutionary models", "shape": "dot", "size": 15, "title": "Process Models: Classical Evolutionary models\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Product", "label": "Product", "shape": "dot", "size": 15, "title": "Product\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Project", "label": "Project", "shape": "dot", "size": 15, "title": "Project\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Quality Control vs Quality Assurance", "label": "Quality Control vs Quality Assurance", "shape": "dot", "size": 15, "title": "Quality Control vs Quality Assurance\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Quality Factors and Methods of Quality Management", "label": "Quality Factors and Methods of Quality Management", "shape": "dot", "size": 15, "title": "Quality Factors and Methods of Quality Management\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Quality Standards: ISO", "label": "Quality Standards: ISO", "shape": "dot", "size": 15, "title": "Quality Standards: ISO\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "TQM", "label": "TQM", "shape": "dot", "size": 15, "title": "TQM\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Re-Engineering", "label": "Re-Engineering", "shape": "dot", "size": 15, "title": "Re-Engineering\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Refactoring", "label": "Refactoring", "shape": "dot", "size": 15, "title": "Refactoring\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Refinement", "label": "Refinement", "shape": "dot", "size": 15, "title": "Refinement\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Reverse Engineering", "label": "Reverse Engineering", "shape": "dot", "size": 15, "title": "Reverse Engineering\n\ud83d\udfe2 LOW"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Requirements Elicitation techniques", "label": "Requirements Elicitation techniques", "shape": "dot", "size": 20, "title": "Requirements Elicitation techniques\n\ud83d\udd34 HIGH"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Requirements Engineering process: Elicitation", "label": "Requirements Engineering process: Elicitation", "shape": "dot", "size": 20, "title": "Requirements Engineering process: Elicitation\n\ud83d\udd34 HIGH"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Requirements Specification", "label": "Requirements Specification", "shape": "dot", "size": 22, "title": "Requirements Specification\n\ud83d\udd34 HIGH"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Types of Maintenance", "label": "Types of Maintenance", "shape": "dot", "size": 15, "title": "Types of Maintenance\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "CASE Tools", "label": "CASE Tools", "shape": "dot", "size": 15.0, "title": "CASE Tools\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Cohesion and Coupling", "label": "Cohesion and Coupling", "shape": "dot", "size": 15.0, "title": "Cohesion and Coupling\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Cost and Estimates (Human Resources", "label": "Cost and Estimates (Human Resources", "shape": "dot", "size": 15.0, "title": "Cost and Estimates (Human Resources\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Deliverables", "label": "Deliverables", "shape": "dot", "size": 15.0, "title": "Deliverables\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Managing team dynamics and communication", "label": "Managing team dynamics and communication", "shape": "dot", "size": 15.0, "title": "Managing team dynamics and communication\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Milestones", "label": "Milestones", "shape": "dot", "size": 15.0, "title": "Milestones\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Modularity", "label": "Modularity", "shape": "dot", "size": 15.0, "title": "Modularity\n\ud83d\udfe2 LOW"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Process Improvement Models: CMM \u0026 CMMI", "label": "Process Improvement Models: CMM \u0026 CMMI", "shape": "dot", "size": 16.77, "title": "Process Improvement Models: CMM \u0026 CMMI\n\ud83d\udd34 HIGH"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "RMMM Plan", "label": "RMMM Plan", "shape": "dot", "size": 15.0, "title": "RMMM Plan\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Reviews", "label": "Reviews", "shape": "dot", "size": 15.0, "title": "Reviews\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Risk Management", "label": "Risk Management", "shape": "dot", "size": 15.0, "title": "Risk Management\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Scope", "label": "Scope", "shape": "dot", "size": 15.0, "title": "Scope\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Six-Sigma", "label": "Six-Sigma", "shape": "dot", "size": 15.0, "title": "Six-Sigma\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Time-scale", "label": "Time-scale", "shape": "dot", "size": 15.0, "title": "Time-scale\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Transaction Transformation", "label": "Transaction Transformation", "shape": "dot", "size": 15.0, "title": "Transaction Transformation\n\ud83d\udfe2 LOW"}, {"color": "#00ff41", "font": {"color": "white"}, "id": "Validation", "label": "Validation", "shape": "dot", "size": 15.0, "title": "Validation\n\ud83d\udfe2 LOW"}, {"color": "#ff5733", "font": {"color": "white"}, "id": "Work Break-down Structure", "label": "Work Break-down Structure", "shape": "dot", "size": 16.8, "title": "Work Break-down Structure\n\ud83d\udd34 HIGH"}]);
+                  edges = new vis.DataSet([{"from": "Agile Principles", "to": "Agile Process: Extreme Programming", "width": 1}, {"from": "Agile Principles", "to": "Agile Project Management", "width": 1}, {"from": "Agile Principles", "to": "Requirements management in Agile", "width": 1}, {"from": "Agile Process: Extreme Programming", "to": "Agile Project Management", "width": 1}, {"from": "Agile Process: Extreme Programming", "to": "Requirements management in Agile", "width": 1}, {"from": "Agile Project Management", "to": "Project Planning", "width": 1}, {"from": "Agile Project Management", "to": "Requirements management in Agile", "width": 1}, {"from": "Analysis", "to": "Metrics and Measurement", "width": 1}, {"from": "Architectural Design", "to": "Design concepts: Abstraction", "width": 1}, {"from": "Architectural Design", "to": "Detailed Design", "width": 1}, {"from": "Architectural Design", "to": "Object Oriented Design", "width": 1}, {"from": "Architectural Design", "to": "Overview of System Engineering", "width": 1}, {"from": "Architectural Design", "to": "Project Planning", "width": 1}, {"from": "Architectural Design", "to": "System Modeling", "width": 1}, {"from": "Architectural Design", "to": "User-Interface Design", "width": 1}, {"from": "Auditing", "to": "Inspection", "width": 1}, {"from": "Cloud and Big Data Testing", "to": "DevOps Testing", "width": 1}, {"from": "Cloud and Big Data Testing", "to": "Web Based System Testing", "width": 1}, {"from": "Design concepts: Abstraction", "to": "Detailed Design", "width": 1}, {"from": "Design concepts: Abstraction", "to": "Object Oriented Design", "width": 1}, {"from": "Design concepts: Abstraction", "to": "User-Interface Design", "width": 1}, {"from": "Detailed Design", "to": "Object Oriented Design", "width": 1}, {"from": "Detailed Design", "to": "User-Interface Design", "width": 1}, {"from": "DevOps Testing", "to": "Object Oriented Testing", "width": 1}, {"from": "DevOps Testing", "to": "Regression Testing", "width": 1}, {"from": "DevOps Testing", "to": "Strategic Approach to Software Testing", "width": 1}, {"from": "DevOps Testing", "to": "Test Design", "width": 1}, {"from": "DevOps Testing", "to": "Test Execution", "width": 1}, {"from": "DevOps Testing", "to": "Web Based System Testing", "width": 1}, {"from": "Metrics and Measurement", "to": "Product and Process Metrics", "width": 1}, {"from": "Mobile App Testing and Automation", "to": "Web Based System Testing", "width": 1}, {"from": "Mutation Testing", "to": "Object Oriented Testing", "width": 1}, {"from": "Mutation Testing", "to": "Regression Testing", "width": 1}, {"from": "Mutation Testing", "to": "Strategic Approach to Software Testing", "width": 1}, {"from": "Mutation Testing", "to": "Test Design", "width": 1}, {"from": "Mutation Testing", "to": "Test Execution", "width": 1}, {"from": "Mutation Testing", "to": "Web Based System Testing", "width": 1}, {"from": "Nature of Software", "to": "Object Oriented Design", "width": 1}, {"from": "Nature of Software", "to": "Overview of System Engineering", "width": 1}, {"from": "Nature of Software", "to": "Software Configuration Management  and Tools", "width": 1}, {"from": "Nature of Software", "to": "Software Maintenance", "width": 1}, {"from": "Nature of Software", "to": "Software Process", "width": 1}, {"from": "Nature of Software", "to": "Software Requirements and types", "width": 1}, {"from": "Nature of Software", "to": "Software Reuse", "width": 1}, {"from": "Object Oriented Design", "to": "Object Oriented Testing", "width": 1}, {"from": "Object Oriented Design", "to": "System Modeling", "width": 1}, {"from": "Object Oriented Design", "to": "User-Interface Design", "width": 1}, {"from": "Object Oriented Testing", "to": "Regression Testing", "width": 1}, {"from": "Object Oriented Testing", "to": "Strategic Approach to Software Testing", "width": 1}, {"from": "Object Oriented Testing", "to": "Test Design", "width": 1}, {"from": "Object Oriented Testing", "to": "Test Execution", "width": 1}, {"from": "Object Oriented Testing", "to": "Test Plan", "width": 1}, {"from": "Object Oriented Testing", "to": "Web Based System Testing", "width": 1}, {"from": "Overview of System Engineering", "to": "System Modeling", "width": 1}, {"from": "Process Models: Classical Evolutionary models", "to": "System Modeling", "width": 1}, {"from": "Product", "to": "Project", "width": 1}, {"from": "Project", "to": "Project Planning", "width": 1}, {"from": "Quality Control vs Quality Assurance", "to": "Quality Factors and Methods of Quality Management", "width": 1}, {"from": "Quality Control vs Quality Assurance", "to": "Quality Standards: ISO", "width": 1}, {"from": "Quality Factors and Methods of Quality Management", "to": "Quality Standards: ISO", "width": 1}, {"from": "Quality Factors and Methods of Quality Management", "to": "TQM", "width": 1}, {"from": "Re-Engineering", "to": "Refactoring", "width": 1}, {"from": "Re-Engineering", "to": "Refinement", "width": 1}, {"from": "Re-Engineering", "to": "Reverse Engineering", "width": 1}, {"from": "Re-Engineering", "to": "Software Reuse", "width": 1}, {"from": "Refactoring", "to": "Refinement", "width": 1}, {"from": "Regression Testing", "to": "Strategic Approach to Software Testing", "width": 1}, {"from": "Regression Testing", "to": "Test Design", "width": 1}, {"from": "Regression Testing", "to": "Test Execution", "width": 1}, {"from": "Regression Testing", "to": "Test Plan", "width": 1}, {"from": "Regression Testing", "to": "Web Based System Testing", "width": 1}, {"from": "Requirements Elicitation techniques", "to": "Requirements Engineering process: Elicitation", "width": 1}, {"from": "Requirements Elicitation techniques", "to": "Requirements Specification", "width": 1}, {"from": "Requirements Elicitation techniques", "to": "Requirements management in Agile", "width": 1}, {"from": "Requirements Elicitation techniques", "to": "Software Requirements and types", "width": 1}, {"from": "Requirements Engineering process: Elicitation", "to": "Requirements Specification", "width": 1}, {"from": "Requirements Engineering process: Elicitation", "to": "Requirements management in Agile", "width": 1}, {"from": "Requirements Engineering process: Elicitation", "to": "Software Process", "width": 1}, {"from": "Requirements Engineering process: Elicitation", "to": "Software Requirements and types", "width": 1}, {"from": "Requirements Specification", "to": "Requirements management in Agile", "width": 1}, {"from": "Requirements Specification", "to": "Software Requirements and types", "width": 1}, {"from": "Software Configuration Management  and Tools", "to": "Software Maintenance", "width": 1}, {"from": "Software Configuration Management  and Tools", "to": "Software Process", "width": 1}, {"from": "Software Configuration Management  and Tools", "to": "Software Requirements and types", "width": 1}, {"from": "Software Configuration Management  and Tools", "to": "Software Reuse", "width": 1}, {"from": "Software Maintenance", "to": "Software Process", "width": 1}, {"from": "Software Maintenance", "to": "Software Reuse", "width": 1}, {"from": "Software Maintenance", "to": "Types of Maintenance", "width": 1}, {"from": "Software Process", "to": "Software Requirements and types", "width": 1}, {"from": "Software Process", "to": "Software Reuse", "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Test Design", "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Test Execution", "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Test Plan", "width": 1}, {"from": "Strategic Approach to Software Testing", "to": "Web Based System Testing", "width": 1}, {"from": "Test Design", "to": "Test Execution", "width": 1}, {"from": "Test Design", "to": "Test Plan", "width": 1}, {"from": "Test Design", "to": "Web Based System Testing", "width": 1}, {"from": "Test Execution", "to": "Test Plan", "width": 1}, {"from": "Test Execution", "to": "Web Based System Testing", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "forceAtlas2Based": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.01,
+            "damping": 0.4,
+            "gravitationalConstant": -50,
+            "springConstant": 0.08,
+            "springLength": 100
+        },
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

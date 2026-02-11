@@ -1,0 +1,42 @@
+RMMM Plan :
+A risk management technique is usually seen in the software Project plan. This can be divided into Risk Mitigation, Monitoring, and Management Plan (RMMM). In this plan, all works are done as part of risk analysis. As part of the overall project plan project manager generally uses this RMMM plan.
+In some software teams, risk is documented with the help of a Risk Information Sheet (RIS). This RIS is controlled by using a database system for easier management of information i.e creation, priority ordering, searching, and other analysis. After documentation of RMMM and start of a project, risk mitigation and monitoring steps will start.
+Risk Mitigation :
+It is an activity used to avoid problems (Risk Avoidance).
+Steps for mitigating the risks as follows.
+- Finding out the risk.
+- Removing causes that are the reason for risk creation.
+- Controlling the corresponding documents from time to time.
+- Conducting timely reviews to speed up the work.
+Risk Monitoring :
+It is an activity used for project tracking.
+It has the following primary objectives as follows.
+- To check if predicted risks occur or not.
+- To ensure proper application of risk aversion steps defined for risk.
+- To collect data for future risk analysis.
+- To allocate what problems are caused by which risks throughout the project.
+Risk Management and planning :
+It assumes that the mitigation activity failed and the risk is a reality. This task is done by Project manager when risk becomes reality and causes severe problems. If the project manager effectively uses project mitigation to remove risks successfully then it is easier to manage the risks. This shows that the response that will be taken for each risk by a manager. The main objective of the risk management plan is the risk register. This risk register describes and focuses on the predicted threats to a software project.
+Example:
+Let us understand RMMM with the help of an example of high staff turnover.
+Risk Mitigation:
+To mitigate this risk, project management must develop a strategy for reducing turnover. The possible steps to be taken are:
+- Meet the current staff to determine causes for turnover (e.g., poor working conditions, low pay, competitive job market).
+- Mitigate those causes that are under our control before the project starts.
+- Once the project commences, assume turnover will occur and develop techniques to ensure continuity when people leave.
+- Organize project teams so that information about each development activity is widely dispersed.
+- Define documentation standards and establish mechanisms to ensure that documents are developed in a timely manner.
+- Assign a backup staff member for every critical technologist.
+Risk Monitoring:
+As the project proceeds, risk monitoring activities commence. The project manager monitors factors that may provide an indication of whether the risk is becoming more or less likely. In the case of high staff turnover, the following factors can be monitored:
+- General attitude of team members based on project pressures.
+- Interpersonal relationships among team members.
+- Potential problems with compensation and benefits.
+- The availability of jobs within the company and outside it.
+Risk Management:
+Risk management and contingency planning assumes that mitigation efforts have failed and that the risk has become a reality. Continuing the example, the project is well underway, and a number of people announce that they will be leaving. If the mitigation strategy has been followed, backup is available, information is documented, and knowledge has been dispersed across the team. In addition, the project manager may temporarily refocus resources (and readjust the project schedule) to those functions that are fully staffed, enabling newcomers who must be added to the team to "get up to the speed".
+Drawbacks of RMMM:
+- It incurs additional project costs.
+- It takes additional time.
+- For larger projects, implementing an RMMM may itself turn out to be another tedious project.
+- RMMM does not guarantee a risk-free project, infact, risks may also come up after the project is delivered.

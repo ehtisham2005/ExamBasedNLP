@@ -1,0 +1,45 @@
+Hi engineers and peers, In this article, I’ll be discussing one of the core software engineering principles, that every software engineer should know or at least be aware of it. As we engineers are supposed to grow in our careers, we have to upgrade our skills whether it’s practical or theoretical.
+So from this article, I am starting to share some software engineering principles & design patterns for writing better and clean code with best practices. This is the first one of this series, in which I’ll be discussing the importance of coupling & cohesion in software. But before moving into the main topic, we should know what is modularization so we can grasp the concept of coupling easily.
+Modularization: is a process of breaking software into multiple small modules, where each module works independently. The main advantage of modularization is that it is easy to understand the software, it becomes reusable, and can be tested easily.
+What is Coupling in Software engineering?
+Coupling: in software engineering is the inter-dependency or degree of relationship between multiple modules/packages/components. Coupling is also called Inter-Module Binding.
+Multiple modules/packages/components that are highly coupled are strongly dependent on each other.
+Multiple modules/packages/components that are loosely coupled are not or somehow dependent on each other.
+Good software is always loosely coupled so it is considered as best practice to make your modules/packages/components loosely coupled or interdependent so that they can be tested and managed to maintain easily. The more number of calls between the modules increases the more it’ll prone to errors. For low coupled classes, changing something major in one class should not affect the other. High coupling would make it difficult to change and maintain your code
+Below is the image for visualization of coupling
+Types of Coupling
+Data Coupling: When modules shared primitive data between them.
+Stamp Coupling: When modules shared composite or structural data between them and It must be a non-global data structure. for example, Passing object or structure variable in react components.
+Control Coupling: When data from one module is used to direct the structure of instruction execution in another.
+External Coupling: When two modules shared externally imposed data type that is external to the software like communication protocols, device interfaces.
+Common Coupling: When two modules shared the same global data & dependent on them, like state management in JavaScript frameworks.
+Content Coupling: When two modules shared code and can modify the data of another module, which is the worst coupling and should be avoided.
+So now you get the idea of Coupling in software engineering, there is another concept that is used with coupling known as cohesion.
+What is Cohesion in Software engineering?
+Cohesion refers to what module can do, internally. It is also called Intra-Module binding as it measures the strength of relationship of functionalities inside a module/package/component. Cohesion should always be high means that a module/package/component is focused on what it should be doing, i.e. only methods relating to the intention of the class.
+Example of low cohesion:
+-------------------
+|Add To Cart module|
+-------------------
+| login() |
+| selectProduct() |
+| getShippingDetails() |
+| PrintReceipt() |
+-------------------
+Example of high cohesion
+----------------------------
+| Add To Cart module |
+----------------------------
+| selectProduct() |
+| getShippingDetails() |
+| calculatePrice() | |
+----------------------------
+In the above example, you see that login function is not relatable to add to cart module, that is low cohesion which is considered as bad in software engineering.
+Types of Coupling
+Functional Cohesion: The execution of the task related to the problem is the only concern from all the elements inside the module.
+Sequential Cohesion: The output of an element is the input of other element in a module i.e., data flow between the parts.
+Communicational Cohesion: Multiple elements in a module operate on same input data and produce same output data.
+Procedural Cohesion: The activities in module are related by sequence, otherwise they are not related.
+Coincidental Cohesion: The activities with meaningless relationship with one another are contributed by the elements in the module.
+So always keep that in mind that :
+Good Software has always low coupling with high cohesion

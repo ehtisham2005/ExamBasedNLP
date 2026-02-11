@@ -1,0 +1,42 @@
+Quality Assurance (QA) and Quality control (QC) are both important methods in software engineering to get high-quality software. Quality Assurance (QA) prevents software defects or minimizes the number of defects in software before delivery by making sure that proper methods and processes are followed during the software development process. Whereas Quality Control (QC) identifies and fixes the defects or errors that exist after development.
+What is Quality Assurance (QA)?
+Quality assurance is a method of making the software application with fewer defects and mistakes when it is finally released to the end users. Quality Assurance is defined as an activity that ensures the approaches, techniques, methods, and processes designed for the projects are implemented correctly. It recognizes defects in the process. Quality Assurance is completed before Quality Control.
+- It focuses on preventing defects.
+- It is a proactive process and is preventive in nature.
+- It helps to recognize flaws in the process.
+- These activities monitor and verify that the processes used to manage and create deliverables have been followed.
+Characteristics of Quality Assurance
+- Process-Oriented: To guarantee constant product quality, it places a strong emphasis on the creation and application of reliable procedures and standards.
+- Proactive Process: Quality Assurance (QA) tries to prevent errors by enhancing procedures, guaranteeing that quality is integrated into the product from the start.
+- Continuous Improvement: To improve quality over time, QA includes constant process assessment and improvement.
+What is Quality Control?
+Quality Control is a software engineering process that is used to ensure that the approaches, techniques, methods, and processes designed for the project are followed correctly. Quality control activities operate and verify that the application meet the defined quality standards.
+- It focuses on an examination of the quality of the end products and the final outcome rather than focusing on the processes used to create a product.
+- It is a reactive process and is detection in nature.
+- These activities monitor and verify that the project deliverables meet the defined quality standards.
+Characteristics of Quality Control
+- Reactive Process: It is the process to find and fix the flaws in the completed product, with focus on finding problems rather than solving them.
+- Defect Identification: With testing and inspection, the goal is to find the defect as early as possible..
+- Product-oriented: It entails examining, evaluating, and verifying the product to make sure it satisfies the required standards of quality.
+Difference between Quality Assurance (QA) and Quality Control (QC)
+| Parameters | Quality Assurance (QA) | Quality Control (QC) |
+|---|---|---|
+| Objective | QA focuses on providing assurance that the quality requested will be achieved. | QC focuses on fulfilling the quality requested. |
+| Technique | QA is the technique of managing quality. | QC is the technique to verify quality. |
+| Involved in which phase? | QA is involved during the development phase. | QC is not included during the development phase. |
+| Program execution is included? | QA does not include the execution of the program. | QC always includes the execution of the program. |
+| Type of tool | QA is a managerial tool. | QC is a corrective tool. |
+| Process/ Product-oriented | QA is process oriented. | QC is product oriented. |
+| Aim | The aim of quality assurance is to prevent defects. | The aim of quality control is to identify and improve the defects. |
+| Order of execution | Quality Assurance is performed before Quality Control. | Quality Control is performed after the Quality Assurance activity is done. |
+| Technique type | QA is a preventive technique. | QC is a corrective technique. |
+| Measure type | QA is a proactive measure. | QC is a reactive measure. |
+| SDLC/ STLC? | QA is responsible for the entire software development life cycle. | QC is responsible for the software testing life cycle. |
+| Activity level | QA is a low-level activity that identifies an error and mistakes that QC cannot. | QC is a high-level activity that identifies an error that QA cannot. |
+| Focus | Pays main focus is on the intermediate process. | Its primary focus is on final products. |
+| Team | All team members of the project are involved. | Generally, the testing team of the project is involved. |
+| Time consumption | QA is a less time-consuming activity. | QC is a more time-consuming activity. |
+| Which statistical technique was applied? | Statistical Process Control (SPC) statistical technique is applied to Quality Assurance. | Statistical Quality Control (SQC) statistical technique is applied to Quality Control. |
+| Example | Verification | Validation |
+Conclusion
+To follow the high standards in product development, both quality assurance (QA) and quality control (QC) is required. The former prioritizes process improvement as a means of preventing faults, whereas the later concentrates on finding and fixing problems in the finished product. Together, they guarantee that throughout the production cycle, quality is continuously attained and maintained.

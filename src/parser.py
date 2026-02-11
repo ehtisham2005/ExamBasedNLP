@@ -16,14 +16,40 @@ class ExamParser:
         self.syllabus_path = syllabus_path
         self.pyqs_path = pyqs_path
         
+        # Regex to detect Structural Headers (e.g. "Module 1", "Unit 2")
         self.header_pattern = re.compile(r'^(Module|Unit|Chapter)\s+\d+[:\-]?.*', re.IGNORECASE)
         
-        self.question_start_pattern = re.compile(r'^\s*\d+[\.\)]\s+')
+        # Regex to detect Question Starts (e.g. "1.", "2)", "Q1")
+        self.question_start_pattern = re.compile(r'^\s*(Q)?\d+[\.\)]\s+')
+
+    def clean_topic(self, text: str) -> str:
+        """
+        The 'De-Noiser':
+        Removes academic fluff so the AI focuses on the Core Concept.
+        Example: "Cost (Human Resources)" -> "Cost"
+        Example: "Time-scale)" -> "Time-scale"
+        """
+        # 1. Remove text inside parentheses (often context, not the topic)
+        # We replace it with nothing to isolate the main noun.
+        text = re.sub(r'\([^)]*\)', '', text)
+        
+        # 2. Remove syllabus artifacts like "1.1", "a)", etc.
+        text = re.sub(r'^\s*\d+[\.\)]\s*', '', text)
+        text = re.sub(r'^\s*[a-z][\.\)]\s*', '', text)
+
+        # 3. Remove trailing punctuation/junk
+        text = re.sub(r'[):.-]+$', '', text)
+        
+        # 4. Remove generic words if they appear alone (optional but helps)
+        if text.lower() in ["introduction", "overview", "basics"]:
+            return ""
+
+        return text.strip()
 
     def parse_syllabus(self) -> List[str]:
         """
         Extracts individual topics from the syllabus. 
-        Filters out structural headers and splits multi-topic lines.
+        Splits multi-topic lines and cleans them.
         """
         raw_lines = load_text_file(self.syllabus_path, "Syllabus")
         if not raw_lines:
@@ -33,24 +59,33 @@ class ExamParser:
         extracted_topics: Set[str] = set()
         
         for line in raw_lines:
-            clean_line = line.strip()
+            line = line.strip()
             
-            if not clean_line or self.header_pattern.match(clean_line):
+            # Skip empty lines or Headers
+            if not line or self.header_pattern.match(line):
                 continue
             
-            parts = re.split(r'[,;]', clean_line)
+            # Split by common delimiters (comma, semicolon)
+            parts = re.split(r'[,;]', line)
+            
             for part in parts:
-                topic = part.strip()
-                if len(topic) > 3:
+                # Apply the Intelligent Cleaning
+                topic = self.clean_topic(part)
+                
+                # Filter: Topic must be meaningful (more than 2 chars)
+                # and not just a number
+                if len(topic) > 2 and not topic.isdigit():
                     extracted_topics.add(topic)
         
-        logger.info(f"Successfully parsed {len(extracted_topics)} unique topics from syllabus.")
-        return sorted(list(extracted_topics))
+        # Sort alphabetically for consistent processing
+        final_list = sorted(list(extracted_topics))
+        logger.info(f"Successfully parsed {len(final_list)} unique topics from syllabus.")
+        return final_list
 
     def parse_pyqs(self) -> List[str]:
         """
         Extracts individual questions from the PYQs file. 
-        Uses regex to identify question starts and handles multi-line questions.
+        Handles multi-line questions.
         """
         raw_lines = load_text_file(self.pyqs_path, "PYQs")
         if not raw_lines:
@@ -61,30 +96,36 @@ class ExamParser:
         current_question = ""
         
         for line in raw_lines:
+            # If line starts with "1." or "Q1", it's a new question
             if self.question_start_pattern.match(line):
                 if current_question:
                     questions.append(current_question.strip())
-                current_question = line.strip()
+                # Start new question (remove the number for cleaner NLP matching)
+                # e.g. "1. Define Agile" -> "Define Agile"
+                current_question = re.sub(r'^\s*(Q)?\d+[\.\)]\s+', '', line).strip()
             else:
+                # Append to previous question (continuation line)
                 current_question += " " + line.strip()
         
+        # Append the very last question
         if current_question:
             questions.append(current_question.strip())
         
-        logger.info(f"Successfully parsed {len(questions)} questions from PYQs.")
-        return questions
+        # Filter out short/empty questions
+        valid_questions = [q for q in questions if len(q) > 10]
 
- 
+        logger.info(f"Successfully parsed {len(valid_questions)} questions from PYQs.")
+        return valid_questions
 
 if __name__ == "__main__":
+    # Test Block
     parser = ExamParser()
     topics = parser.parse_syllabus()
     questions = parser.parse_pyqs()
     
     print(f"\n--- PARSER TEST ---")
-    print(f"Total Topics Found: {len(topics)}")
-    print(f"Total Questions Found: {len(questions)}")
-    if topics: print(f"Sample Topic: {topics[15] }")
-    for i in range(50):
-        print(f"Topic {i+1}: {topics[i]}")
-    if questions: print(f"Sample Question: {questions[0][:75]}...")
+    print(f"Total Topics: {len(topics)}")
+    if topics: 
+        print(f"Sample Cleaned Topics: {topics[:5]}")
+        # Verify specific tricky topics
+        print("Checking for 'Cost'...", [t for t in topics if "Cost" in t])

@@ -1,0 +1,34 @@
+For a software system, arguably the paramount concern is ensuring its flawless and non-harmful performance rather than merely its existence. Software testers play a critical role in achieving this goal, but the testing landscape is rich with diverse schools of thought, methodologies, tools, and techniques. Pivotal questions for testers are as follows: Should your emphasis be on manual testing or automation? Should you primarily be creating test scripts? And what kinds of automated tests are likely to provide value to your specific application?
+Strategic Software Testing
+Recommended experience
+What you'll learn
+Understand the strengths and weaknesses of testing approaches and techniques
+Use context to inform your testing strategies and approaches
+Distinguish between the relative value of human-interactive and automated testing approaches
+Construct and adjust testing strategies for short and long range goals
+Leverage the strengths and talents of team members to implement testing strategies
+Skills you'll gain
+Details to know
+Add to your LinkedIn profile
+August 2025
+6 assignments
+See how employees at top companies are mastering in-demand skills
+There is 1 module in this course
+This module explores the multifaceted nature of software testing. It begins by defining software testing and its significance, then delves into diverse testing philosophies and categories. Lessons cover human-driven interactive testing, automated testing techniques, and the impact of development contexts on testing strategies. The module culminates in formulating adaptable testing strategies, illustrated through real-world examples.
+What's included
+53 videos6 assignments
+Why people choose Coursera for their career
+Felipe M.
+Jennifer J.
+Larry W.
+Chaitanya A.
+Open new doors with Coursera Plus
+Unlimited access to 10,000+ world-class courses, hands-on projects, and job-ready certificate programs - all included in your subscription
+Advance your career with an online degree
+Earn a degree from world-class universities - 100% online
+Join over 3,400 global companies that choose Coursera for Business
+Upskill your employees to excel in the digital economy
+Frequently asked questions
+Yes, you can preview the first video and view the syllabus before you enroll. You must purchase the course to access content not included in the preview.
+If you decide to enroll in the course before the session start date, you will have access to all of the lecture videos and readings for the course. Youâll be able to submit assignments once the session starts.
+Once you enroll and your session begins, you will have access to all videos and other resources, including reading items and the course discussion forum. Youâll be able to view and submit practice assessments, and complete required graded assignments to earn a grade and a Course Certificate.

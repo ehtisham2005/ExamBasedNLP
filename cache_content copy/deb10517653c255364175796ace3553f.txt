@@ -1,0 +1,23 @@
+In these digital time we find rarely people who is not using any Software Product, and main thing about these, we daily interact with the most of the Software product which make our tasks easily done.
+In these article we understanding core knowledge about the Software Product In detailed manner.
+What Is a Software Product?
+Software Products is any Software or any system which has been developed, tested and maintained for the specific purpose to solve that problem.
+In certain cases, software products may be part of system products where hardware, as well as software, is delivered to a customer. Software products are produced with the help of the software process. The software process is a way in which we produce software.
+Based on why the software product are developed, the Software product mainly divided into the two parts which are follows
+Types of Software Products
+Software products fall into two broad categories:
+1. Generic products: Generic products are stand-alone systems that are developed by a production unit and sold on the open market to any customer who can buy them.
+Products like Microsoft Office or Google Chrome. They are ready to use right out of the box and are designed to meet the general needs of many users. Whether you’re working on a document or browsing the web, these tools are flexible enough to suit a wide range of tasks.
+2. Customized Products: Customized products are the systems that are commissioned by a particular customer. Some contractor develops the software for that customer.
+These are designed specifically for a particular business or set of users. Imagine a software system built just for managing employee data in a company or a custom CRM system that’s perfectly aligned with the way a business operates.
+Characteristics of Software Product
+Software Product should possess the following important characteristics:
+- Efficiency: The software should not make wasteful use of system resources such as memory and processor cycles.
+- Maintainability: It should be possible to evolve the software to meet the changing requirements of customers.
+- Dependability: It is the flexibility of the software that ought to not cause any physical or economic injury in the event of system failure. It includes a range of characteristics such as reliability, security, and safety.
+- In time: Software should be developed well in time.
+- Within Budget: The software development costs should not be overrun, and they should be within the budgetary limit.
+- Functionality: The software system should exhibit the proper functionality, i.e., it should perform all the functions it is supposed to perform.
+- Adaptability: The software system should have the ability to adapted to a reasonable extent with the changing requirements.
+Conclusion
+Software Product is mainly classified into two main part which is Generic and Customized, and in these article we learned about the same. For more Detail about How the Software developed start to end please do refer "Software Development life Cycle".

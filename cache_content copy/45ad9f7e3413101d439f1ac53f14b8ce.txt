@@ -1,0 +1,116 @@
+Software Engineering is the process of designing, developing, testing, and maintaining software.
+- It is a systematic and disciplined approach to software development that aims to create high-quality, reliable, and maintainable software.
+- It includes a variety of techniques, tools, and methodologies, including requirements analysis, design, testing, and maintenance.
+Basics
+Learn what software is and why Software Engineering is needed.
+Software Development Models
+Need to manage complexity, reduce risks, and ensure software is built systematically, on time, and within budget.
+- Classical Waterfall Model
+- Iterative Waterfall Model
+- Spiral Model
+- Incremental process model
+- Rapid application development model(RAD)
+- RAD Model vs Traditional SDLC
+- Agile Development Models
+- Agile Software Development
+- Extreme Programming (XP)
+- SDLC V-Model
+- Comparison of different life cycle models
+Software Architecture
+Defines the high-level structure of a system, showing how components are organized and interact with each other.
+- User Interface Design
+- Coupling and Cohesion
+- Information System Life Cycle
+- Database application system life cycle
+- Pham-Nordmann-Zhang Model (PNZ model)
+- Schick-Wolverton software reliability model
+Software Project Management(SPM)
+Focuses on planning, organizing, and controlling software projects to deliver quality software on time and within budget.
+- Project Management Process
+- Project size estimation techniques
+- System configuration management
+- COCOMO Model
+- Capability maturity model (CMM)
+- Integrating Risk Management in SDLC | Set 1
+- Integrating Risk Management in SDLC | Set 2
+- Integrating Risk Management in SDLC | Set 3
+- Role and Responsibilities of a software Project Manager
+- Software Project Management Complexities
+- Quasi renewal processes
+- Reliability Growth Models
+- Jelinski Moranda software reliability model
+- Schick-Wolverton software reliability model
+- Goel-Okumoto Model
+- Mills’ Error Seeding Model
+- Basic fault tolerant software techniques
+- Software Maintenance
+Software Metrices
+Measurable values used to evaluate the quality, performance, and efficiency of software and its development process.
+- Software Measurement and Metrics
+- People Metrics and Process Metrics in Software Engineering
+- Halstead’s Software Metrics
+- Cyclomatic Complexity
+- Functional Point (FP) Analysis – Software Engineering
+- Lines of Code (LOC) in Software Engineering
+Software Requirements
+Define what a system must do and serve as the foundation for its design, development, and testing.
+- Requirements Engineering Process
+- Classification of Software Requirements
+- How to write a good SRS for your Project
+- Quality Characteristics of a good SRS
+- Requirements Elicitation
+- Challenges in eliciting requirements
+Software Configuration
+Focuses on managing and controlling changes to software components and artifacts throughout the development lifecycle.
+- Software Configuration Management
+- Objectives of Software Configuration Management
+- Software Quality Assurance
+- Project Monitoring & Control
+Software Quality
+Measures how well a software product meets requirements and delivers reliable, efficient, and user-friendly performance.
+Software Design
+Creates a structured blueprint that defines how a software system will meet its requirements efficiently.
+- Software Design Process
+- Software Design process – Set 2
+- Software Design Principles
+- Coupling and Cohesion
+- Function Oriented Design
+- Object Oriented Design
+- User Interface Design
+Software Reliability
+Measures how consistently a system performs its intended functions without failure over time.
+Software Testing and Debugging
+It ensure that software works correctly by identifying and fixing defects throughout development.
+- Software Testing Tutorial
+- Seven Principles of software testing
+- Testing Guidelines
+- Black box testing
+- White box Testing
+- Debugging
+- Selenium: An Automation tool
+- Integration Testing
+Software Maintenance
+Involves updating and improving software to keep it effective, efficient, and relevant over time.
+Difference Between
+Understanding the differences between software engineering concepts helps choose the right approach for building effective and efficient software.
+- Waterfall model vs Incremental model
+- v-model vs waterfall model
+- Manual testing vs Automation testing
+- Sanity Testing vs Smoke Testing
+- Cohesion vs Coupling
+- Alpha Testing vs Beta Testing
+- Testing and Debugging
+- Functional vs Non-functional Testing
+- Waterfall Model vs Spiral Model
+- RAD vs Waterfall
+- Unit Testing vs System Testing
+- Load Testing vs Stress Testing
+- Frontend Testing vs Backend Testing
+- Agile Model vs V-Model
+Software Engineering Interview Questions
+- Software Engineering Interview Questions
+- Software Engineering Quiz
+- SDLC MCQ Questions
+- Risk Management MCQ Questions
+- Software Development Models MCQ Questions and Answers
+- Software Quality Assurance Quiz

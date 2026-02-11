@@ -1,0 +1,49 @@
+Current Version: Profex 5.6.1 - Released November 30, 2025
+What is Profex
+Profex is a program for Rietveld refinement of powder X-ray diffraction (XRD) data based on the refinement kernel BGMN. It can be used for phase identification, phase quantification, structure refinement, and provides a large number of convenience features.
+Profex runs on Windows, Linux, and Mac OS X operating systems and is available as free software licensed under the GNU General Public License (GPL) version 2 or any later version.
+Key features
+XRD scan files
+- Reads a variety of raw data formats, including all major instrument manufacturers (Bruker / Siemens, PANalytical / Philips, Rigaku, Thermo Fisher, Seifert / GE, and generic text formats)
+- Display stacked scans
+- Export scan files to generic text formats
+- Export graphs to PNG or SVG vector format
+- Supports laboratory, synchrotron, and neutron diffraction data
+Phase Identification
+- Full-pattern search-matching using the internal structure database (~1000 structure files)
+- Peak detection and export of peak lists for search-matching with 3rd party software (e.g. Match! or QualX2)
+- Double-click on strongest peak to list best matches
+- Browse COD database
+- Import CIF files from COD and XML files from ICDD PDF-4+ database
+Rietveld Refinement
+- Phase quantification and structure refinement
+- Profile calculation based on fundamental parameters approach (FPA)
+- Graphical editor for instrument configurations
+- Graphical wizard to create refinement projects
+- Unattended refinements (no iterative refinements requiring user input)
+- Batch refinements
+- Supports Rietveld refinement, LeBail profile fitting, and refinement of calibrated structure factor lists
+- Presets for 1-click refinements
+- Powerful scripting language
+Refinement Results
+- Export refined parameters to CSV files (e.g. for import in Excel)
+- Export refined structures to CIF format
+- Export publication-quality graphs to SVG vector format
+- Draw electron density maps (Fobs, Fcalc, Fobs-Fcalc)
+- Export peak list
+- Compute refined chemical composition
+Others
+- Context help for BGMN variables
+- Syntax highlighting
+- Enhanced text editors for structure and control file management and editing
+- And many more…
+Latest News
+Profex goes Mars!
+Artist’s concept of Curiosity on the surface of Mars. Image courtesy NASA/JPL-Caltech
+November 07, 2022
+In collaboration with Dr. Valerie Tu from Jacobs at NASA Johnson Space Center and Dr. Richard Archer from NASA Johnson Space Center, we adapted Profex to work with XRD datasets collected by the CheMin instrument, which is installed on NASA’s Mars rover Curiosity and collects XRD data on Mars since 2012. Find out more…
+Video Tutorials
+Check out our YouTube channel Profex Tutorials. We will periodically publish new tutorials for selected topics. The first episode explains installation and setup of Profex on three different platforms:
+Reference
+Profex and BGMN are free to use and share, but users are kindly asked to cite the following open access publication if results generated with Profex are published in any form:
+Döbelin, N., Kleeberg, R., „Profex: a graphical user interface for the Rietveld refinement program BGMN„, Journal of Applied Crystallography 48 (2015), 1573-1580.

@@ -1,0 +1,201 @@
+Testing is crazily important for finding bugs, verifying the functionality and improving the general stability of the software. Almost all if not all software vendors test their programs in some way. Conducting the testing process helps teams make sure that web and mobile apps meet functional requirements, perform reliably, and deliver exceptional user experiences.
+However, traditional testing practices provide the manual execution of test cases – checking the program manually to try out all the features and functionality to see if everything works as expected.
+Another much better way involves a comprehensive approach that incorporates a holistic understanding of testing results achieved through the writing of automated test scripts that execute tests and produce rich reports and analytics.
+Having the test automation set up that can be run with a single command — helps to find bugs a new release introduces more quickly and focuses on more priority tasks. It allows free up time on more priority tasks. Thus, automated testing deals with routine. But there’s also another reason,
+Code covered by auto-tests is easier to modify and improve. It should be organized in such a way that every function has a clearly described task, well-defined input and output. That means perfect application architecture from the beginning.
+Sure in real life it’s not always that easy. From the start, it may seem that it takes a lot of time to write automated tests, but it is definitely worth it.
+Automation testing is especially helpful in regression testing when a couple of new features are added to the system. Numerous automated test frameworks offer unique features and capabilities to suit this type of testing. Among these JavaScript testing frameworks – WebdriwerIO, Playwright, Cypress, CodeceptJS, Jest are popular nowadays. But the foundation of some of them – is the Mocha and Chai tandem.
+Mocha and Chai tandem can be a preferred combination for many JavaScript software engineers striving for efficient and reliable testing practices with exceptional reporting and analytics capabilities. Rich reports and analytics in testing help gain insights into the quality, performance, and reliability of software products. They provide stakeholders with a full view of the testing process and let them make informed decisions, optimize testing strategies, and promote ongoing improvement in their testing workforce. 👀 Let’s discover more details ahead!
+Introduction to Mocha and Chai:
+🤔 Why are they popular JavaScript testing frameworks?
+Integrating Chai and Mocha into your testing workflow improves the testing process and establishes a foundation for flexible and accurate reporting and analytics. These powerful tools not only verify the functionality of your code but also help your teams capture crucial data points and insights during the testing process. From verifying code behavior to monitoring test coverage and performance metrics, Chai and Mocha offer a comprehensive feature set. Let’s discover more detailed information about these technologies👇
+What is Mocha?
+Mocha is known as a feature-rich JavaScript test framework that runs on Node.js and in the browser. It also makes asynchronous testing simple and provides a versatile and flexible testing environment for developers. Its interface is simple with logging the results in the terminal window. Also Mocha cleans the state of the software being tested to ensure that test cases run independently of each other. With Mocha, you can:
+- Get a highly flexible and customizable testing environment and choose your preferred assertion libraries, test interfaces, and reporters.
+- Simplify the testing of asynchronous code to allow software engineers to write tests for functions involving callbacks, promises, or async/await syntax, thereby providing comprehensive test coverage of asynchronous functionalities.
+- Use different testing styles, including BDD (Behavior Driven Development), TDD (Test Driven Development), and export interfaces for both synchronous apply and asynchronous testing.
+- Apply
+before
+,after
+,beforeEach
+, andafterEach
+hooks to run setup and teardown code before and after tests or test suites. - Run tests in both browser and Node.js environments and generate rich and detailed test reports.
+Writing tests with Mocha and Chai
+However, Mocha alone is not a good fit for comprehensive testing. While Mocha provides the environment for writing tests and executing them, it lacks the built-in capabilities for verifying test results against expected outcomes. For this purpose, we require an assertion library.
+That’s why Mocha can be paired with the Chai assertion library to get the required options to attain purposes in both in-browser and server-side testing.
+Mocha serves as the test runner, responsible for executing our test suites, while Chai.js functions as the assertion library, allowing teams to define and validate the expected outcomes of the test cases.
+Using a combination of Mocha and Chai is a great option that provides Living Documentation for the specifications of the features of your products, you may follow through the link and meet implementation Living Docs with our test management.
+Moreover, these libraries are suitable for both in-browser and server-side testing.
+What is Chai?
+As we mentioned before Chai is a popular assertion library for Node.js and the browser. Chai.js implements three different assertion styles. Which one you choose is just a matter of your preference and project needs. Chai allows the freedom of choosing the style interface we prefer: “should”, “expect” and “assert” are all available. So, Chai not only provides a flexible and expressive syntax for writing assertions in JavaScript tests but also allows developers to create clear and readable test cases thanks to multiple assertion styles and chaining methods. With Chai, you can:
+- Get clear and expressive assertions that improve the readability of your test scripts.
+- Write descriptive tests using natural language constructions to better and more effectively articulate the intent and logic behind each test scenario.
+- Create custom assertions tailored to your specific testing requirements.
+- Assert complex data structures such as arrays, objects, etc. with ease to make validation of the code’s output thorough.
+You can learn more about the assertions and assertion styles Chai provides in the official Chai documentation.
+But of course, you can use any assertion library you like, for instance, Expect.js, Should.js and more.
+Combining Mocha and Chai offers several advantages, including the generation of Living Documentation that outlines the specifications of your product features. To explore implementation and benefits further, refer to the provided link to our test management system.
+What makes Mocha better JS testing frameworks?
+Mocha integrates with Node.js, serving as a test framework native to the Node.js environment. This inherent compatibility ensures effortless and swift testing for Node.js applications. Additionally, Mocha offers a plethora of plugins and extensions tailored to address distinctive testing scenarios encountered in front-end frameworks like Angular, Vue.js, React, and Flutter.
+- Seamlessly integrates with NodeJS. Mocha seamlessly integrates with Node.js, serving as a test framework native to the Node.js environment. This inherent compatibility provides effortless and swift testing for Node.js applications.
+- Simple to navigate and highly adaptable. Mocha offers unparalleled ease of use and flexibility. With its simple syntax, Mocha facilitates the creation of descriptive auto-tests effortlessly. Utilizing the describe method, tests can be organized into logical groups, while it method executes them seamlessly. Additionally, Mocha supports running automated tests each time a file is changed locally to deliver efficient development processes. The official Docs showcases a comprehensive list of Mocha’s impressive capabilities, serving as a valuable resource for users.
+- Front-end and Back-end Testing Coverage. Mocha tool covers both front-end and back-end testing, accommodating various types such as unit testing, end-to-end (e2e) testing, and RESTful API testing.
+- Diverse Browser support. With wide browser support, Mocha executes test cases across major web browsers, offering numerous browser-specific methods and options.
+- Functions effectively in both TDD and BDD environments. Mocha works adeptly in both TDD and BDD environments, supporting Behaviour Driven Development (BDD) and Test Driven Development (TDD), thereby facilitating the creation of high-quality test cases and improving test coverage.
+- Tests As Docs. With living documentation principles, Mocha’s description and its titles convey the function’s purpose, promoting efficiency and risk reduction in agile software development projects.
+- Rich reporting options. Users can choose from a variety of reporting options including list, progress, and JSON formats, with the default reporter reflecting the test case hierarchy.
+- Community support. As an open-source testing tool, Mocha enjoys strong support from a vibrant community, providing valuable resources and assistance to users.
+Is Mocha a BDD tool?
+Behavior Driven Development (BDD) approuch emphasizes writing test cases in a unified Gherkin language. This approach facilitates seamless communication among diverse stakeholders, including developers, QA teams, and business leaders, fostering better collaboration and understanding across technical and non-technical domains.
+Mocha provides several interfaces for writing tests, BDD interface is the default.
+BDD is three things in one: tests, documentation and examples.
+As a JavaScript-based testing framework, Mocha supports both Behavior Driven Development (BDD) and Test Driven Development (TDD) styles of testing. While Mocha itself is not inherently a BDD tool, it provides the flexibility to write tests in a BDD Software engineers can choose to structure their tests in a BDD manner using Mocha’s syntax, making it a popular choice for BDD testing in JavaScript projects. However, Mocha can also be used for TDD-style testing if preferred.
+Examples (acceptance tests) explain and illustrate the rules. These examples can become tests (manual or automation code) and they document the use cases. In scenarios where complexities arise, it becomes challenging to illustrate the points being discussed without examples. To gain a deeper comprehension of BDD, let’s delve into a practical development case. Examples are a lightweight form of describing the test scenario. Example mapping fits better for collaborative Tree Amigos discussion sessions.
+To better understand BDD, we’ll examine a practical case of development. The code below demonstrates what a test suite defined using the BDD Mocha interface looks like:
+// begin a test suite of one or more tests
+describe('#sum()', function() {
+// add a test hook
+beforeEach(function() {
+// ...some logic before each test is run
+})
+// test a functionality
+it('should add numbers', function() {
+// add an assertion
+expect(sum(1, 2, 3, 4, 5)).to.equal(15);
+})
+// ...some more tests
+})
+Mocha produces the cleanest tests. In our test case, we’re describing the function of the sum
+describe("title", function() { ... })
+In the title of the test case, we describe the specific use case in a human-readable manner. The second argument is a function responsible for testing the described use case. The code within the it
+block should ideally execute without errors if the implementation is correct.
+it("use case description", function() { ... })
+it
+should not be called more than once within an it()
+function block. Calling it multiple times will throw an error.
+Functions expect.* are used to check whether sum
+works as expected. Right here we’re using one of them – expect.to.equal, it compares arguments and yields an error if they are not equal. Here it checks that the result of sum(1, 2, 3, 4, 5) equals 15. There are other types of comparisons and checks as well.
+expect.equal(value1, value2, value3, value4, value5)
+Thus, this statement can be executed and it
+will run the test specified in the block.
+In the future, we can add more it
+and describe
+We can set up before/after functions that execute before or after running tests and also beforeEach
+afterEach
+functions that execute it.
+Mocha BDD Test Flow: How It Works
+Here you can find the logic of the BDD testing flow:
+- Initial spec file and Test Writing for the required software functionality. Begin by creating a specification file and start writing tests to verify the required functionality of the software.
+- Describe Blocks. Organize tests within described blocks, each describing a feature, module, or aspect of the application under test.
+- It Blocks. Define individual test cases within described blocks, with each
+it
+block representing a specific behavior or scenario. - Before and After Hooks. Utilize
+before
+afte
+beforeEach
+afterEach
+hooks to set up and tear down test environment to make sure that Mocha tests start with a clean state and handle necessary setup or cleanup actions. - Assertions. Use assertion libraries like Chai to make assertions within
+it
+blocks, verifying if the actual behavior matches the expected behavior. - Test Execution. Execute the tests for the software functionality. Errors will be displayed if the software functionality is incomplete or if any issues are encountered during Mocha testing.
+- Implementation of Functionality. Implement the functionality of the program based on the requirements and the failing tests.
+- Adding More Use Cases. As more use cases are identified, add them to the specification file, even if they are not yet supported by the implementations. This step may cause some tests to fail initially.
+- Bug Fixing and Refactoring. Address any bugs identified during testing and refactor the code as necessary until all tests pass without errors.
+- Repeat the testing cycle for any new functionality that needs to be implemented, ensuring that each feature is thoroughly tested and validated against the specified requirements.
+So, the SDLC (Software Development Lyfe Cycle) is iterative. QAs write the spec, implement it, make sure tests pass, then write more tests, make sure they work etc. In the end, we have both a working implementation of the current release. Mocha BDD Test Flow ensures that the software functionality meets the desired specifications and quality standards, while also allowing for the continuous improvement and enhancement of the software over time.
+Getting started first test with Mocha
+In this extensive tutorial, we are going to present the process of launching the Chai and Mocha javascript testing framework – from writing the initial test script and executing it to generating a detailed test result report.
+Assuming you have Node.js and npm installed, if not, please download and install them from the official Node.js website before proceeding. To verify the successful installation and npm version, execute the following command. It displays the installed versions of both technologies.
+We will assume that you already have Node.js and npm installed. If you do not please download and install them before continuing. You can find them on the official Node.js website.
+Check for successful installation and npm version through the following command. It shows the installed versions of both technologies.
+node -v
+npm -v
+Afterward, you will need to install Mocha either globally on your local machine or as a dependency for your project. The –save-dev flag flag installs the necessary dependencies of the libraries. You can achieve this by executing the following commands:
+npm i --global mocha npm i --save-dev mocha
+To install Chai as a development dependency for your project, execute the following command:
+npm i --save-dev chai
+In the directory of your project file using the following command create the package.json file:
+npm init -y
+Inside package.json, inside scripts, change the value of the test to mocha.
+"scripts": {
+"test":"mocha"
+}
+You can proceed by creating the test directory in the project root. Mocha tool automatically scans this directory for Mocha tests and provides analytics information along with generating a comprehensive report.
+Now, we have everything configured to run Mocha tests, but writing some Mocha tests first is a must. Here we will add a simple functionality test with a basic Mocha test string to your test.js test file:
+import { expect } from 'chai';
+import C from '../src/Calculator';
+describe('calculate', function() {
+it('add', function() {
+let result = C.Sum(5, 2);
+expect(result).equal(7);
+});
+it('substract', function() {
+let result = C.Difference(5, 2);
+expect(result).equal(3);
+});
+});
+You can utilize a variety of reporters and customize your test results. To enable this feature, create the specified directory in the project root. This directory will deliver analytics information about the tests and generate a comprehensive report.
+Now, let’s run the test suite and verify its functionality! To do this, simply type the designated command, which serves as a drop-in replacement for the mocha command.
+npm run test
+Mocha offers developers the flexibility to choose from a variety of built-in test reporters.
+Rich reports and analytics: Why are they important in software testing?
+Here we are going to present some information on how you can benefit from generating reports and analytics when automated testing is completed:
+- Gain Insight into Test Coverage: Understand the extent of test coverage and identify areas for ongoing improvement to drive comprehensive validation of software functionalities.
+- Identify Failure Patterns: Analyze test failure data to uncover recurring issues, pinpoint root causes, and enhance the overall stability and robustness of the application.
+- Optimize Performance: Leverage performance metrics to streamline test execution, improve resource utilization, and accelerate feedback loops within the development pipeline.
+- Detect Regressions: Detect changes in test results between code revisions, facilitating prompt identification and resolution of regressions to maintain software integrity.
+- Facilitate Informed Decision Making: Equip stakeholders with actionable insights to prioritize bug fixes, allocate resources more effectively, and be ready for release.
+- Drive Continuous Improvement: Foster a culture of continuous improvement by leveraging analytics to refine testing strategies, improve test coverage, and continuously improve software quality.
+Sync Mocha and Chai Tests With Manual Testing
+If you’ve already written automated tests with Mocha, you can synchronize them with your manual tests and maintain control over the execution of all your tests. Let’s explore how this synchronization works in action.
+Launch Mocha and Chai report From Example
+Our team has a selection of Demo projects to kickstart your testing journey, starting with the testomat.io Test Case Management System (TCMS). Alongside WebdriverIO, you’ll discover examples featuring Cypress, Playwright, Cucumber, Jest, CodeceptJS, and other testing frameworks. Simply follow the link to access and download the desired project, and experience how it functions firsthand.
+With testomat.io test case management system, well-versed testing and development teams and specialists without QA (BA, PM) experience can seamlessly collaborate. If necessary, the product owner can also participate in the project. To lay the groundwork for teamwork, follow these simple steps to run the example on testomat.io test management:
+Steps you need to follow to run the example on testomat.io test management:
+#1: Create A New Mocha Test Project
+Once signed in to the Test Management System (TMS), you’ll encounter two options for creating a project:
+- Classical Cypress project: Test descriptions are presented in markdown format.
+- BDD Cypress project: Tests are presented in Gherkin format.
+After making your choice, simply write the project title and effortlessly create a new project by clicking the “Create” button.
+Once you make your choice — write the project title and easily create a new project with the Create button.
+#2: Import Mocha Automated Tests Into TMS
+When the project is created, you’ll have the option to import automated tests from test file by selecting the appropriate menu on the test management interface.
+Choose the Mocha testing framework and select a combination of JavaScript or TypeScript programming languages that best suits your project.
+After that copy the generated by the test management app command with the API key and execute it in CMD. This action will initiate the process of importing tests from the test files into the test management system.
+Inspecting the command prompt CMD, the test management importer analyzes the code, accurately identifying and displaying the number of tests found within the test framework.
+Go back to your project and look at the number of tests found. If necessary, you will be able to click on the desired test to view the steps it contains.
+#3 How Do I Create Mocha Report?
+To obtain a comprehensive report of the test results, you need to first install the testomat.io Reporter in the repository. To accomplish this, copy and paste the following command into your command prompt (CMD):
+#4 Execute Automated Mocha Scripts
+Once completed, you’ll gain access to a real-time status report even before the test run finishes. In case of any issues, you can review the execution trace, analyze test scenarios, and examine attachments to pinpoint the problem accurately.
+Once testing is completed, a link to the comprehensive report will be generated to be shared with stakeholders if there is a need.
+Running Mocha Tests On CI\CD
+Up to this stage, we have conducted local testing of the Node.js application that can now be automated through a Continuous Integration (CI) server. At testomat.io, we can seamlessly integrate it with popular CI\CD tools, including GitHub, GitLab, Jenkins, Bamboo, and CircleCI.
+Furthermore, there’s no need for complex configurations. All you need is to establish the connection between the test management system and your CI\CD environment. This helps tests to be launched directly from the test management system on your CI\CD platform.
+With that in mind, choosing the right tools for seamless CI\CD integration into the development and deployment pipeline is crucial. You need to discuss how the desired testing framework integrates with CI\CD pipelines and how its features and capabilities contribute to the efficiency of testing workflows.
+For example, Mocha’s flexibility in test configuration, Jest’s built-in assertion library and test runner, and Playwright’s support for end-to-end testing across different browsers. To simplify the process, here’s a comparison table outlining key features of Jest, Playwright, and Mocha:
+| Jest | Playwright | Mocha |
+| Open-source tool | Open-source tool | Open-source tool |
+| Supports JavaScript/TypeScript/ Angular/Vue/NodeJS | Supports JavaScript/TypeScript/ Python/Java/ .NET | Supports JavaScript/TypeScript |
+| Chrome/Firefox/Safari//Internet Explorer/Opera are supported browsers | Chrome /Microsoft Edge/Apple Safari/Mozilla Firefox are supported browsers | Any browser is supported |
+| Windows/Linux/macOS | Windows/Linux/macOS | Windows/Linux/macOS |
+| Unit testing, snapshot testing | Cross-browser testing, E2E testing, web testing, mobile testing, API testing, parallel testing, snapshot testing, unit testing | Unit testing, integration testing, end-to-end testing |
+| Strong community and active support | Actively developing community | Low community support |
+This table provides a brief overview of the features and characteristics of Jest, Playwright, and Mocha to help you make an informed decision based on project requirements and specifications.
+Tips and Best Practices for Using Mocha and Chai for Testing
+Here are some best practices for any team to follow:
+Descriptive Test Case Names
+Clear and descriptive test case names are essential for understanding the expected behavior of the system under test. By using descriptive names, developers and testers can easily identify the purpose of each test case that leads to improved comprehension and maintainability of the test suite.
+Decomposition of Complex Scenarios
+Breaking down complex test scenarios into smaller, focused tests improves test readability, maintainability, and scalability. By isolating specific functionality or behavior within individual test cases, teams can pinpoint and address issues more effectively. This contributes to more robust and reliable test coverage.
+Effective Use of Before and After Hooks
+Leveraging before and after hooks allows teams to set up and tear down test environments consistently before and after each test execution. This provides a clean and predictable testing environment, reduces test flakiness, and promotes reproducibility of test results across different environments and configurations.
+Consistent Coding Style and Structure
+Following a consistent coding style and structure improves the readability and maintainability of test code. By adhering to established coding standards, teams can foster collaboration, reduce cognitive overhead, and streamline the review and debugging process.
+Documentation of Test Cases
+Documenting test cases with comments or annotations provides valuable context and insights into the purpose, assumptions, and dependencies of each test scenario. Well-documented tests enable team members to understand the rationale behind test decisions, troubleshoot failures more effectively, and onboard new contributors more efficiently.
+Jest has fewer features than Mocha and doesn’t support some valuable things like asynchronous tests. This table provides a brief overview of the features and characteristics of Jest, Playwright, and Mocha to help you in making an informed decision based on project requirements and specifications.
+Hopefully, you now have a better idea of the differences among these three popular frameworks. As I mentioned, regardless of which framework you choose, all three are mature and effective choices and can work for you, depending on the need of your project and your preferences. Now you’re ready to get testing!
+Bottom line: Want to improve testing workflow with Chai and Mocha?
+Generating reports that are informative, actionable, and tailored to your specific testing needs is crucial. With Mocha and Chai technologies, you can integrate rich reports and analytics in software testing. By leveraging automated testing and insightful reporting, teams can achieve higher levels of efficiency, reliability, and performance in their applications. The importance of rich reports and analytics in software testing cannot be overstated.
+They enable teams to gain comprehensive insights into test coverage, identify failure patterns, optimize performance, detect bugs, facilitate informed decision-making, and drive continuous improvement across development cycles. By combining Mocha’s test-running capabilities with Chai’s assertion library, teams can effectively validate the functionality of their code and capture crucial data points during the testing process. The synergy between these two frameworks enables the generation of the best specifications of product features and enhances collaboration among stakeholders.
+The adoption of Mocha and Chai, along with best practices in testing, allows teams to deliver high-quality software products that meet the evolving needs of users and stakeholders.

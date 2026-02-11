@@ -1,0 +1,1 @@
+In software engineering, test design is the activity of deriving and specifying test cases from test conditions to test software.

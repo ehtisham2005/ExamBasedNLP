@@ -1,0 +1,1 @@
+A test plan is a document detailing the objectives, resources, and processes for a specific test session for a software or hardware product. The plan typically contains a detailed understanding of the eventual workflow.
