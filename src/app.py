@@ -325,7 +325,7 @@ with tab_tutor:
             with st.chat_message("assistant"):
                 try:
                     stream = client.chat.completions.create(
-                        model="llama-3.3-70b-versatile",
+                        model="openai/gpt-oss-120b",
                         messages=[{"role": "system", "content": sys_prompt}] + 
                                  [{"role": m["role"], "content": m["content"]} for m in st.session_state['history'][-5:]],
                         stream=True, max_tokens=1024
