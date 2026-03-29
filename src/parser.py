@@ -3,53 +3,59 @@ import logging
 from typing import List, Set
 from loader import load_text_file
 
+# Configure logging for production monitoring
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 class ExamParser:
     """
-    Advanced parser for extracting structured data from unstructured 
-    Syllabus and Previous Year Question (PYQ) text files.
+    Universal subject-agnostic parser for extracting structured data from 
+    unstructured Syllabus and Previous Year Question (PYQ) text files.
     """
 
     def __init__(self, syllabus_path: str = "data/syllabus.txt", pyqs_path: str = "data/pyqs.txt"):
         self.syllabus_path = syllabus_path
         self.pyqs_path = pyqs_path
         
-        # Regex to detect Structural Headers (e.g. "Module 1", "Unit 2")
-        self.header_pattern = re.compile(r'^(Module|Unit|Chapter)\s+\d+[:\-]?.*', re.IGNORECASE)
+        # Generalized Regex: Detects structural headers across subjects
+        # Matches: "Module 1", "Unit I", "Chapter 5", "Part A", "Section 2"
+        self.header_pattern = re.compile(
+            r'^\s*(Module|Unit|Chapter|Section|Part|Block)\s+([0-9]+|[IVXLC]+|[:\-A-Z])[:\-]?.*', 
+            re.IGNORECASE
+        )
         
-        # Regex to detect Question Starts (e.g. "1.", "2)", "Q1")
-        self.question_start_pattern = re.compile(r'^\s*(Q)?\d+[\.\)]\s+')
+        # Flexible Question Detection: Handles diverse exam formatting
+        # Matches: "1.", "1)", "Q1:", "Question 1.", "22. ", "a) "
+        self.question_start_pattern = re.compile(
+            r'^\s*(Question\s+)?\d+[\.\)\:]\s+|^\s*Q\d+[\.\)\:]\s+', 
+            re.IGNORECASE
+        )
 
     def clean_topic(self, text: str) -> str:
         """
-        The 'De-Noiser':
-        Removes academic fluff so the AI focuses on the Core Concept.
-        Example: "Cost (Human Resources)" -> "Cost"
-        Example: "Time-scale)" -> "Time-scale"
+        The 'De-Noiser': Removes academic fluff so the AI focuses on core concepts.
+        Refined to be more aggressive for subject-agnostic compatibility.
         """
-        # 1. Remove text inside parentheses (often context, not the topic)
-        # We replace it with nothing to isolate the main noun.
-        text = re.sub(r'\([^)]*\)', '', text)
+        # 1. Remove parenthetical context (e.g., "Cost (Human Resources)" -> "Cost")
+        text = re.sub(r'\(.*?\)', '', text)
         
-        # 2. Remove syllabus artifacts like "1.1", "a)", etc.
-        text = re.sub(r'^\s*\d+[\.\)]\s*', '', text)
-        text = re.sub(r'^\s*[a-z][\.\)]\s*', '', text)
-
-        # 3. Remove trailing punctuation/junk
-        text = re.sub(r'[):.-]+$', '', text)
+        # 2. Remove syllabus artifacts/bullets (e.g., "1.1 Topic", "a) Topic")
+        text = re.sub(r'^\s*([0-9]+(\.[0-9]+)*|[a-z])[\.\)\-]\s*', '', text, flags=re.IGNORECASE)
         
-        # 4. Remove generic words if they appear alone (optional but helps)
-        if text.lower() in ["introduction", "overview", "basics"]:
+        # 3. Strip leading/trailing punctuation and common syllabus junk
+        text = text.strip(" :.-–—()[]")
+        
+        # 4. Filter out generic academic stop-words that don't represent unique topics
+        academic_fluff = {"introduction", "overview", "basics", "summary", "conclusion", "references", "preface"}
+        if text.lower() in academic_fluff:
             return ""
 
-        return text.strip()
+        return text
 
     def parse_syllabus(self) -> List[str]:
         """
-        Extracts individual topics from the syllabus. 
-        Splits multi-topic lines and cleans them.
+        Extracts individual topics. Splits multi-topic lines and cleans them.
+        Filters headers like "Unit 1: Overview".
         """
         raw_lines = load_text_file(self.syllabus_path, "Syllabus")
         if not raw_lines:
@@ -59,25 +65,23 @@ class ExamParser:
         extracted_topics: Set[str] = set()
         
         for line in raw_lines:
-            line = line.strip()
+            line_str = line.strip()
             
-            # Skip empty lines or Headers
-            if not line or self.header_pattern.match(line):
+            # Skip empty lines or structural headers
+            if not line_str or self.header_pattern.match(line_str):
                 continue
             
-            # Split by common delimiters (comma, semicolon)
-            parts = re.split(r'[,;]', line)
+            # Split by common delimiters (comma, semicolon, bullet points)
+            # This ensures "Cohesion, Coupling" becomes two distinct nodes
+            parts = re.split(r'[,;•\t]', line_str)
             
             for part in parts:
-                # Apply the Intelligent Cleaning
                 topic = self.clean_topic(part)
                 
-                # Filter: Topic must be meaningful (more than 2 chars)
-                # and not just a number
-                if len(topic) > 2 and not topic.isdigit():
+                # Filter: Must be long enough to be a concept and not just a number/artifact
+                if len(topic) > 3 and not topic.replace('.', '').isdigit():
                     extracted_topics.add(topic)
         
-        # Sort alphabetically for consistent processing
         final_list = sorted(list(extracted_topics))
         logger.info(f"Successfully parsed {len(final_list)} unique topics from syllabus.")
         return final_list
@@ -85,47 +89,46 @@ class ExamParser:
     def parse_pyqs(self) -> List[str]:
         """
         Extracts individual questions from the PYQs file. 
-        Handles multi-line questions.
+        Normalizes multi-line questions into single semantic blocks for SBERT.
         """
-        raw_lines = load_text_file(self.pyqs_path, "PYQs")
-        if not raw_lines:
-            logger.warning(f"PYQs file at {self.pyqs_path} is empty or missing.")
+        # Load as full content to handle complex multi-line breaks correctly
+        try:
+            with open(self.pyqs_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except Exception as e:
+            logger.error(f"Error reading PYQs: {e}")
             return []
 
-        questions: List[str] = []
-        current_question = ""
+        # Split content into distinct questions using the numbering pattern
+        # We use re.split to handle questions that don't start at the beginning of a line
+        raw_splits = self.question_start_pattern.split(content)
         
-        for line in raw_lines:
-            # If line starts with "1." or "Q1", it's a new question
-            if self.question_start_pattern.match(line):
-                if current_question:
-                    questions.append(current_question.strip())
-                # Start new question (remove the number for cleaner NLP matching)
-                # e.g. "1. Define Agile" -> "Define Agile"
-                current_question = re.sub(r'^\s*(Q)?\d+[\.\)]\s+', '', line).strip()
-            else:
-                # Append to previous question (continuation line)
-                current_question += " " + line.strip()
-        
-        # Append the very last question
-        if current_question:
-            questions.append(current_question.strip())
-        
-        # Filter out short/empty questions
-        valid_questions = [q for q in questions if len(q) > 10]
+        valid_questions: List[str] = []
+        for q in raw_splits:
+            if not q:
+                continue
+            
+            # Normalize whitespace: convert multiple spaces/newlines into one space
+            # This is critical for reliable SBERT embedding matches
+            normalized_q = " ".join(q.split()).strip()
+            
+            # Ensure the question has enough context to be analyzable
+            if len(normalized_q) > 15:
+                valid_questions.append(normalized_q)
 
-        logger.info(f"Successfully parsed {len(valid_questions)} questions from PYQs.")
+        logger.info(f"Successfully parsed {len(valid_questions)} individual questions from PYQs.")
         return valid_questions
 
 if __name__ == "__main__":
-    # Test Block
+    # Test Block for Manual Verification
     parser = ExamParser()
     topics = parser.parse_syllabus()
     questions = parser.parse_pyqs()
     
-    print(f"\n--- PARSER TEST ---")
+    print(f"\n--- UNIVERSAL PARSER TEST ---")
     print(f"Total Topics: {len(topics)}")
+    print(f"Total Questions: {len(questions)}")
     if topics: 
-        print(f"Sample Cleaned Topics: {topics[:5]}")
-        # Verify specific tricky topics
-        print("Checking for 'Cost'...", [t for t in topics if "Cost" in t])
+        print(f"Top 5 Cleaned Topics: {topics[:5]}")
+    if questions:
+        print(f"First Question Block: {questions[0][:100]}...")
